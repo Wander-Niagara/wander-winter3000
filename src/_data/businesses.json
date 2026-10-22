@@ -1,0 +1,114 @@
+{
+  "_note": "Themed business modules. Names and photos are real (client photo library, credited via EXIF origin). Every `url` currently points at the live wanderniagara.com directory — swap in each business's own site URL when the client confirms outbound destinations.",
+  "couples": {
+    "themes": [
+      {
+        "title": "Wine & Craft Sips",
+        "icon": "grapes",
+        "items": [
+          { "name": "180 Estate Winery", "blurb": "Barrel cellar, big views, and a stop on the Fall Wine Trail.", "img": "/assets/img/photos/biz-180-estate.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Megalomaniac Winery", "blurb": "Tastings on the escarpment brow above Vineland.", "img": "/assets/img/photos/biz-megalomaniac.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Fielding Estates Winery", "blurb": "Wine on the bench, craft cider on the side.", "img": "/assets/img/photos/biz-fielding-cider.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Newark Brewing Co.", "blurb": "Flights and snacks on the Benchlands ale trail.", "img": "/assets/img/photos/biz-newark-brewing.jpg", "url": "https://www.wanderniagara.com/directory/" }
+        ]
+      },
+      {
+        "title": "Table for Two",
+        "icon": "glass",
+        "items": [
+          { "name": "Fat Rabbit", "blurb": "St. Catharines' Michelin-recognized tasting-menu room.", "img": "/assets/img/photos/biz-fat-rabbit.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Bar Les Incompétents", "blurb": "Fat Rabbit's little sibling — oysters, plates and good wine.", "img": "/assets/img/photos/biz-les-incompetents.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Winery patios", "blurb": "Long lunches over the vines — 180 Estate's patio, pictured.", "img": "/assets/img/photos/biz-180-patio.jpg", "url": "https://www.wanderniagara.com/directory/" }
+        ]
+      },
+      {
+        "title": "Boutique Stays",
+        "icon": "inn",
+        "items": [
+          { "name": "Inn the Orchard", "blurb": "A private inn tucked into a working Benchlands orchard.", "img": "/assets/img/photos/biz-inn-orchard.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Lounge Inn Jordan", "blurb": "Calm, modern rooms steps from Jordan Village.", "img": "/assets/img/photos/biz-lounge-inn.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Inn On The Twenty", "blurb": "Jordan Village's landmark stay on Main Street.", "img": "/assets/img/photos/biz-jordan-village.jpg", "url": "https://www.wanderniagara.com/directory/" }
+        ]
+      },
+      {
+        "title": "Arts & Evenings Out",
+        "icon": "star",
+        "items": [
+          { "name": "Montebello Park concerts", "blurb": "Grape & Wine season fills the park with live music.", "img": "/assets/img/photos/biz-concert-park.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Live music nights", "blurb": "Festival stages and venue shows run all season.", "img": "/assets/img/photos/biz-concert-crowd.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Downtown St. Catharines", "blurb": "Pubs, patios and late plates after the show.", "img": "/assets/img/photos/biz-pub-friends.jpg", "url": "https://www.wanderniagara.com/directory/" }
+        ]
+      }
+    ]
+  },
+  "families": {
+    "themes": [
+      {
+        "title": "Fall Colours & Easy Trails",
+        "icon": "leaf",
+        "items": [
+          { "name": "Ball's Falls Conservation Area", "blurb": "Flat trails, two waterfalls, and full fall colour.", "img": "/assets/img/photos/biz-balls-falls-hike.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "The falls lookout", "blurb": "The classic Ball's Falls view — an easy walk from the lot.", "img": "/assets/img/photos/biz-balls-falls-lookout.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Twenty Valley in colour", "blurb": "Creekside footbridges under the turning canopy.", "img": "/assets/img/photos/biz-fall-bridge.jpg", "url": "https://www.wanderniagara.com/directory/" }
+        ]
+      },
+      {
+        "title": "Farms & Markets",
+        "icon": "pumpkin",
+        "items": [
+          { "name": "Romagnoli Family Farm", "blurb": "A roadside stand stacked with the week's harvest.", "img": "/assets/img/photos/biz-romagnoli.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Harvest markets", "blurb": "Heirloom pumpkins, squash and baskets of plums.", "img": "/assets/img/photos/biz-market-pumpkins.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Pumpkin patches", "blurb": "Pick-your-own patches run through Halloween.", "img": "/assets/img/photos/biz-pumpkin-patch.jpg", "url": "https://www.wanderniagara.com/directory/" }
+        ]
+      },
+      {
+        "title": "Big Days Out",
+        "icon": "ferris",
+        "items": [
+          { "name": "Henley Island & Port Dalhousie", "blurb": "Regatta water, lakefront walks and the old carousel.", "img": "/assets/img/photos/biz-rowing.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Ball's Falls Thanksgiving Festival", "blurb": "The season's big family weekend — barn, vendors, food trucks.", "img": "/assets/img/photos/biz-thanksgiving-festival.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Fling on King", "blurb": "A street party of music and midway fun in Beamsville.", "img": "/assets/img/photos/biz-fling-on-king.jpg", "url": "https://www.wanderniagara.com/directory/" }
+        ]
+      },
+      {
+        "title": "Holiday Fun",
+        "icon": "lantern",
+        "items": [
+          { "name": "Jingle Bar", "blurb": "The Benchlands' pop-up holiday bottle shop and bar.", "img": "/assets/img/photos/biz-jingle-bar.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Festival rides for little ones", "blurb": "Barrel trains and small-kid fun at the fall festivals.", "img": "/assets/img/photos/biz-barrel-train.jpg", "url": "https://www.wanderniagara.com/directory/" }
+        ]
+      }
+    ]
+  },
+  "events": {
+    "themes": [
+      {
+        "title": "Sip between shows",
+        "icon": "grapes",
+        "items": [
+          { "name": "180 Estate Winery", "blurb": "Barrel cellar and big views near the festival routes.", "img": "/assets/img/photos/biz-180-estate.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Megalomaniac Winery", "blurb": "Tastings on the escarpment brow above Vineland.", "img": "/assets/img/photos/biz-megalomaniac.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Newark Brewing Co.", "blurb": "Flights and snacks on the Benchlands ale trail.", "img": "/assets/img/photos/biz-newark-brewing.jpg", "url": "https://www.wanderniagara.com/directory/" }
+        ]
+      },
+      {
+        "title": "Eat well between events",
+        "icon": "glass",
+        "items": [
+          { "name": "Fat Rabbit", "blurb": "St. Catharines' Michelin-recognized tasting-menu room.", "img": "/assets/img/photos/biz-fat-rabbit.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Bar Les Incompétents", "blurb": "Oysters, plates and good wine downtown.", "img": "/assets/img/photos/biz-les-incompetents.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Downtown St. Catharines", "blurb": "Pubs, patios and late plates after the show.", "img": "/assets/img/photos/biz-pub-friends.jpg", "url": "https://www.wanderniagara.com/directory/" }
+        ]
+      },
+      {
+        "title": "Stay over",
+        "icon": "inn",
+        "items": [
+          { "name": "Inn the Orchard", "blurb": "A private inn tucked into a working Benchlands orchard.", "img": "/assets/img/photos/biz-inn-orchard.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Lounge Inn Jordan", "blurb": "Calm, modern rooms steps from Jordan Village.", "img": "/assets/img/photos/biz-lounge-inn.jpg", "url": "https://www.wanderniagara.com/directory/" },
+          { "name": "Inn On The Twenty", "blurb": "Jordan Village's landmark stay on Main Street.", "img": "/assets/img/photos/biz-jordan-village.jpg", "url": "https://www.wanderniagara.com/directory/" }
+        ]
+      }
+    ]
+  }
+}

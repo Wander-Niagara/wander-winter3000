@@ -1,0 +1,22 @@
+{# Yellow sticky header — logo home link + hamburger menu on every viewport
+   (client request, Sept 10). The menu is anchor-based: each item opens the
+   relevant page and scrolls to that section's widget. No-JS keeps an inline
+   nav via CSS. #}
+<header class="site-header" id="site-header">
+  <div class="wrap">
+    <a class="brand-logo" href="/" aria-label="{{ site.name }} — home">
+      <img src="/assets/img/logos/wander-black.png" alt="Wander — St. Catharines &amp; Niagara Benchlands" width="273" height="120">
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="global-nav" hidden>
+      <span class="menu-btn__bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="menu-btn__label">Menu</span>
+    </button>
+    <nav class="nav" id="global-nav" aria-label="Main">
+      {% for item in site.nav %}
+      {% set itemPath = item.href.split("#")[0] %}
+      <a href="{{ item.href }}"{% if page.url == itemPath %} data-same-page{% endif %}>{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
+<span id="top"></span>

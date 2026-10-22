@@ -1,0 +1,99 @@
+{
+  "_note": "3 itinerary cards per page. Each `url` opens a Whereabouts itinerary. All names/URLs are [PLACEHOLDER] until real Whereabouts itineraries exist. `img` is a placeholder SVG the client will replace with a real photo.",
+  "couples": [
+    {
+      "title": "The 2-Day Wine & Bench Escape",
+      "duration": "2 days",
+      "stops": 7,
+      "cta": "View the 2-day wine itinerary",
+      "url": "https://whereabouts.example/itineraries/couples-wine-2day-PLACEHOLDER",
+      "img": "/assets/img/placeholder-itinerary-wine.svg",
+      "blurb": "Bench wineries, a long lunch, and a boutique-inn nightcap.",
+      "icon": "grapes"
+    },
+    {
+      "title": "Arts, Dinner & a Show Weekend",
+      "duration": "2 days",
+      "stops": 6,
+      "cta": "View the arts & dining itinerary",
+      "url": "https://whereabouts.example/itineraries/couples-arts-PLACEHOLDER",
+      "img": "/assets/img/placeholder-itinerary-arts.svg",
+      "blurb": "Galleries by day, a chef's table by night, live music after.",
+      "icon": "star"
+    },
+    {
+      "title": "Friends' Craft Crawl",
+      "duration": "1 day",
+      "stops": 5,
+      "cta": "View the 1-day craft crawl",
+      "url": "https://whereabouts.example/itineraries/couples-craft-PLACEHOLDER",
+      "img": "/assets/img/placeholder-itinerary-craft.svg",
+      "blurb": "Cideries, a craft brewery, and a distillery tasting flight.",
+      "icon": "jug"
+    }
+  ],
+  "families": [
+    {
+      "title": "Fall Colours Family Day",
+      "duration": "1 day",
+      "stops": 5,
+      "cta": "View the fall colours day trip",
+      "url": "https://whereabouts.example/itineraries/families-colours-PLACEHOLDER",
+      "img": "/assets/img/placeholder-itinerary-colours.svg",
+      "blurb": "An easy trail, a lookout, and cider donuts to finish.",
+      "icon": "leaf"
+    },
+    {
+      "title": "Farms, Markets & a Corn Maze",
+      "duration": "1 day",
+      "stops": 6,
+      "cta": "View the farms & markets itinerary",
+      "url": "https://whereabouts.example/itineraries/families-farms-PLACEHOLDER",
+      "img": "/assets/img/placeholder-itinerary-farms.svg",
+      "blurb": "Pick-your-own, a petting barn, and a wagon ride.",
+      "icon": "pumpkin"
+    },
+    {
+      "title": "Big Days Out Weekend",
+      "duration": "2 days",
+      "stops": 7,
+      "cta": "View the 2-day family weekend",
+      "url": "https://whereabouts.example/itineraries/families-weekend-PLACEHOLDER",
+      "img": "/assets/img/placeholder-itinerary-bigdays.svg",
+      "blurb": "Two full days of attractions with a multi-night stay.",
+      "icon": "ferris"
+    }
+  ],
+  "events": [
+    {
+      "title": "Fall Festival Weekend Plan",
+      "duration": "2 days",
+      "stops": 6,
+      "cta": "View the festival weekend itinerary",
+      "url": "https://whereabouts.example/itineraries/events-festival-PLACEHOLDER",
+      "img": "/assets/img/placeholder-itinerary-festival.svg",
+      "blurb": "Line up the season's marquee events into one weekend.",
+      "icon": "star"
+    },
+    {
+      "title": "Harvest & Live Music Day",
+      "duration": "1 day",
+      "stops": 5,
+      "cta": "View the harvest & music day",
+      "url": "https://whereabouts.example/itineraries/events-harvest-PLACEHOLDER",
+      "img": "/assets/img/placeholder-itinerary-harvest.svg",
+      "blurb": "A daytime harvest event and an evening show.",
+      "icon": "corn"
+    },
+    {
+      "title": "Holiday Kick-Off Itinerary",
+      "duration": "1 day",
+      "stops": 5,
+      "cta": "View the holiday kick-off plan",
+      "url": "https://whereabouts.example/itineraries/events-holiday-PLACEHOLDER",
+      "img": "/assets/img/placeholder-itinerary-holiday.svg",
+      "blurb": "Tree lightings, markets, and a festive dinner.",
+      "icon": "lantern"
+    }
+  ]
+}

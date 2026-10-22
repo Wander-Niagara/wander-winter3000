@@ -1,0 +1,28 @@
+{# EMAIL SIGNUP — client heading/copy (Mackenzie's doc). Posts straight to
+   Mailchimp using the action URL, honeypot and tag from the client's embed
+   snippet (_data/embeds.js) — rendered as a brand form, no Mailchimp CSS/JS. #}
+<section class="section section--warm" id="newsletter">
+  <div class="wrap">
+    <div class="nl">
+      <h2 class="boxed">Sign Up for More Fall Ideas and Insider Tips</h2>
+      <p>Subscribe to email updates to get the latest news, events, and things to do in St. Catharines and the Benchlands.</p>
+      {% if embeds.mailchimp.actionUrl %}
+      <form class="nl-form" data-nl-loc="inline" action="{{ embeds.mailchimp.actionUrl }}" method="post" target="_blank" novalidate>
+        <label class="visually-hidden" for="nl-email">Email address</label>
+        <input id="nl-email" type="email" name="EMAIL" placeholder="you@email.com" required autocomplete="email">
+        {% if embeds.mailchimp.tags %}<input type="hidden" name="tags" value="{{ embeds.mailchimp.tags }}">{% endif %}
+        {% if embeds.mailchimp.honeypot %}
+        <div aria-hidden="true" style="position:absolute;left:-5000px">
+          <input type="text" name="{{ embeds.mailchimp.honeypot }}" tabindex="-1" value="" autocomplete="off">
+        </div>
+        {% endif %}
+        <button class="btn" type="submit" name="subscribe">Subscribe</button>
+      </form>
+      {% else %}
+      {% set slotKey = "MAILCHIMP_SIGNUP" %}
+      {% set slotCells = 2 %}
+      {% include "partials/widget-slot.njk" %}
+      {% endif %}
+    </div>
+  </div>
+</section>

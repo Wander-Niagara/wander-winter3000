@@ -1,0 +1,54 @@
+{# BLOG ARTICLE — title, optional dek, hero photo slot, body (client copy
+   verbatim), back link to the audience page, Article structured data. #}
+{% extends "base.njk" %}
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ title | dump | safe }},
+  {% if dek %}"alternativeHeadline": {{ dek | dump | safe }},{% endif %}
+  "datePublished": "{{ date or '2026-09-11' }}",
+  "author": { "@type": "Organization", "name": "{{ site.name }}" },
+  "publisher": { "@type": "Organization", "name": "{{ site.name }}", "url": "{{ site.url }}" },
+  "mainEntityOfPage": "{{ site.url }}{{ page.url }}"
+}
+</script>
+{% endblock %}
+
+{% block content %}
+  <div class="wrap article-head">
+    <h1>{{ title }}</h1>
+    {% if dek %}<p class="dek">{{ dek }}</p>{% endif %}
+    <p class="meta">{{ audienceLabel }} · {{ site.name }}</p>
+  </div>
+
+  {% if heroSlotKey %}
+  <div class="wrap article-hero">
+    {% set imgSlotKey = heroSlotKey %}
+    {% set imgSlotAlt = heroAlt %}
+    {% include "partials/img-slot.njk" %}
+  </div>
+  {% endif %}
+
+  <div class="wrap">
+    <div class="prose">
+      {{ content | safe }}
+    </div>
+    <p class="prose article-back"><a class="tlink" href="{{ backHref }}">&larr; {{ backLabel }}</a></p>
+  </div>
+
+  {% if widgetSlotKey %}
+  <section class="section section--warm" id="{{ widgetSlotKey | lower }}" data-module="article">
+    <div class="wrap">
+      <div class="section__head"><h2>{{ widgetHeading or "Explore" }}</h2></div>
+      {% set slotKey = widgetSlotKey %}
+      {% set slotCells = 8 %}
+      {% include "partials/widget-slot.njk" %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% include "partials/page-tail.njk" %}
+{% endblock %}

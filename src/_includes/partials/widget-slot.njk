@@ -1,0 +1,28 @@
+{# PENDING-ASSET SLOT.
+   Usage: {% set slotKey = "EVENTS" %}{% include "partials/widget-slot.njk" %}
+   - Embed pasted into _data/slots.js → rendered (lazy, via app.js data-embed loader).
+   - Empty + dev/SHOW_PLACEHOLDERS → labelled wireframe grid.
+   - Empty + production → renders nothing. #}
+{% set slot = slots.widgets[slotKey] if slotKey else null %}
+{% if not slot and slotLabel %}
+{# legacy call signature (slotLabel) — kept so intermediate commits build #}
+<div class="widget-slot">
+  <p class="widget-slot__label">{{ slotLabel }}</p>
+  <div class="widget-slot__grid" aria-hidden="true">
+    {% for i in range(0, slotCells or 4) %}<i></i>{% endfor %}
+  </div>
+</div>
+{% elif slot.embed %}
+<div class="widget-live" data-embed="{{ slotKey }}">
+  <div class="embed-slot"></div>
+  <template>{{ slot.embed | safe }}</template>
+</div>
+{% elif slots.showPlaceholders %}
+<div class="widget-slot" data-slot="{{ slotKey }}">
+  <p class="widget-slot__label">{{ slotKey }} · {{ slot.label }}</p>
+  <div class="widget-slot__grid" aria-hidden="true">
+    {% for i in range(0, slotCells or 4) %}<i></i>{% endfor %}
+  </div>
+</div>
+{% endif %}
+{% set slotCells = 0 %}

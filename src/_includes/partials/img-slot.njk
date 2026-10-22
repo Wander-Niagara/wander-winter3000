@@ -1,0 +1,13 @@
+{# ARTICLE IMAGE SLOT — photos from the live WordPress articles (see
+   _data/slots.js articleImages; each entry carries its own alt).
+   Usage: {% set imgSlotKey = "BLOG_WEEKEND_HERO" %}{% include "partials/img-slot.njk" %} #}
+{% set imgSlot = slots.articleImages[imgSlotKey] %}
+{% if imgSlot.embed %}
+<figure class="article-img"><img src="{{ imgSlot.embed }}" alt="{{ imgSlotAlt or imgSlot.alt or '' }}" loading="lazy" decoding="async"></figure>
+{% elif slots.showPlaceholders %}
+<div class="widget-slot widget-slot--img" data-slot="{{ imgSlotKey }}">
+  <p class="widget-slot__label">{{ imgSlotKey }} · {{ imgSlot.label }}</p>
+  <div class="widget-slot__grid" aria-hidden="true"><i></i></div>
+</div>
+{% endif %}
+{% set imgSlotAlt = "" %}

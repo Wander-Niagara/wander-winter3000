@@ -1,0 +1,12 @@
+{
+  "_note": "Dated event rows. Names come from the client's Fall 2026 article outlines. Only the Spark Gala date (Oct 24) was confirmed by the client; TBC labels must be replaced with real dates before launch. `url` should point at each event's own page when confirmed — currently the live wanderniagara.com events page.",
+  "seeAllUrl": "https://www.wanderniagara.com/events/",
+  "items": [
+    { "dateLabel": "Sep TBC", "title": "Niagara Grape & Wine Festival", "venue": "Montebello Park, St. Catharines · dates TBC", "url": "https://www.wanderniagara.com/events/" },
+    { "dateLabel": "Sep TBC", "title": "Cicada Music Festival", "venue": "Family-friendly · dates TBC", "url": "https://www.wanderniagara.com/events/" },
+    { "dateLabel": "Oct TBC", "title": "Pioneer Day", "venue": "Lincoln Museum · apple fritters & food trucks · date TBC", "url": "https://www.wanderniagara.com/events/" },
+    { "date": "2026-10-10", "dateLabel": "Oct 10", "title": "Ball's Falls Thanksgiving Festival", "venue": "Ball's Falls Conservation Area · Thanksgiving weekend", "url": "https://www.wanderniagara.com/events/" },
+    { "date": "2026-10-24", "dateLabel": "Oct 24", "title": "Spark Gala ft. the National Ballet of Canada", "venue": "FirstOntario Performing Arts Centre", "url": "https://www.wanderniagara.com/events/" },
+    { "dateLabel": "Nov TBC", "title": "Downtown Holiday Lighting", "venue": "St. Paul Street, St. Catharines · date TBC", "url": "https://www.wanderniagara.com/events/" }
+  ]
+}

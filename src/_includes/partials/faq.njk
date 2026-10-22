@@ -1,0 +1,18 @@
+{# FAQ — client-authorized copy from wanderniagara.com's events guide
+   (_data/faq.js). Shown on every page before the newsletter signup (Sept 10).
+   FAQPage structured data is emitted once, on /events/. #}
+{% if faq and faq.length %}
+<section class="section" id="faq" data-module="faq">
+  <div class="wrap">
+    <div class="section__head"><h2>Frequently Asked Questions</h2></div>
+    <div class="faq">
+      {% for qa in faq %}
+      <details{% if loop.first %} open{% endif %}>
+        <summary>{{ qa.q }}</summary>
+        <div class="faq__a">{{ qa.a | safe }}</div>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

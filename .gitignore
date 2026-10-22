@@ -1,0 +1,17 @@
+node_modules/
+_site/
+.DS_Store
+*.log
+.cache/
+.eleventy.cache/
+
+# Impeccable transient artifacts (review screenshots, photo contact sheets, local capture tooling)
+.impeccable/review/
+.impeccable/sheets/
+.impeccable/*.mjs
+.impeccable/*.py
+.impeccable/origins.txt
+.impeccable/questions/
+.impeccable/fetch/
+dist-flywheel/
+.env

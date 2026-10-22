@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FFD300">
+  <title>{{ title }}{% if title %} — {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ title or site.campaign }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  {% set ogImg = heroImg or (slots.PAGE_HEROES[heroSlot] if heroSlot) %}
+  {% if ogImg %}<meta property="og:image" content="{{ site.url }}{{ ogImg }}">{% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Montserrat — the site's single face (client request, Sept 10) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap"></noscript>
+
+  <!-- Preconnect to third-party embed origins (lazy-loaded later) -->
+  {% for origin in embeds.preconnect %}<link rel="preconnect" href="{{ origin }}" crossorigin>
+  {% endfor %}
+
+  {% if ogImg %}<link rel="preload" as="image" href="{{ ogImg }}" fetchpriority="high">{% endif %}
+
+  <!-- JS gate for progressive behaviors (menu, lazy embeds) -->
+  <script>document.documentElement.classList.add('js')</script>
+
+  <!-- Single stylesheet, inlined -->
+  <style>{{ "src/assets/css/critical.css" | readFile | safe }}</style>
+
+  <!-- Analytics config slot (read by app.js). IDs come from _data/embeds.js -->
+  <script type="application/json" id="wn-config">
+  {
+    "ga4Id": {{ (embeds.ga4Id or "") | dump | safe }},
+    "metaPixelId": {{ (embeds.metaPixelId or "") | dump | safe }},
+    "gtmId": {{ (embeds.gtmId or "") | dump | safe }},
+    "stackAdaptPixelId": {{ (embeds.stackAdaptPixelId or "") | dump | safe }},
+    "plausibleSrc": {{ (embeds.plausibleSrc or "") | dump | safe }},
+    "variant": {{ (variant or "") | dump | safe }},
+    "ref": {
+      "enabled": {{ "true" if site.outboundRef.enabled else "false" }},
+      "param": {{ site.outboundRef.param | dump | safe }},
+      "value": {{ site.outboundRef.value | dump | safe }},
+      "disabledDomains": {{ site.outboundRef.disabledDomains | dump | safe }}
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "sameAs": [{% for s in site.social %}"{{ s.url }}"{% if not loop.last %}, {% endif %}{% endfor %}]
+  }
+  </script>
+  {% block head %}{% endblock %}
+</head>
+<body>
+<!--
+THESIS: the client's wireframe, built exactly — great imagery, clear CTA copy,
+and nothing else; refuses every "designed website" instinct including our own
+prior world.
+OWN-WORLD: client-pinned spec (families-simplified_3.html, 2026-08-21) with
+Tourisme Charlevoix / Chaudière-Appalaches as references: Inter, white and
+warm-paper grounds, ink green, the yellow header, black pill buttons,
+6px photo cards, full-bleed photography. Whereabouts widget zones are plain
+wireframe grids, never designed. Motion: none beyond hover.
+STORY: an ad-tapper lands, sees one bold photo and one clear action, picks
+their path (families / couples & friends / events), and clicks out.
+FIRST VIEWPORT: yellow header bar, full-bleed fall photo, one bold Inter-800
+headline, one pill CTA.
+FORM: pinned by the client — no roll; the brief beats the catalog, always.
+FINISH: fidelity to the client mockup is the bar; every divergence from it
+must be justified by the mockup's own system or the client's words.
+-->
+  <a class="skip" href="#main">Skip to content</a>
+  {% include "partials/header.njk" %}
+  <main id="main">
+    {% block content %}{{ content | safe }}{% endblock %}
+  </main>
+  {% include "partials/footer.njk" %}
+  <script src="/assets/js/app.js" defer></script>
+</body>
+</html>
