@@ -23,13 +23,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(HtmlBasePlugin);
 
   // ---- Passthrough copy (assets ship as-is; keep paths relative) ----
-  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "assets": "assets" });
   eleventyConfig.addPassthroughCopy("src/favicon.svg");
   // robots.txt is GitHub-Pages-only: on Flywheel the WordPress site owns /robots.txt.
   if (!FLYWHEEL) eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   // Rebuild when CSS/JS change during --serve
-  eleventyConfig.addWatchTarget("src/assets/");
+  eleventyConfig.addWatchTarget("assets/");
 
   // ---- Collections ----
   // Blog articles live in src/blog/*.md

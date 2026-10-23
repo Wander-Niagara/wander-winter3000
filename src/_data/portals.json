@@ -1,0 +1,218 @@
+{
+  "_note": "Hotspot boxes as percentages of each facade plate (mobile = facade.png 1536x2304, desktop = facade-wide.png 1536x1024). glass = the tappable window/door opening; glow = where that portal's overlay plate sits. Edit href/label here to re-map a window; templates read this file. Order = the light-up sequence (left to right, door last). The desktop plate also has a decorative upper-floor glow that is not a portal.",
+  "plates": {
+    "mobile": {
+      "facade": "/assets/plates/facade.png",
+      "size": [
+        1536,
+        2304
+      ],
+      "snow": "/assets/plates/snow-ground.png",
+      "snowSize": [
+        1536,
+        579
+      ]
+    },
+    "desktop": {
+      "facade": "/assets/plates/facade-wide.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "upperGlow": {
+        "file": "glow-wide-upper.png",
+        "x": 19.857,
+        "y": 15.137,
+        "w": 59.505,
+        "h": 31.152
+      }
+    }
+  },
+  "portals": [
+    {
+      "id": "dormer-left",
+      "label": "Winter reading",
+      "ariaLabel": "Attic: winter reading about St. Catharines and the Benchlands",
+      "href": "/winter/blog/",
+      "room": "Attic room: quieter, cold daylight",
+      "mobile": {
+        "glow": {
+          "file": "glow-dormer-left.png",
+          "x": 13.477,
+          "y": 1.172,
+          "w": 32.52,
+          "h": 23.633
+        },
+        "glass": {
+          "x": 22.461,
+          "y": 7.161,
+          "w": 14.551,
+          "h": 11.654
+        }
+      },
+      "desktop": {
+        "glow": {
+          "file": "glow-wide-dormer-left.png",
+          "x": 28.19,
+          "y": 2.246,
+          "w": 15.495,
+          "h": 23.73
+        },
+        "glass": {
+          "x": 32.878,
+          "y": 9.277,
+          "w": 6.12,
+          "h": 9.668
+        }
+      }
+    },
+    {
+      "id": "dining",
+      "label": "Eat, drink and shop",
+      "ariaLabel": "Dining room: eat and drink in St. Catharines and the Benchlands",
+      "href": "/winter/eatdrinkplay/",
+      "room": "Dining room: red walls, chandelier, lace table",
+      "mobile": {
+        "glow": {
+          "file": "glow-dining.png",
+          "x": 0.0,
+          "y": 22.331,
+          "w": 36.23,
+          "h": 43.815
+        },
+        "glass": {
+          "x": 2.441,
+          "y": 31.25,
+          "w": 20.41,
+          "h": 25.977
+        }
+      },
+      "desktop": {
+        "glow": {
+          "file": "glow-wide-dining.png",
+          "x": 15.69,
+          "y": 33.789,
+          "w": 25.521,
+          "h": 41.699
+        },
+        "glass": {
+          "x": 23.112,
+          "y": 44.922,
+          "w": 10.677,
+          "h": 19.434
+        }
+      }
+    },
+    {
+      "id": "living",
+      "label": "Winter outdoors",
+      "ariaLabel": "Living room: winter outdoors and family fun in St. Catharines and the Benchlands",
+      "href": "/winter/outdoors/",
+      "room": "Living room: tree, mantel, stockings",
+      "mobile": {
+        "glow": {
+          "file": "glow-living.png",
+          "x": 63.77,
+          "y": 22.331,
+          "w": 36.23,
+          "h": 43.815
+        },
+        "glass": {
+          "x": 77.148,
+          "y": 31.25,
+          "w": 20.41,
+          "h": 25.977
+        }
+      },
+      "desktop": {
+        "glow": {
+          "file": "glow-wide-living.png",
+          "x": 58.008,
+          "y": 33.789,
+          "w": 25.521,
+          "h": 41.699
+        },
+        "glass": {
+          "x": 65.43,
+          "y": 44.922,
+          "w": 10.677,
+          "h": 19.434
+        }
+      }
+    },
+    {
+      "id": "dormer-right",
+      "label": "Stay the night",
+      "ariaLabel": "Bedroom: stay the night in St. Catharines and the Benchlands",
+      "href": "/winter/eatdrinkplay/#accommodations",
+      "room": "Primary bedroom: four-poster, red comforter",
+      "mobile": {
+        "glow": {
+          "file": "glow-dormer-right.png",
+          "x": 54.492,
+          "y": 1.172,
+          "w": 32.52,
+          "h": 23.633
+        },
+        "glass": {
+          "x": 63.477,
+          "y": 7.161,
+          "w": 14.551,
+          "h": 11.654
+        }
+      },
+      "desktop": {
+        "glow": {
+          "file": "glow-wide-dormer-right.png",
+          "x": 55.859,
+          "y": 2.246,
+          "w": 15.495,
+          "h": 23.73
+        },
+        "glass": {
+          "x": 60.547,
+          "y": 9.277,
+          "w": 6.12,
+          "h": 9.668
+        }
+      }
+    },
+    {
+      "id": "door",
+      "label": "What's on this winter",
+      "ariaLabel": "Front door: what's on this winter in St. Catharines and the Benchlands",
+      "href": "/winter/events/",
+      "room": "Foyer: red stair runner, garland on the banister",
+      "mobile": {
+        "glow": {
+          "file": "glow-door.png",
+          "x": 16.211,
+          "y": 18.099,
+          "w": 67.578,
+          "h": 42.122
+        },
+        "glass": {
+          "x": 41.992,
+          "y": 37.109,
+          "w": 16.016,
+          "h": 5.794
+        }
+      },
+      "desktop": {
+        "glow": {
+          "file": "glow-wide-door.png",
+          "x": 32.292,
+          "y": 22.949,
+          "w": 35.286,
+          "h": 46.777
+        },
+        "glass": {
+          "x": 45.573,
+          "y": 43.457,
+          "w": 8.724,
+          "h": 5.762
+        }
+      }
+    }
+  ]
+}

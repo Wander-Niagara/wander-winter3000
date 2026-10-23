@@ -1,0 +1,1331 @@
+{
+  "tool": "comp-spec inspect-map",
+  "version": 1,
+  "referenceOnly": true,
+  "stateChanged": false,
+  "comp": ".impeccable/mocks/comp-a.png",
+  "compSize": {
+    "width": 768,
+    "height": 1662
+  },
+  "inputRegionCount": 20,
+  "regions": [
+    {
+      "id": "header-logo",
+      "kind": "chrome",
+      "note": "Wander wordmark with a small star, white on the night-sky page ground; the client's logo lockup replaces it",
+      "grid": null,
+      "box": {
+        "x": 0.0365,
+        "y": 0.0132,
+        "w": 0.2474,
+        "h": 0.0313
+      },
+      "px": {
+        "x": 28,
+        "y": 22,
+        "w": 190,
+        "h": 52
+      },
+      "aspect": 3.6538,
+      "palette": [
+        {
+          "hex": "#091426",
+          "coverage": 0.775
+        },
+        {
+          "hex": "#f5f0e9",
+          "coverage": 0.1617
+        },
+        {
+          "hex": "#a8abad",
+          "coverage": 0.0237
+        },
+        {
+          "hex": "#3f4753",
+          "coverage": 0.0211
+        },
+        {
+          "hex": "#0a1212",
+          "coverage": 0.0185
+        }
+      ],
+      "detail": {
+        "energy": 41.1457
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 1,
+      "cropPath": "region-1.png"
+    },
+    {
+      "id": "header-cta",
+      "kind": "control",
+      "note": "engraved brass door plaque button reading What's on, two screw heads, dark engraved lettering",
+      "grid": null,
+      "box": {
+        "x": 0.7526,
+        "y": 0.0132,
+        "w": 0.2188,
+        "h": 0.0313
+      },
+      "px": {
+        "x": 578,
+        "y": 22,
+        "w": 168,
+        "h": 52
+      },
+      "aspect": 3.2308,
+      "palette": [
+        {
+          "hex": "#c19856",
+          "coverage": 0.3469
+        },
+        {
+          "hex": "#94723f",
+          "coverage": 0.3255
+        },
+        {
+          "hex": "#0f161d",
+          "coverage": 0.1633
+        },
+        {
+          "hex": "#73552f",
+          "coverage": 0.1041
+        },
+        {
+          "hex": "#543f25",
+          "coverage": 0.0602
+        }
+      ],
+      "detail": {
+        "energy": 22.7399
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 2,
+      "cropPath": "region-2.png"
+    },
+    {
+      "id": "facade",
+      "kind": "plate",
+      "note": "photographic plate: red-brick Georgian colonial at night cropped to its central three bays: two gabled dormers with black shutters, hipped snowy roof, white arched portico with a lit brass lantern and fanlight, black six-panel door with an evergreen wreath and red velvet bow, two tall ground-floor windows with black shutters, warm-white mini-lights outlining windows and arch, snow-covered shrubs and potted evergreens, brick steps with iron railings, warm navy sky with falling snow; opaque; the window glass is rendered dark and unlit in this plate because each window's glow ships as its own overlay plate",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0,
+        "y": 0.0572,
+        "w": 1,
+        "h": 0.5295
+      },
+      "px": {
+        "x": 0,
+        "y": 95,
+        "w": 768,
+        "h": 880
+      },
+      "aspect": 0.8727,
+      "palette": [
+        {
+          "hex": "#0f0d0d",
+          "coverage": 0.3805
+        },
+        {
+          "hex": "#311810",
+          "coverage": 0.2315
+        },
+        {
+          "hex": "#44506f",
+          "coverage": 0.1484
+        },
+        {
+          "hex": "#58443c",
+          "coverage": 0.1389
+        },
+        {
+          "hex": "#101d36",
+          "coverage": 0.1007
+        }
+      ],
+      "detail": {
+        "energy": 37.1566
+      },
+      "medium": "raster",
+      "plate": "assets/plates/facade.png",
+      "text": null,
+      "number": 3,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 675840,
+        "remainingPixels": 675840,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": []
+      },
+      "cropPath": "region-3.png",
+      "referencePath": "reference-3.png"
+    },
+    {
+      "id": "glow-dormer-left",
+      "kind": "plate",
+      "note": "transparent overlay plate: the left dormer window's warm amber glow through sheer curtains with a single candle, soft halation spilling onto the white trim and snow; nothing but the glow",
+      "grid": null,
+      "box": {
+        "x": 0.1302,
+        "y": 0.1035,
+        "w": 0.2214,
+        "h": 0.0975
+      },
+      "px": {
+        "x": 100,
+        "y": 172,
+        "w": 170,
+        "h": 162
+      },
+      "aspect": 1.0494,
+      "palette": [
+        {
+          "hex": "#534546",
+          "coverage": 0.2863
+        },
+        {
+          "hex": "#0b0b0f",
+          "coverage": 0.2626
+        },
+        {
+          "hex": "#db8c42",
+          "coverage": 0.2092
+        },
+        {
+          "hex": "#b06b3c",
+          "coverage": 0.1546
+        },
+        {
+          "hex": "#56576e",
+          "coverage": 0.0874
+        }
+      ],
+      "detail": {
+        "energy": 15.8505
+      },
+      "medium": "raster",
+      "plate": "assets/plates/glow-dormer-left.png",
+      "text": null,
+      "flags": [
+        {
+          "id": "baked-composite",
+          "message": "Frame and view are one image here, so the page can't swap the view or move the curtains on their own."
+        }
+      ],
+      "number": 4,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 27540,
+        "remainingPixels": 27540,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": []
+      },
+      "cropPath": "region-4.png",
+      "referencePath": "reference-4.png"
+    },
+    {
+      "id": "glow-dormer-right",
+      "kind": "plate",
+      "note": "transparent overlay plate: the right dormer window's warm amber glow through sheer curtains with a single candle, soft halation on the trim and snow; nothing but the glow",
+      "grid": null,
+      "box": {
+        "x": 0.651,
+        "y": 0.1035,
+        "w": 0.2214,
+        "h": 0.0975
+      },
+      "px": {
+        "x": 500,
+        "y": 172,
+        "w": 170,
+        "h": 162
+      },
+      "aspect": 1.0494,
+      "palette": [
+        {
+          "hex": "#0a0a0e",
+          "coverage": 0.2832
+        },
+        {
+          "hex": "#50474d",
+          "coverage": 0.2655
+        },
+        {
+          "hex": "#d68740",
+          "coverage": 0.1884
+        },
+        {
+          "hex": "#b57042",
+          "coverage": 0.155
+        },
+        {
+          "hex": "#684d41",
+          "coverage": 0.1078
+        }
+      ],
+      "detail": {
+        "energy": 15.5855
+      },
+      "medium": "raster",
+      "plate": "assets/plates/glow-dormer-right.png",
+      "text": null,
+      "flags": [
+        {
+          "id": "baked-composite",
+          "message": "Frame and view are one image here, so the page can't swap the view or move the curtains on their own."
+        }
+      ],
+      "number": 5,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 27540,
+        "remainingPixels": 27540,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": []
+      },
+      "cropPath": "region-5.png",
+      "referencePath": "reference-5.png"
+    },
+    {
+      "id": "glow-dining",
+      "kind": "plate",
+      "note": "transparent overlay plate: the left ground-floor window's amber glow through sheer curtains, a crystal chandelier and a candle visible inside, halation spilling onto brick, shutters and snowy sill; nothing but the glow",
+      "grid": null,
+      "box": {
+        "x": 0.0065,
+        "y": 0.2738,
+        "w": 0.2865,
+        "h": 0.1986
+      },
+      "px": {
+        "x": 5,
+        "y": 455,
+        "w": 220,
+        "h": 330
+      },
+      "aspect": 0.6667,
+      "palette": [
+        {
+          "hex": "#100c0c",
+          "coverage": 0.3468
+        },
+        {
+          "hex": "#95501b",
+          "coverage": 0.2088
+        },
+        {
+          "hex": "#35180b",
+          "coverage": 0.1699
+        },
+        {
+          "hex": "#bf773a",
+          "coverage": 0.1595
+        },
+        {
+          "hex": "#e39d55",
+          "coverage": 0.1149
+        }
+      ],
+      "detail": {
+        "energy": 24.8674
+      },
+      "medium": "raster",
+      "plate": "assets/plates/glow-dining.png",
+      "text": null,
+      "flags": [
+        {
+          "id": "baked-composite",
+          "message": "Frame and view are one image here, so the page can't swap the view or move the curtains on their own."
+        }
+      ],
+      "number": 6,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 72600,
+        "remainingPixels": 72600,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": []
+      },
+      "cropPath": "region-6.png",
+      "referencePath": "reference-6.png"
+    },
+    {
+      "id": "glow-living",
+      "kind": "plate",
+      "note": "transparent overlay plate: the right ground-floor window's amber glow through sheer curtains, a lit Christmas tree with warm lights and red baubles and a candle visible inside, halation spilling onto brick, shutters and snowy sill; nothing but the glow",
+      "grid": null,
+      "box": {
+        "x": 0.7227,
+        "y": 0.2738,
+        "w": 0.2734,
+        "h": 0.1986
+      },
+      "px": {
+        "x": 555,
+        "y": 455,
+        "w": 210,
+        "h": 330
+      },
+      "aspect": 0.6364,
+      "palette": [
+        {
+          "hex": "#0e0b0a",
+          "coverage": 0.2901
+        },
+        {
+          "hex": "#a6622a",
+          "coverage": 0.2428
+        },
+        {
+          "hex": "#391e0b",
+          "coverage": 0.1989
+        },
+        {
+          "hex": "#9f704b",
+          "coverage": 0.1503
+        },
+        {
+          "hex": "#d59354",
+          "coverage": 0.1179
+        }
+      ],
+      "detail": {
+        "energy": 28.1214
+      },
+      "medium": "raster",
+      "plate": "assets/plates/glow-living.png",
+      "text": null,
+      "flags": [
+        {
+          "id": "baked-composite",
+          "message": "Frame and view are one image here, so the page can't swap the view or move the curtains on their own."
+        }
+      ],
+      "number": 7,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 69300,
+        "remainingPixels": 69300,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": []
+      },
+      "cropPath": "region-7.png",
+      "referencePath": "reference-7.png"
+    },
+    {
+      "id": "glow-door",
+      "kind": "plate",
+      "note": "transparent overlay plate: the front door's warmth: the lit brass lantern's amber halo on the white portico, the fanlight glowing from the foyer, light catching the wreath and spilling down the steps; nothing but the glow",
+      "grid": null,
+      "box": {
+        "x": 0.293,
+        "y": 0.2377,
+        "w": 0.4167,
+        "h": 0.3279
+      },
+      "px": {
+        "x": 225,
+        "y": 395,
+        "w": 320,
+        "h": 545
+      },
+      "aspect": 0.5872,
+      "palette": [
+        {
+          "hex": "#130f0e",
+          "coverage": 0.398
+        },
+        {
+          "hex": "#35190f",
+          "coverage": 0.2228
+        },
+        {
+          "hex": "#8b6c61",
+          "coverage": 0.2017
+        },
+        {
+          "hex": "#d99757",
+          "coverage": 0.1121
+        },
+        {
+          "hex": "#ae7a50",
+          "coverage": 0.0653
+        }
+      ],
+      "detail": {
+        "energy": 31.4036
+      },
+      "medium": "raster",
+      "clipped": [
+        "bottom"
+      ],
+      "plate": "assets/plates/glow-door.png",
+      "text": null,
+      "number": 8,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 174400,
+        "remainingPixels": 174400,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": []
+      },
+      "cropPath": "region-8.png",
+      "referencePath": "reference-8.png"
+    },
+    {
+      "id": "snow-ground",
+      "kind": "plate",
+      "note": "photographic plate: deep foreground snow at the foot of the steps, pale blue-white with blue shadows and faint amber light from the house, the top edge meeting the bottom step; the headline is set on it as live text, not painted",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0,
+        "y": 0.5626,
+        "w": 1,
+        "h": 0.1763
+      },
+      "px": {
+        "x": 0,
+        "y": 935,
+        "w": 768,
+        "h": 293
+      },
+      "aspect": 2.6212,
+      "palette": [
+        {
+          "hex": "#303b57",
+          "coverage": 0.7363
+        },
+        {
+          "hex": "#635a67",
+          "coverage": 0.1159
+        },
+        {
+          "hex": "#f6efe8",
+          "coverage": 0.0833
+        },
+        {
+          "hex": "#13100e",
+          "coverage": 0.0411
+        },
+        {
+          "hex": "#0b1a2a",
+          "coverage": 0.0233
+        }
+      ],
+      "detail": {
+        "energy": 41.1513
+      },
+      "medium": "raster",
+      "plate": "assets/plates/snow-ground.png",
+      "text": null,
+      "number": 9,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 102888,
+        "totalPixels": 225024,
+        "remainingPixels": 122136,
+        "excludedFraction": 0.457231228668942,
+        "fullyExcluded": false,
+        "regions": [
+          {
+            "id": "headline",
+            "kind": "text",
+            "cropPx": {
+              "x": 130,
+              "y": 55,
+              "w": 508,
+              "h": 148
+            },
+            "pixels": 75184
+          },
+          {
+            "id": "subline",
+            "kind": "text",
+            "cropPx": {
+              "x": 48,
+              "y": 191,
+              "w": 676,
+              "h": 50
+            },
+            "pixels": 33800
+          }
+        ],
+        "ignoredContainers": []
+      },
+      "cropPath": "region-9.png",
+      "referencePath": "reference-9.png"
+    },
+    {
+      "id": "headline",
+      "kind": "text",
+      "note": "two-line headline Winter is made / for wandering, heavy friendly serif, snow white, centred",
+      "grid": null,
+      "box": {
+        "x": 0.1693,
+        "y": 0.5957,
+        "w": 0.6615,
+        "h": 0.089
+      },
+      "px": {
+        "x": 130,
+        "y": 990,
+        "w": 508,
+        "h": 148
+      },
+      "aspect": 3.4324,
+      "palette": [
+        {
+          "hex": "#2d3752",
+          "coverage": 0.7507
+        },
+        {
+          "hex": "#f6eee6",
+          "coverage": 0.2005
+        },
+        {
+          "hex": "#b7b6b7",
+          "coverage": 0.0201
+        },
+        {
+          "hex": "#565060",
+          "coverage": 0.015
+        },
+        {
+          "hex": "#7a7e8c",
+          "coverage": 0.0138
+        }
+      ],
+      "detail": {
+        "energy": 57.5402
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 10,
+      "cropPath": "region-10.png"
+    },
+    {
+      "id": "subline",
+      "kind": "text",
+      "note": "one-line subline A holiday escape to St. Catharines and the Benchlands., same serif, smaller, snow white, centred",
+      "grid": null,
+      "box": {
+        "x": 0.0625,
+        "y": 0.6775,
+        "w": 0.8802,
+        "h": 0.0301
+      },
+      "px": {
+        "x": 48,
+        "y": 1126,
+        "w": 676,
+        "h": 50
+      },
+      "aspect": 13.52,
+      "palette": [
+        {
+          "hex": "#273654",
+          "coverage": 0.8479
+        },
+        {
+          "hex": "#f1efeb",
+          "coverage": 0.0826
+        },
+        {
+          "hex": "#b3b4b7",
+          "coverage": 0.0295
+        },
+        {
+          "hex": "#7b7d8c",
+          "coverage": 0.025
+        },
+        {
+          "hex": "#4c5969",
+          "coverage": 0.015
+        }
+      ],
+      "detail": {
+        "energy": 56.3532
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 11,
+      "cropPath": "region-11.png"
+    },
+    {
+      "id": "section-heading",
+      "kind": "text",
+      "note": "section heading Choose a room, heavy serif, white, centred on the navy section ground",
+      "grid": null,
+      "box": {
+        "x": 0.2891,
+        "y": 0.7551,
+        "w": 0.4245,
+        "h": 0.0313
+      },
+      "px": {
+        "x": 222,
+        "y": 1255,
+        "w": 326,
+        "h": 52
+      },
+      "aspect": 6.2692,
+      "palette": [
+        {
+          "hex": "#081728",
+          "coverage": 0.7729
+        },
+        {
+          "hex": "#f5efe9",
+          "coverage": 0.1788
+        },
+        {
+          "hex": "#b6b4b3",
+          "coverage": 0.0185
+        },
+        {
+          "hex": "#37414d",
+          "coverage": 0.017
+        },
+        {
+          "hex": "#616770",
+          "coverage": 0.0128
+        }
+      ],
+      "detail": {
+        "energy": 63.7885
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 12,
+      "cropPath": "region-12.png"
+    },
+    {
+      "id": "plaque-1",
+      "kind": "control",
+      "note": "brass door plaque link What's on this winter: notched-corner brass bar, two screw heads, dark engraved lettering centred",
+      "grid": null,
+      "box": {
+        "x": 0.2279,
+        "y": 0.7972,
+        "w": 0.5417,
+        "h": 0.0493
+      },
+      "px": {
+        "x": 175,
+        "y": 1325,
+        "w": 416,
+        "h": 82
+      },
+      "aspect": 5.0732,
+      "palette": [
+        {
+          "hex": "#a68047",
+          "coverage": 0.6413
+        },
+        {
+          "hex": "#091523",
+          "coverage": 0.2313
+        },
+        {
+          "hex": "#3b2c1b",
+          "coverage": 0.0437
+        },
+        {
+          "hex": "#7a5c36",
+          "coverage": 0.0421
+        },
+        {
+          "hex": "#ceaa67",
+          "coverage": 0.0416
+        }
+      ],
+      "detail": {
+        "energy": 33.0179
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 13,
+      "cropPath": "region-13.png"
+    },
+    {
+      "id": "plaque-2",
+      "kind": "control",
+      "note": "brass door plaque link Eat, drink and shop, same plaque form",
+      "grid": null,
+      "container": true,
+      "box": {
+        "x": 0.2279,
+        "y": 0.8544,
+        "w": 0.5417,
+        "h": 0.0493
+      },
+      "px": {
+        "x": 175,
+        "y": 1420,
+        "w": 416,
+        "h": 82
+      },
+      "aspect": 5.0732,
+      "palette": [
+        {
+          "hex": "#a17b42",
+          "coverage": 0.6728
+        },
+        {
+          "hex": "#081425",
+          "coverage": 0.1782
+        },
+        {
+          "hex": "#7a5a32",
+          "coverage": 0.063
+        },
+        {
+          "hex": "#0e1111",
+          "coverage": 0.0544
+        },
+        {
+          "hex": "#a38c6b",
+          "coverage": 0.0316
+        }
+      ],
+      "detail": {
+        "energy": 31.1253
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 14,
+      "cropPath": "region-14.png"
+    },
+    {
+      "id": "plaque-2-label",
+      "kind": "text",
+      "note": "engraved plaque label Eat, drink and shop, dark ink on brass, centred",
+      "grid": null,
+      "parentId": "plaque-2",
+      "box": {
+        "x": 0.3229,
+        "y": 0.8664,
+        "w": 0.349,
+        "h": 0.0277
+      },
+      "px": {
+        "x": 248,
+        "y": 1440,
+        "w": 268,
+        "h": 46
+      },
+      "aspect": 5.8261,
+      "palette": [
+        {
+          "hex": "#a07a41",
+          "coverage": 0.7768
+        },
+        {
+          "hex": "#0d151f",
+          "coverage": 0.1433
+        },
+        {
+          "hex": "#7d6543",
+          "coverage": 0.041
+        },
+        {
+          "hex": "#4a3e2f",
+          "coverage": 0.0334
+        },
+        {
+          "hex": "#b89648",
+          "coverage": 0.0056
+        }
+      ],
+      "detail": {
+        "energy": 31.4313
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 15,
+      "cropPath": "region-15.png"
+    },
+    {
+      "id": "plaque-3",
+      "kind": "control",
+      "note": "brass door plaque link Winter outdoors, same plaque form",
+      "grid": null,
+      "box": {
+        "x": 0.2279,
+        "y": 0.9116,
+        "w": 0.5417,
+        "h": 0.0493
+      },
+      "px": {
+        "x": 175,
+        "y": 1515,
+        "w": 416,
+        "h": 82
+      },
+      "aspect": 5.0732,
+      "palette": [
+        {
+          "hex": "#906c3d",
+          "coverage": 0.3887
+        },
+        {
+          "hex": "#ae894a",
+          "coverage": 0.3372
+        },
+        {
+          "hex": "#081324",
+          "coverage": 0.1506
+        },
+        {
+          "hex": "#0b0d0d",
+          "coverage": 0.0765
+        },
+        {
+          "hex": "#68522c",
+          "coverage": 0.0471
+        }
+      ],
+      "detail": {
+        "energy": 29.6854
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 16,
+      "cropPath": "region-16.png"
+    },
+    {
+      "id": "plaque-4",
+      "kind": "control",
+      "note": "brass door plaque link Stay the night, same plaque form, cut by the bottom edge of the viewport (a fifth plaque, Winter reading, follows below the fold)",
+      "grid": null,
+      "box": {
+        "x": 0.2279,
+        "y": 0.9687,
+        "w": 0.5417,
+        "h": 0.0313
+      },
+      "px": {
+        "x": 175,
+        "y": 1610,
+        "w": 416,
+        "h": 52
+      },
+      "aspect": 8,
+      "palette": [
+        {
+          "hex": "#b28c51",
+          "coverage": 0.5901
+        },
+        {
+          "hex": "#8d6b3e",
+          "coverage": 0.1908
+        },
+        {
+          "hex": "#080b1a",
+          "coverage": 0.1778
+        },
+        {
+          "hex": "#4c4434",
+          "coverage": 0.0298
+        },
+        {
+          "hex": "#232522",
+          "coverage": 0.0114
+        }
+      ],
+      "detail": {
+        "energy": 32.6875
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "number": 17,
+      "cropPath": "region-17.png"
+    },
+    {
+      "id": "brass-texture",
+      "kind": "texture",
+      "note": "clean sample of the plaque brass: warm brushed brass with a soft vertical sheen, no lettering; tiled behind every plaque control",
+      "grid": null,
+      "parentId": "plaque-2",
+      "box": {
+        "x": 0.2682,
+        "y": 0.8628,
+        "w": 0.0443,
+        "h": 0.0325
+      },
+      "px": {
+        "x": 206,
+        "y": 1434,
+        "w": 34,
+        "h": 54
+      },
+      "aspect": 0.6296,
+      "palette": [
+        {
+          "hex": "#a78047",
+          "coverage": 1
+        }
+      ],
+      "detail": {
+        "energy": 1.1415
+      },
+      "medium": "raster",
+      "plate": "assets/plates/brass-texture.png",
+      "text": null,
+      "number": 18,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 1836,
+        "remainingPixels": 1836,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": [
+          "plaque-2"
+        ]
+      },
+      "cropPath": "region-18.png",
+      "referencePath": "reference-18.png"
+    },
+    {
+      "id": "evergreen-left",
+      "kind": "plate",
+      "note": "transparent cutout plate: snow-laden evergreen boughs entering the section from the left edge, lit faintly from the house; cropped by the left and bottom edges",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0,
+        "y": 0.7401,
+        "w": 0.2148,
+        "h": 0.2599
+      },
+      "px": {
+        "x": 0,
+        "y": 1230,
+        "w": 165,
+        "h": 432
+      },
+      "aspect": 0.3819,
+      "palette": [
+        {
+          "hex": "#091628",
+          "coverage": 0.6881
+        },
+        {
+          "hex": "#38415b",
+          "coverage": 0.175
+        },
+        {
+          "hex": "#080909",
+          "coverage": 0.1321
+        },
+        {
+          "hex": "#6a6575",
+          "coverage": 0.0035
+        },
+        {
+          "hex": "#202828",
+          "coverage": 0.0013
+        }
+      ],
+      "detail": {
+        "energy": 5.9594
+      },
+      "medium": "raster",
+      "plate": "assets/plates/evergreen-left.png",
+      "text": null,
+      "number": 19,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 71280,
+        "remainingPixels": 71280,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": []
+      },
+      "cropPath": "region-19.png",
+      "referencePath": "reference-19.png"
+    },
+    {
+      "id": "evergreen-right",
+      "kind": "plate",
+      "note": "transparent cutout plate: snow-laden evergreen boughs entering the section from the right edge; cropped by the right and bottom edges",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0.7878,
+        "y": 0.7401,
+        "w": 0.2122,
+        "h": 0.2599
+      },
+      "px": {
+        "x": 605,
+        "y": 1230,
+        "w": 163,
+        "h": 432
+      },
+      "aspect": 0.3773,
+      "palette": [
+        {
+          "hex": "#091629",
+          "coverage": 0.6786
+        },
+        {
+          "hex": "#3e465e",
+          "coverage": 0.1582
+        },
+        {
+          "hex": "#090a0a",
+          "coverage": 0.1422
+        },
+        {
+          "hex": "#222242",
+          "coverage": 0.0138
+        },
+        {
+          "hex": "#656371",
+          "coverage": 0.0071
+        }
+      ],
+      "detail": {
+        "energy": 6.2241
+      },
+      "medium": "raster",
+      "plate": "assets/plates/evergreen-right.png",
+      "text": null,
+      "number": 20,
+      "reference": {
+        "policy": "plate-reference-v2",
+        "excludedPixels": 0,
+        "totalPixels": 70416,
+        "remainingPixels": 70416,
+        "excludedFraction": 0.0,
+        "fullyExcluded": false,
+        "regions": [],
+        "ignoredContainers": []
+      },
+      "cropPath": "region-20.png",
+      "referencePath": "reference-20.png"
+    }
+  ],
+  "issues": [
+    {
+      "severity": "warning",
+      "code": "foreground-mask",
+      "regionId": "snow-ground",
+      "message": "headline, subline exclude 45.7% of this reference. Check that the excluded pixels contain foreground, not artwork between separate text elements. Split overly broad foreground bounds; review grouping must not change geometry."
+    },
+    {
+      "severity": "warning",
+      "code": "measurement-warning",
+      "regionId": null,
+      "message": "region facade: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)"
+    },
+    {
+      "severity": "warning",
+      "code": "measurement-warning",
+      "regionId": null,
+      "message": "region glow-door: the artwork runs off the box on the bottom (its ink reaches the edge over 35% of that side). Widen the region so the box holds the whole shape with a margin; a plate placed with object-fit: cover on this box would be cut there."
+    },
+    {
+      "severity": "warning",
+      "code": "measurement-warning",
+      "regionId": null,
+      "message": "region snow-ground: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)"
+    },
+    {
+      "severity": "warning",
+      "code": "measurement-warning",
+      "regionId": null,
+      "message": "region plaque-2: \"container\": true set in the regions file (the region-size refusal is overridden: one undivided element)"
+    },
+    {
+      "severity": "warning",
+      "code": "measurement-warning",
+      "regionId": null,
+      "message": "region evergreen-left: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)"
+    },
+    {
+      "severity": "warning",
+      "code": "measurement-warning",
+      "regionId": null,
+      "message": "region evergreen-right: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)"
+    },
+    {
+      "severity": "warning",
+      "code": "uncovered-ink",
+      "regionId": null,
+      "message": "9 grid cells have detail outside named regions. This is a coverage heuristic, not proof of missing components."
+    }
+  ],
+  "overlaps": [
+    {
+      "a": "facade",
+      "b": "glow-dormer-left",
+      "pixels": 27540.0,
+      "relationship": "overlapping elements"
+    },
+    {
+      "a": "facade",
+      "b": "glow-dormer-right",
+      "pixels": 27540.0,
+      "relationship": "overlapping elements"
+    },
+    {
+      "a": "facade",
+      "b": "glow-dining",
+      "pixels": 72600.0,
+      "relationship": "overlapping elements"
+    },
+    {
+      "a": "facade",
+      "b": "glow-living",
+      "pixels": 69300.0,
+      "relationship": "overlapping elements"
+    },
+    {
+      "a": "facade",
+      "b": "glow-door",
+      "pixels": 174400.0,
+      "relationship": "overlapping elements"
+    },
+    {
+      "a": "facade",
+      "b": "snow-ground",
+      "pixels": 30720.0,
+      "relationship": "overlapping elements"
+    },
+    {
+      "a": "glow-door",
+      "b": "snow-ground",
+      "pixels": 1600.0,
+      "relationship": "overlapping elements"
+    },
+    {
+      "a": "snow-ground",
+      "b": "headline",
+      "pixels": 75184.0,
+      "relationship": "overlapping elements"
+    },
+    {
+      "a": "snow-ground",
+      "b": "subline",
+      "pixels": 33800.0,
+      "relationship": "overlapping elements"
+    },
+    {
+      "a": "headline",
+      "b": "subline",
+      "pixels": 6096.0,
+      "relationship": "overlapping elements"
+    },
+    {
+      "a": "plaque-2",
+      "b": "plaque-2-label",
+      "pixels": 12328.0,
+      "relationship": "container extent"
+    },
+    {
+      "a": "plaque-2",
+      "b": "brass-texture",
+      "pixels": 1836.0,
+      "relationship": "container extent"
+    }
+  ],
+  "reviewGroups": {},
+  "uncoveredInkCells": [
+    "A0",
+    "B0",
+    "I0",
+    "D7",
+    "E7",
+    "D8",
+    "E8",
+    "F8",
+    "G8"
+  ],
+  "comparisonSheets": [
+    {
+      "path": "comparison-1.png",
+      "regionIds": [
+        "snow-ground"
+      ]
+    }
+  ]
+}

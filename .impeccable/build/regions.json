@@ -1,0 +1,234 @@
+{
+  "regions": [
+    {
+      "id": "header-logo",
+      "kind": "chrome",
+      "pixelBox": {
+        "x": 28,
+        "y": 22,
+        "w": 190,
+        "h": 52
+      },
+      "note": "Wander wordmark with a small star, white on the night-sky page ground; the client's logo lockup replaces it"
+    },
+    {
+      "id": "header-cta",
+      "kind": "control",
+      "pixelBox": {
+        "x": 578,
+        "y": 22,
+        "w": 168,
+        "h": 52
+      },
+      "note": "engraved brass door plaque button reading What's on, two screw heads, dark engraved lettering"
+    },
+    {
+      "id": "facade",
+      "kind": "plate",
+      "pixelBox": {
+        "x": 0,
+        "y": 95,
+        "w": 768,
+        "h": 880
+      },
+      "bleed": true,
+      "note": "photographic plate: red-brick Georgian colonial at night cropped to its central three bays: two gabled dormers with black shutters, hipped snowy roof, white arched portico with a lit brass lantern and fanlight, black six-panel door with an evergreen wreath and red velvet bow, two tall ground-floor windows with black shutters, warm-white mini-lights outlining windows and arch, snow-covered shrubs and potted evergreens, brick steps with iron railings, warm navy sky with falling snow; opaque; the window glass is rendered dark and unlit in this plate because each window's glow ships as its own overlay plate"
+    },
+    {
+      "id": "glow-dormer-left",
+      "kind": "plate",
+      "pixelBox": {
+        "x": 100,
+        "y": 172,
+        "w": 170,
+        "h": 162
+      },
+      "note": "transparent overlay plate: the left dormer window's warm amber glow through sheer curtains with a single candle, soft halation spilling onto the white trim and snow; nothing but the glow"
+    },
+    {
+      "id": "glow-dormer-right",
+      "kind": "plate",
+      "pixelBox": {
+        "x": 500,
+        "y": 172,
+        "w": 170,
+        "h": 162
+      },
+      "note": "transparent overlay plate: the right dormer window's warm amber glow through sheer curtains with a single candle, soft halation on the trim and snow; nothing but the glow"
+    },
+    {
+      "id": "glow-dining",
+      "kind": "plate",
+      "pixelBox": {
+        "x": 5,
+        "y": 455,
+        "w": 220,
+        "h": 330
+      },
+      "note": "transparent overlay plate: the left ground-floor window's amber glow through sheer curtains, a crystal chandelier and a candle visible inside, halation spilling onto brick, shutters and snowy sill; nothing but the glow"
+    },
+    {
+      "id": "glow-living",
+      "kind": "plate",
+      "pixelBox": {
+        "x": 555,
+        "y": 455,
+        "w": 210,
+        "h": 330
+      },
+      "note": "transparent overlay plate: the right ground-floor window's amber glow through sheer curtains, a lit Christmas tree with warm lights and red baubles and a candle visible inside, halation spilling onto brick, shutters and snowy sill; nothing but the glow"
+    },
+    {
+      "id": "glow-door",
+      "kind": "plate",
+      "pixelBox": {
+        "x": 225,
+        "y": 395,
+        "w": 320,
+        "h": 545
+      },
+      "note": "transparent overlay plate: the front door's warmth: the lit brass lantern's amber halo on the white portico, the fanlight glowing from the foyer, light catching the wreath and spilling down the steps; nothing but the glow; the spill fades to nothing at every edge of the overlay, and the step light continues into the snow plate below",
+      "bleed": true
+    },
+    {
+      "id": "snow-ground",
+      "kind": "plate",
+      "pixelBox": {
+        "x": 0,
+        "y": 935,
+        "w": 768,
+        "h": 293
+      },
+      "bleed": true,
+      "note": "photographic plate: deep foreground snow at the foot of the steps, pale blue-white with blue shadows and faint amber light from the house, the top edge meeting the bottom step; the headline is set on it as live text, not painted"
+    },
+    {
+      "id": "headline",
+      "kind": "text",
+      "pixelBox": {
+        "x": 130,
+        "y": 990,
+        "w": 508,
+        "h": 148
+      },
+      "note": "two-line headline Winter is made / for wandering, heavy friendly serif, snow white, centred"
+    },
+    {
+      "id": "subline",
+      "kind": "text",
+      "pixelBox": {
+        "x": 48,
+        "y": 1126,
+        "w": 676,
+        "h": 50
+      },
+      "note": "one-line subline A holiday escape to St. Catharines and the Benchlands., same serif, smaller, snow white, centred"
+    },
+    {
+      "id": "section-heading",
+      "kind": "text",
+      "pixelBox": {
+        "x": 222,
+        "y": 1255,
+        "w": 326,
+        "h": 52
+      },
+      "note": "section heading Choose a room, heavy serif, white, centred on the navy section ground"
+    },
+    {
+      "id": "plaque-1",
+      "kind": "control",
+      "pixelBox": {
+        "x": 175,
+        "y": 1325,
+        "w": 416,
+        "h": 82
+      },
+      "note": "brass door plaque link What's on this winter: notched-corner brass bar, two screw heads, dark engraved lettering centred"
+    },
+    {
+      "id": "plaque-2",
+      "kind": "control",
+      "pixelBox": {
+        "x": 175,
+        "y": 1420,
+        "w": 416,
+        "h": 82
+      },
+      "note": "brass door plaque link Eat, drink and shop, same plaque form",
+      "container": true
+    },
+    {
+      "id": "plaque-2-label",
+      "kind": "text",
+      "parentId": "plaque-2",
+      "pixelBox": {
+        "x": 248,
+        "y": 1440,
+        "w": 268,
+        "h": 46
+      },
+      "note": "engraved plaque label Eat, drink and shop, dark ink on brass, centred"
+    },
+    {
+      "id": "plaque-3",
+      "kind": "control",
+      "pixelBox": {
+        "x": 175,
+        "y": 1515,
+        "w": 416,
+        "h": 82
+      },
+      "note": "brass door plaque link Winter outdoors, same plaque form"
+    },
+    {
+      "id": "plaque-4",
+      "kind": "control",
+      "pixelBox": {
+        "x": 175,
+        "y": 1610,
+        "w": 416,
+        "h": 52
+      },
+      "note": "brass door plaque link Stay the night, same plaque form, cut by the bottom edge of the viewport (a fifth plaque, Winter reading, follows below the fold)"
+    },
+    {
+      "id": "brass-texture",
+      "kind": "texture",
+      "pixelBox": {
+        "x": 206,
+        "y": 1434,
+        "w": 34,
+        "h": 54
+      },
+      "note": "clean sample of the plaque brass: warm brushed brass with a soft vertical sheen, no lettering; tiled behind every plaque control",
+      "parentId": "plaque-2"
+    },
+    {
+      "id": "evergreen-left",
+      "kind": "plate",
+      "pixelBox": {
+        "x": 0,
+        "y": 1230,
+        "w": 165,
+        "h": 432
+      },
+      "bleed": true,
+      "note": "transparent cutout plate: snow-laden evergreen boughs entering the section from the left edge, lit faintly from the house; cropped by the left and bottom edges"
+    },
+    {
+      "id": "evergreen-right",
+      "kind": "plate",
+      "pixelBox": {
+        "x": 605,
+        "y": 1230,
+        "w": 163,
+        "h": 432
+      },
+      "bleed": true,
+      "note": "transparent cutout plate: snow-laden evergreen boughs entering the section from the right edge; cropped by the right and bottom edges"
+    }
+  ],
+  "allowUncovered": true,
+  "_uncoveredNote": "A0 B0 I0: falling snowflakes on the night-sky page ground (drawn by the snow canvas). D7 E7 and D8-G8: cells under the Choose a room heading and the plaque-2 container, whose ink is named by its children."
+}

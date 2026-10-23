@@ -116,6 +116,10 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the
 finish review, the verdict, DESIGN.md, and every shipping raster carrying its
 provenance.
 
+## Approved comp
+
+`.impeccable/mocks/comp-a.png` (768×1662, 390:844), approved by the user on 2026-10-22; desktop companion `.impeccable/mocks/comp-a-desktop.png`.
+
 ## Portal map
 
 | Portal | Destination | Room |
@@ -137,3 +141,24 @@ tapped window warming and its hanging sign swinging into view.
 - Production hostname (`wanderniagara.com/winter/` vs `winter.wanderniagara.com`).
 - Client photography, business list, dated events, article copy: placeholders
   until supplied.
+
+## Type (measured 2026-10-22)
+
+font-match on the headline region: Libertinus Serif 700 and Libre Caslon Text 700
+tied at distance 0.462 (next: Ibarra Real Nova 0.500, Playfair 0.518). The tool's
+USE line wrote Libertinus (first of the tie); the brief pins Caslon lineage, so the
+build sets **Libre Caslon Text 700** as the display face (cap 51.8 comp px →
+font-size 63 comp px / 32 CSS px at 390). Body: **Vollkorn** (variable, 400–700,
+italic), ranked third for the subline shape and the warm readable text serif the
+brief asks for. Both self-hosted from `assets/fonts/`.
+
+## Plates (2026-10-23)
+
+One lit render per viewport (portrait three-bay for mobile, five-bay wide for
+desktop) is the source; `scripts/plates/facade.py` derives the unlit facade, the
+per-portal glow overlays (inverse-screen, so facade + screen(glow) reproduces the
+render exactly) and the snow band. Hotspot and glow boxes are in
+`src/_data/portals.json` as percentages of each plate. The plates gate scores
+structure against the comp crop at 21–36% because the render is a different
+house in the same composition, not a crop of the comp; the user's plates review
+decides whether the render stands in for the comp's house.
