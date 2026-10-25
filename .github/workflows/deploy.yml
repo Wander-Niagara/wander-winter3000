@@ -27,11 +27,11 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      # Client preview lives at the GitHub Pages project URL (no custom domain
+      # Client preview lives at the GitHub Pages project URL for this repo (no custom domain
       # yet), so the build needs the repo-name path prefix. When a custom
       # domain is wired up later: restore src/CNAME and drop the --pathprefix.
       # SHOW_PLACEHOLDERS renders labelled slot placeholders in the client preview
-      - run: npx @11ty/eleventy --pathprefix=/wander-niagara-fall/
+      - run: npx @11ty/eleventy --pathprefix=/wander-winter3000/
         env:
           SHOW_PLACEHOLDERS: "1"
       - uses: actions/upload-pages-artifact@v3

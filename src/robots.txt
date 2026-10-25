@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fall.wanderniagara.com/sitemap.xml
+Sitemap: https://wander-niagara.github.io/wander-winter3000/sitemap.xml

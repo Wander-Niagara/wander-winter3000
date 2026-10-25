@@ -1,8 +1,6 @@
 ---
-# Legacy-URL redirects. Old paths meta-refresh to the client's final campaign
-# slugs so anything already shared (interim previews, stakeholder links) never
-# 404s. Root-relative `to` is rewritten with the pathPrefix by HtmlBasePlugin,
-# so these work on both the GitHub Pages and Flywheel (/fall/) targets.
+# Legacy-URL redirects: none yet for the winter site. Kept as the pattern from
+# the fall build so interim preview slugs can be redirected without template work.
 layout: null
 eleventyExcludeFromCollections: true
 pagination:
@@ -11,9 +9,8 @@ pagination:
   alias: r
 permalink: "{{ r.from }}"
 redirects:
-  - { from: "/families/index.html", to: "/fallcolors/" }
-  - { from: "/couples-and-friends/index.html", to: "/eatdrinkplay/" }
-  - { from: "/couples/index.html", to: "/eatdrinkplay/" }
+  - { from: "/eat-drink-play/index.html", to: "/eatdrinkplay/" }
+  - { from: "/stories/index.html", to: "/blog/" }
 ---
 <!doctype html>
 <html lang="en">

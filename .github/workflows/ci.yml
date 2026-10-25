@@ -18,7 +18,7 @@ jobs:
       - run: npm run build
       - name: Confirm key pages built
         run: |
-          for p in index couples families events stories directory; do
+          for p in index eatdrinkplay outdoors events blog privacy; do
             test -f "_site/$p/index.html" -o -f "_site/index.html" || { echo "Missing $p"; exit 1; }
           done
           # No custom domain yet — the preview lives at the GitHub Pages project

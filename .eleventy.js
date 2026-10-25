@@ -1,12 +1,12 @@
-// Eleventy config — Wander Niagara Fall campaign microsite
+// Eleventy config — Wander Niagara Winter campaign microsite
 // CommonJS (package.json has no "type":"module").
 //
 // Build targets (DEPLOY_TARGET env var, see _data/site.js):
 //   ghpages  (default) — GitHub Pages preview/staging. Output _site/, pathPrefix
-//                        comes from the CLI (--pathprefix=/wander-niagara-fall/ in
+//                        comes from the CLI (--pathprefix=/wander-winter3000/ in
 //                        the Actions workflow), index.html files. Unchanged.
 //   flywheel           — static folder on the client's Flywheel WordPress host,
-//                        served by Nginx at https://wanderniagara.com/fall/.
+//                        served by Nginx at https://wanderniagara.com/winter/.
 //                        Output dist-flywheel/fall/, pathPrefix /fall/, every page
 //                        written as index.php (Flywheel's Nginx index directive
 //                        only recognises index.php), no GitHub-Pages-only files.
@@ -127,13 +127,13 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: "src",
-      output: FLYWHEEL ? "dist-flywheel/fall" : "_site",
+      output: FLYWHEEL ? "dist-flywheel/winter" : "_site",
       includes: "_includes",
       data: "_data",
     },
     // ghpages: "/" here, overridden by --pathprefix on the CLI for the Pages URL.
-    // flywheel: the folder lives at wanderniagara.com/fall/.
-    pathPrefix: FLYWHEEL ? "/fall/" : "/",
+    // flywheel: the folder lives at wanderniagara.com/winter/.
+    pathPrefix: FLYWHEEL ? "/winter/" : "/",
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     templateFormats: ["njk", "md", "html"],
