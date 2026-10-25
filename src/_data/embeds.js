@@ -1,81 +1,59 @@
 // -----------------------------------------------------------------------------
-// EMBEDS & ANALYTICS — the single paste-here file for the client / Loud & Clear.
-// Every third-party integration is a slot below. Leave a value as "" (empty
-// string) and the site degrades gracefully: the module renders a labelled
-// placeholder instead of a live embed, and analytics no-ops.
-//
-// Nothing here loads render-blocking; embeds are lazy-initialised on scroll.
-// See README → "What the client must paste where".
+// EMBEDS & ANALYTICS — the single paste-here file for the client / Loud and Clear.
+// Every third-party integration is a slot below. Leave a value as "" and the
+// site degrades gracefully: the module renders a labelled placeholder instead
+// of a live embed, and analytics no-ops. Nothing here is render-blocking.
+// See README → "What the client pastes where".
 // -----------------------------------------------------------------------------
 module.exports = {
   // ---- Analytics -----------------------------------------------------------
-  // GA4 Measurement ID, e.g. "G-XXXXXXXXXX". Empty = analytics disabled.
+  // GA4 Measurement ID. Carried over from the fall site (shared with the main
+  // wanderniagara.com property; filter this microsite by page_variant).
+  // [PLACEHOLDER-DECISION] keep shared, or paste a winter-only property here.
   ga4Id: "G-1JK9KHWCS3",
-  // Meta (Facebook) Pixel ID, e.g. "1234567890". Empty = pixel disabled.
+  // Meta (Facebook) Pixel ID from Loud and Clear, e.g. "1234567890". [PLACEHOLDER]
   metaPixelId: "",
-  // Optional: if Loud & Clear prefer GTM, paste the container id "GTM-XXXXXXX"
-  // here and load it instead of gtag (see README). Empty = not used.
+  // Optional GTM container id "GTM-XXXXXXX" if Loud and Clear prefer GTM. [PLACEHOLDER]
   gtmId: "",
-  // StackAdapt retargeting pixel (universal pixel id). Empty = disabled.
+  // StackAdapt universal pixel (carried over from fall). Set "" to disable.
   stackAdaptPixelId: "kfPIwrQ72HRILrPivbDP8g",
-  // Plausible (privacy-friendly analytics) — the script src from the client's
-  // snippet. Empty = disabled. Custom events are forwarded alongside GA4.
+  // Plausible script src (carried over from fall). Set "" to disable.
   plausibleSrc: "https://plausible.io/js/pa-OBP5InHVvW5mgJGXal8R7.js",
 
   // ---- Whereabouts ---------------------------------------------------------
-  // The client chose Whereabouts because its widgets load async. Paste embed
-  // markup/ids below. Each itinerary card links to a Whereabouts itinerary URL
-  // (set per-itinerary in itineraries.json). These are the widget embeds.
+  // Widget embeds live per-slot in src/_data/slots.js (ITINERARIES_*, EVENTS,
+  // MICHELIN). This block holds the shared loader/access values.
   whereabouts: {
-    // <script> src the widgets need (paste once; loaded lazily). e.g.
-    // "https://embed.whereabouts.co/loader.js"
-    loaderSrc: "",
-    // Listings module embed (used on /directory/). Paste the raw embed HTML,
-    // or a widget id the loader expands.
-    listingsEmbed: "", // e.g. '<div data-whereabouts-listings="XXImportid"></div>'
-    // Interactive map embed (client's existing map). Paste raw embed HTML/iframe.
-    mapEmbed: "", // e.g. '<div data-whereabouts-map="XXmapid"></div>'
-    // Wineries roster — the Whereabouts operators widget ("The cellar list"
-    // section). Loaded lazily by app.js when the section scrolls into view.
-    wineriesWidget:
-      '<whereabouts-operators-widget widget-id="6a85fa0786787426fc53deae" access-id="6a733c9f069c5aa5556f466c"></whereabouts-operators-widget>' +
-      '<script src="https://api.prod.next.whereabouts.tech/embeddable/widget/operator/main.js" type="module"></script>',
+    accessId: "6a733c9f069c5aa5556f466c",
+    operatorLoader: "https://api.prod.next.whereabouts.tech/embeddable/widget/operator/main.js",
+    tripperLoader:  "https://next.whereabouts.tech/widget/tripper/v1/main.js",
+    eventLoader:    "https://api.prod.next.whereabouts.tech/embeddable/widget/event/main.js",
   },
 
   // ---- CrowdRiff -----------------------------------------------------------
-  // UGC gallery. Paste the gallery hash/id from the CrowdRiff embed snippet.
+  // The script id + src from the CrowdRiff embed snippet (fall gallery kept as
+  // a working stand-in). [PLACEHOLDER] swap for the winter gallery when ready.
   crowdriff: {
-    galleryId: "", // e.g. "abc123def456" (the value in data-crowdriff-hash)
+    scriptId: "cr-init__ca96b69426de3407",
+    scriptSrc: "https://starling.crowdriff.com/js/crowdriff.js",
   },
 
   // ---- Mailchimp -----------------------------------------------------------
-  // From Mailchimp: Audience → Signup forms → Embedded form. Copy the values out
-  // of the generated <form action="..."> tag. That URL already encodes u & id.
+  // Audience → Signup forms → Embedded form → the <form action="…"> URL.
   mailchimp: {
-    // The full form action URL, e.g.
-    // "https://thenewbusiness.us21.list-manage.com/subscribe/post?u=XXXX&id=YYYY"
     actionUrl: "https://wanderniagara.us14.list-manage.com/subscribe/post?u=5c9980c2b101d254a2bab94af&id=da5bfb6035&f_id=00eca0e0f0",
-    // Mailchimp's anti-bot honeypot field name is derived from u & id:
-    // b_<u>_<id>. Paste it here so the hidden field is correct. Optional but
-    // recommended. e.g. "b_XXXX_YYYY"
     honeypot: "b_5c9980c2b101d254a2bab94af_da5bfb6035",
-    // Audience tag applied to signups from this site (from the embed snippet)
+    // Audience tag for winter-campaign signups. [PLACEHOLDER] (fall tag shown)
     tags: "7335926",
   },
 
-  // ---- Preconnect origins --------------------------------------------------
-  // Hosts we hint the browser to connect to early. Trim any you don't use.
   preconnect: [
     "https://api.prod.next.whereabouts.tech",
     "https://next.whereabouts.tech",
-    "https://tags.srv.stackadapt.com",
     "https://www.googletagmanager.com",
     "https://plausible.io",
+    "https://tags.srv.stackadapt.com",
     "https://connect.facebook.net",
-    "https://embed.whereabouts.co",
     "https://starling.crowdriff.com",
-    "https://cdn.crowdriff.com",
-    "https://chimpstatic.com",
-    "https://list-manage.com",
   ],
 };

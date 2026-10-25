@@ -1,5 +1,6 @@
 {
   "layout": "layouts/article.njk",
-  "variant": "blog",
-  "permalink": "/blog/{{ page.fileSlug }}/"
+  "variant": "stories",
+  "permalink": "/blog/{{ page.fileSlug }}/",
+  "tags": ["articles"]
 }
