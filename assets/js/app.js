@@ -248,7 +248,7 @@
   // 11. Falling snow: a bounded canvas over the hero, paused off-screen and
   //     when the tab is hidden, never started under reduced motion.
   var canvas = document.querySelector(".snowfall");
-  if (canvas && !reduced && canvas.getContext) {
+  if (canvas && canvas.getContext) {
     var ctx = canvas.getContext("2d"), flakes = [], running = false, raf = 0, W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
     function size(){
       var r = canvas.parentNode.getBoundingClientRect(); W = r.width; H = r.height;
@@ -257,21 +257,24 @@
       while (flakes.length < n) flakes.push(flake(true));
       flakes.length = n;
     }
-    function flake(anywhere){ return { x: Math.random() * W, y: anywhere ? Math.random() * H : -6, r: .8 + Math.random() * 2.2, v: 18 + Math.random() * 34, d: (Math.random() - .5) * 14, p: Math.random() * 6.28 }; }
+    function flake(anywhere){ return { x: Math.random() * W, y: anywhere ? Math.random() * H : -6, r: .6 + Math.random() * 1.6, v: 16 + Math.random() * 30, d: (Math.random() - .5) * 12, p: Math.random() * 6.28 }; }
     var last = 0;
     function frame(t){
       if (!running) return;
       var dt = Math.min(.05, (t - last) / 1000 || 0); last = t;
       ctx.clearRect(0, 0, W, H);
-      ctx.fillStyle = "rgba(244,246,250,.85)";
-      for (var i = 0; i < flakes.length; i++) {
-        var f = flakes[i]; f.p += dt; f.y += f.v * dt; f.x += (f.d + Math.sin(f.p) * 9) * dt;
-        if (f.y > H + 6 || f.x < -8 || f.x > W + 8) flakes[i] = f = flake(false);
-        ctx.globalAlpha = .45 + (f.r / 3) * .55;
-        ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.283); ctx.fill();
-      }
-      ctx.globalAlpha = 1;
+      draw(dt);
       raf = window.requestAnimationFrame(frame);
+    }
+    function draw(dt){
+      // soft bokeh flakes: a radial fade, not a hard disc
+      for (var i = 0; i < flakes.length; i++) {
+        var f = flakes[i];
+        if (dt) { f.p += dt; f.y += f.v * dt; f.x += (f.d + Math.sin(f.p) * 8) * dt; if (f.y > H + 6 || f.x < -8 || f.x > W + 8) flakes[i] = f = flake(false); }
+        var g = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, f.r * 2.2);
+        g.addColorStop(0, "rgba(244,246,250," + (.55 + f.r * .2) + ")"); g.addColorStop(1, "rgba(244,246,250,0)");
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(f.x, f.y, f.r * 2.2, 0, 6.283); ctx.fill();
+      }
     }
     function start(){ if (running) return; running = true; last = 0; raf = window.requestAnimationFrame(frame); }
     function stop(){ running = false; window.cancelAnimationFrame(raf); }
@@ -281,7 +284,8 @@
       if ("IntersectionObserver" in window) new IntersectionObserver(function(en){ en[0].isIntersecting && document.visibilityState === "visible" ? start() : stop(); }, { threshold: .02 }).observe(canvas);
       else start();
     };
-    if ("requestIdleCallback" in window) window.requestIdleCallback(begin, { timeout: 2500 }); else window.setTimeout(begin, 1200);
+    if (reduced) { size(); draw(0); window.addEventListener("resize", throttle(function(){ size(); ctx.clearRect(0, 0, W, H); draw(0); }, 250)); }
+    else if ("requestIdleCallback" in window) window.requestIdleCallback(begin, { timeout: 2500 }); else window.setTimeout(begin, 1200);
     document.addEventListener("visibilitychange", function(){ document.visibilityState === "visible" ? start() : stop(); });
   }
 

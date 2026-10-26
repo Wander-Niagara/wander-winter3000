@@ -9,8 +9,8 @@
     <div class="tags">
       {% for it in itineraries[itinPage] %}
       <a class="tag" href="{{ it.url }}" target="_blank" rel="noopener" data-module="itinerary" data-card-label="{{ it.title }}">
-        <span class="tag__type">{{ it.duration }} · {{ it.stops }} stops</span>
         <span class="tag__name">{{ it.title }}</span>
+        <span class="tag__town">{{ it.duration }} · {{ it.stops }} stops</span>
         <p class="tag__blurb">{{ it.blurb }}</p>
         <span class="tag__go">{{ it.cta }} →</span>
       </a>

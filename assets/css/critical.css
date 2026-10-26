@@ -61,6 +61,9 @@ h3{font-size:clamp(18px,4.4vw,22px);line-height:1.2;margin-bottom:8px}
 h4{font-size:17px;line-height:1.3}
 /* ---- Header: slim, on the night sky -------------------------------------- */
 .site-header{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;height:52px;padding:0 var(--gutter);max-width:var(--max);margin:0 auto}
+.page--home .site-header{position:absolute;top:0;left:0;right:0;max-width:none;padding:0 var(--gutter)}
+.page--home .hero{padding-top:52px}
+@media (min-width:900px){.page--home .hero{padding-top:0}.page--home .site-header{padding:0 max(var(--gutter),calc((100% - var(--max)) / 2))}}
 .brand img{height:32px;width:auto}
 .site-nav{display:none}
 @media (min-width:900px){
@@ -75,7 +78,7 @@ h4{font-size:17px;line-height:1.3}
 .plaque{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 24px;
   font:700 15px/1.15 var(--display);color:var(--ink);text-decoration:none;text-align:center;letter-spacing:.01em;
   background:var(--brass) url(/assets/plates/brass-texture-512.webp) center/220px auto;
-  border-radius:4px;clip-path:polygon(6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px),0 6px);
+  border-radius:2px;clip-path:polygon(9px 0,calc(100% - 9px) 0,100% 9px,100% calc(100% - 9px),calc(100% - 9px) 100%,9px 100%,0 calc(100% - 9px),0 9px);
   box-shadow:inset 0 1px 0 rgba(255,246,220,.55),inset 0 -1px 0 rgba(60,35,10,.55),inset 0 0 0 1px rgba(120,85,30,.35);
   text-shadow:0 1px 0 rgba(255,246,220,.45);cursor:pointer;transition:filter .18s var(--ease-out),transform .18s var(--ease-out)}
 .plaque::before,.plaque::after{content:"";position:absolute;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;
@@ -90,9 +93,11 @@ h4{font-size:17px;line-height:1.3}
 
 /* ---- The house ---------------------------------------------------------- */
 .hero{position:relative;overflow:hidden;isolation:isolate}
+.hero::after,.room::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:url(/assets/plates/grain-256.png) repeat;opacity:.07;mix-blend-mode:soft-light}
 .snowfall{position:absolute;inset:0;z-index:3;pointer-events:none}
-@media (prefers-reduced-motion:reduce){.snowfall{display:none}}
-.house{position:relative;width:100%;max-width:var(--max);margin:0 auto;aspect-ratio:var(--plate-w)/var(--plate-h)}
+
+.house{position:relative;width:100%;margin:0 auto;overflow:hidden}
+.house__plate{position:relative;width:100%;aspect-ratio:var(--plate-w)/var(--plate-h)}
 .house__facade img{width:100%;height:100%;object-fit:cover;display:block}
 .house__glow{position:absolute;pointer-events:none;mix-blend-mode:screen;opacity:1;
   transition:opacity .42s var(--ease-out);transition-delay:calc(var(--i) * 220ms + 120ms)}
@@ -117,12 +122,14 @@ h4{font-size:17px;line-height:1.3}
 .snowfield{position:relative;z-index:2;max-width:var(--max);margin:calc(-105 / 1536 * 100%) auto 0}
 .snowfield__plate img{width:100%;height:auto}
 .snowfield__text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:9% 4px 2%}
+.h1-line{display:block}
 .snowfield h1{margin:0;font:700 clamp(30px,8.2vw,48px)/1.02 var(--display);letter-spacing:-.01em;color:var(--snow);text-wrap:balance;
-  text-shadow:0 1px 2px rgba(0,0,0,.45),0 4px 18px rgba(0,0,0,.45)}
+  text-shadow:0 1px 2px rgba(0,0,0,.35),0 3px 12px rgba(0,0,0,.3)}
 .snowfield p{margin:9px 0 0;font:400 clamp(15px,3.85vw,19px)/1.3 var(--display);letter-spacing:-.005em;color:var(--snow);text-shadow:0 1px 2px rgba(0,0,0,.5),0 3px 14px rgba(0,0,0,.4);text-wrap:balance}
 
 @media (min-width:900px){
-  .house{aspect-ratio:var(--plate-w-d)/var(--plate-h-d)}
+  .house{height:min(calc(100vw * var(--plate-h-d) / var(--plate-w-d)),100svh)}
+  .house__plate{position:absolute;left:0;bottom:0;aspect-ratio:var(--plate-w-d)/var(--plate-h-d)}
   .house__glows--m,.house__portals--m{display:none}
   .house__glows--d,.house__portals--d{display:block}
   .house__portal{min-width:0;min-height:0}
@@ -132,11 +139,10 @@ h4{font-size:17px;line-height:1.3}
   /* the headline block moves onto the lawn, left of the walk; the snow plate is the lawn itself */
   .snowfield{position:absolute;left:0;right:0;bottom:0;margin:0;max-width:none;pointer-events:none}
   .snowfield__plate{display:none}
-  .snowfield__text{position:static;display:block;text-align:left;width:min(100%,1200px);margin:0 auto;padding:0 0 calc(5% * 1200 / 1440) 4.5%;box-sizing:border-box}
-  .snowfield h1{font-size:clamp(40px,4vw,58px);max-width:11ch;text-wrap:balance;text-shadow:0 1px 2px rgba(0,0,0,.5),0 6px 22px rgba(0,0,0,.5)}
+  .snowfield__text{position:static;display:block;text-align:left;width:min(100%,1200px);margin:0 auto;padding:0 0 4% 2%;box-sizing:border-box}
+  .snowfield h1{font-size:clamp(40px,4vw,58px);max-width:none;width:max-content;text-wrap:initial;text-shadow:0 1px 2px rgba(0,0,0,.5),0 6px 22px rgba(0,0,0,.5)}
   .snowfield p{margin-top:12px;font-size:clamp(17px,1.5vw,22px);max-width:34ch;text-wrap:pretty}
 }
-@media (min-width:1300px){.house{-webkit-mask-image:linear-gradient(90deg,transparent,#000 70px,#000 calc(100% - 70px),transparent);mask-image:linear-gradient(90deg,transparent,#000 70px,#000 calc(100% - 70px),transparent)}}
 /* ---- Choose a room ------------------------------------------------------ */
 .rooms{position:relative;overflow:hidden;padding:22px var(--gutter) 40px;max-width:var(--max);margin:0 auto;text-align:center}
 .rooms h2{margin:0 0 14px;font:700 clamp(21px,5.6vw,30px)/1.1 var(--display);color:var(--ink-on-night)}

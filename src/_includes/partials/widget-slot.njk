@@ -13,7 +13,7 @@
   </div>
 </div>
 {% elif slot.embed %}
-<div class="widget-live" data-embed="{{ slotKey }}">
+<div class="widget-live" data-embed="{{ slotKey }}" data-slot-label="{{ slot.label | replace(" [PLACEHOLDER: fall widget]", "") | replace(" [PLACEHOLDER: fall gallery]", "") }}">
   <div class="embed-slot"></div>
   <template>{{ slot.embed | safe }}</template>
 </div>

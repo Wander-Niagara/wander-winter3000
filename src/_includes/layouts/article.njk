@@ -16,9 +16,9 @@
 {% endblock %}
 {% block content %}
   <div class="article-head">
-    <p class="meta">{{ audience }} · Winter reading</p>
     <h1>{{ title }}</h1>
     {% if dek %}<p class="dek">{{ dek }}</p>{% endif %}
+    <p class="meta">Written for {{ audience | lower }} · Winter reading</p>
   </div>
   <div class="article-hero">
     {% set photoKey = heroSlotKey %}{% set photoShape = "wide" %}{% include "partials/photo-print.njk" %}
