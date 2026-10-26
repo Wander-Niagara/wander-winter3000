@@ -107,10 +107,11 @@ p{margin:0 0 1em}
 .story .print__mat{position:relative}
 .story__audience{position:absolute;left:10px;top:10px;z-index:1;padding:4px 9px;font:700 11px/1.3 var(--text);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--gold)}
 .story__body{padding:12px 4px 0}
-.story h3{font:700 clamp(19px,4.8vw,22px)/1.2 var(--display);margin:0 0 6px;color:#f7efe0}
+.story h3,.story h2{font:700 clamp(19px,4.8vw,22px)/1.2 var(--display);margin:0 0 6px;color:#f7efe0}
 .story p{margin:0 0 8px;font-size:15px;line-height:1.45;color:var(--ink-soft-night)}
-.story:hover h3{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.story:hover h3,.story:hover h2{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
 .stories--large .print__img{aspect-ratio:16/10}
+.stories--large .story h2{font-size:clamp(22px,5.6vw,28px)}
 
 /* ---- Room heroes (interior pages) ---------------------------------------- */
 .room{position:relative;overflow:hidden;isolation:isolate}

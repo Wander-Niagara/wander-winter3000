@@ -52,6 +52,12 @@ a{color:inherit}
 .skip{position:absolute;left:var(--gutter);top:-48px;padding:8px 14px;background:var(--gold);color:var(--ink);font-family:var(--display);z-index:100}
 .skip:focus{top:8px}
 
+/* ---- Type roles (sizes here so hierarchy ships with the critical sheet) ---- */
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;letter-spacing:-.01em;text-wrap:balance;margin:0 0 10px}
+h1{font-size:clamp(34px,9vw,64px);line-height:1.04;letter-spacing:-.015em}
+h2{font-size:clamp(24px,5.4vw,36px);line-height:1.08}
+h3{font-size:clamp(18px,4.4vw,22px);line-height:1.2;margin-bottom:8px}
+h4{font-size:17px;line-height:1.3}
 /* ---- Header: slim, on the night sky -------------------------------------- */
 .site-header{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;height:48px;padding:0 var(--gutter);max-width:var(--max);margin:0 auto}
 .brand img{height:32px;width:auto}
@@ -99,9 +105,9 @@ a{color:inherit}
 .house__sign{position:absolute;left:50%;top:100%;transform:translate(-50%,6px);white-space:nowrap;pointer-events:none;visibility:hidden;
   font:700 13px/1 var(--display);color:var(--ink);padding:7px 12px 6px;border-radius:3px;
   background:var(--brass) url(/assets/plates/brass-texture-512.webp) center/180px auto;
-  box-shadow:inset 0 1px 0 rgba(255,246,220,.5),0 3px 8px rgba(0,0,0,.45);opacity:0;transition:opacity .2s var(--ease-out),transform .3s var(--ease-out)}
+  box-shadow:inset 0 1px 0 rgba(255,246,220,.5),0 3px 8px rgba(0,0,0,.45);transition:transform .3s var(--ease-out),visibility 0s .3s}
 .house__sign::before{content:"";position:absolute;left:50%;bottom:100%;width:1px;height:8px;background:var(--brass);transform:translateX(-50%)}
-.house__portal:hover .house__sign,.house__portal:focus-visible .house__sign{opacity:1;visibility:visible;transform:translate(-50%,10px)}
+.house__portal:hover .house__sign,.house__portal:focus-visible .house__sign{visibility:visible;transform:translate(-50%,10px);transition-delay:0s}
 /* a hovered or focused portal warms its window */
 .house:has(.house__portal--door:is(:hover,:focus-visible)) .house__glow--door,
 .house:has(.house__portal--dining:is(:hover,:focus-visible)) .house__glow--dining,
@@ -114,8 +120,8 @@ a{color:inherit}
   .house__glows--m,.house__portals--m,.snowfield{display:none}
   .house__glows--d,.house__portals--d{display:block}
   .house__headline{display:block;position:absolute;left:4.5%;bottom:5%;width:42%;z-index:3;pointer-events:none}
-  .house__h1{margin:0;font:700 clamp(40px,4vw,58px)/1.02 var(--display);letter-spacing:-.015em;color:var(--snow);text-wrap:balance;max-width:11ch;text-shadow:0 1px 2px rgba(18,28,51,.6),0 6px 22px rgba(18,28,51,.6)}
-  .house__sub{margin:12px 0 0;font:400 clamp(17px,1.5vw,22px)/1.3 var(--display);color:var(--snow);text-shadow:0 1px 2px rgba(18,28,51,.6),0 4px 16px rgba(18,28,51,.55)}
+  .house__h1{margin:0;font:700 clamp(40px,4vw,58px)/1.02 var(--display);letter-spacing:-.015em;color:var(--snow);text-wrap:balance;max-width:11ch;text-shadow:0 1px 2px rgba(0,0,0,.5),0 6px 22px rgba(0,0,0,.5)}
+  .house__sub{margin:12px 0 0;font:400 clamp(17px,1.5vw,22px)/1.3 var(--display);color:var(--snow);text-shadow:0 1px 2px rgba(0,0,0,.5),0 4px 16px rgba(0,0,0,.45)}
   .house__portal{min-width:0;min-height:0}
 }
 /* ---- The snow the headline sits in -------------------------------------- */
@@ -123,8 +129,8 @@ a{color:inherit}
 .snowfield__plate img{width:100%;height:auto}
 .snowfield__text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:9% 6px 2%}
 .snowfield h1{margin:0;font:700 clamp(30px,8.2vw,48px)/1.02 var(--display);letter-spacing:-.01em;color:var(--snow);text-wrap:balance;
-  text-shadow:0 1px 2px rgba(18,28,51,.55),0 4px 18px rgba(18,28,51,.55)}
-.snowfield p{margin:9px 0 0;font:400 clamp(13.5px,3.6vw,19px)/1.3 var(--display);letter-spacing:-.005em;color:var(--snow);text-shadow:0 1px 2px rgba(18,28,51,.6),0 3px 14px rgba(18,28,51,.5);text-wrap:balance}
+  text-shadow:0 1px 2px rgba(0,0,0,.45),0 4px 18px rgba(0,0,0,.45)}
+.snowfield p{margin:9px 0 0;font:400 clamp(13.5px,3.6vw,19px)/1.3 var(--display);letter-spacing:-.005em;color:var(--snow);text-shadow:0 1px 2px rgba(0,0,0,.5),0 3px 14px rgba(0,0,0,.4);text-wrap:balance}
 
 /* ---- Choose a room ------------------------------------------------------ */
 .rooms{position:relative;overflow:hidden;padding:22px var(--gutter) 40px;max-width:var(--max);margin:0 auto;text-align:center}
