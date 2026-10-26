@@ -18,7 +18,7 @@ await page.evaluate(() => document.fonts && document.fonts.ready);
 await new Promise(r => setTimeout(r, settle));
 if (full) { // walk the page so lazy images and reveals settle before a full-page capture
   await page.evaluate(async () => { const h = document.documentElement.scrollHeight; for (let y = 0; y < h; y += 600) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 90)); } window.scrollTo(0, 0); });
-  await page.evaluate(() => Promise.all([...document.images].filter(i => !i.complete).map(i => new Promise(r => { i.onload = i.onerror = r; }))));
+  await Promise.race([page.evaluate(() => Promise.all([...document.images].filter(i => !i.complete).map(i => new Promise(r => { i.onload = i.onerror = r; })))), new Promise(r => setTimeout(r, 4000))]);
   await new Promise(r => setTimeout(r, 400));
 }
 await page.evaluate(() => window.scrollTo(0, 0));

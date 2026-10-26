@@ -2,6 +2,7 @@
    {% set photoKey = "HOME_BREAK_LIGHTS" %}{% set photoShape = "portrait" %}{% set photoCaption = "..." %}{% include "partials/photo-print.njk" %}
    Photo missing + dev → labelled placeholder inside the frame; production → the frame is not rendered. #}
 {% set ph = slots.photos[photoKey] %}
+{% if photoHref %}<a class="print-link" href="{{ photoHref }}" data-module="home" data-card-label="{{ photoCaption }}">{% endif %}
 {% if ph and ph.embed %}
 <figure class="print">
   <span class="print__mat"><img class="print__img{% if photoShape %} print__img--{{ photoShape }}{% endif %}" src="{{ ph.embed }}" alt="{{ ph.alt }}" loading="lazy" decoding="async"></span>
@@ -13,4 +14,5 @@
   {% if photoCaption %}<figcaption class="print__caption">{{ photoCaption }}</figcaption>{% endif %}
 </figure>
 {% endif %}
-{% set photoShape = "" %}{% set photoCaption = "" %}
+{% if photoHref %}</a>{% endif %}
+{% set photoShape = "" %}{% set photoCaption = "" %}{% set photoHref = "" %}

@@ -8,7 +8,7 @@
     <span class="tag__name">{{ b.name }}</span>
     <span class="tag__town">{{ b.town }}</span>
     <p class="tag__blurb">{{ b.blurb }}</p>
-    <span class="tag__go">Visit {{ b.name | replace("[PLACEHOLDER] ", "") | truncate(24, true, "…") }} →</span>
+    <span class="tag__go">Visit {{ b.name | replace("[PLACEHOLDER] ", "") }}<span class="visually-hidden"> (opens in a new tab)</span> →</span>
   </a>
   {% endfor %}
 </div>

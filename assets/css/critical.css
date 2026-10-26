@@ -116,16 +116,19 @@ h4{font-size:17px;line-height:1.3}
 /* ---- The snow the headline sits in -------------------------------------- */
 .snowfield{position:relative;z-index:2;max-width:var(--max);margin:calc(-105 / 1536 * 100%) auto 0}
 .snowfield__plate img{width:100%;height:auto}
-.snowfield__text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:9% 6px 2%}
+.snowfield__text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:9% 4px 2%}
 .snowfield h1{margin:0;font:700 clamp(30px,8.2vw,48px)/1.02 var(--display);letter-spacing:-.01em;color:var(--snow);text-wrap:balance;
   text-shadow:0 1px 2px rgba(0,0,0,.45),0 4px 18px rgba(0,0,0,.45)}
-.snowfield p{margin:9px 0 0;font:400 clamp(13.5px,3.6vw,19px)/1.3 var(--display);letter-spacing:-.005em;color:var(--snow);text-shadow:0 1px 2px rgba(0,0,0,.5),0 3px 14px rgba(0,0,0,.4);text-wrap:balance}
+.snowfield p{margin:9px 0 0;font:400 clamp(15px,3.85vw,19px)/1.3 var(--display);letter-spacing:-.005em;color:var(--snow);text-shadow:0 1px 2px rgba(0,0,0,.5),0 3px 14px rgba(0,0,0,.4);text-wrap:balance}
 
 @media (min-width:900px){
   .house{aspect-ratio:var(--plate-w-d)/var(--plate-h-d)}
   .house__glows--m,.house__portals--m{display:none}
   .house__glows--d,.house__portals--d{display:block}
   .house__portal{min-width:0;min-height:0}
+  .house__portal--dining .house__sign{top:auto;bottom:100%;transform:translate(-50%,-6px)}
+  .house__portal--dining:hover .house__sign,.house__portal--dining:focus-visible .house__sign{transform:translate(-50%,-12px)}
+  .house__portal--dining .house__sign::before{bottom:auto;top:100%}
   /* the headline block moves onto the lawn, left of the walk; the snow plate is the lawn itself */
   .snowfield{position:absolute;left:0;right:0;bottom:0;margin:0;max-width:none;pointer-events:none}
   .snowfield__plate{display:none}
@@ -133,10 +136,11 @@ h4{font-size:17px;line-height:1.3}
   .snowfield h1{font-size:clamp(40px,4vw,58px);max-width:11ch;text-wrap:balance;text-shadow:0 1px 2px rgba(0,0,0,.5),0 6px 22px rgba(0,0,0,.5)}
   .snowfield p{margin-top:12px;font-size:clamp(17px,1.5vw,22px);max-width:34ch;text-wrap:pretty}
 }
+@media (min-width:1300px){.house{-webkit-mask-image:linear-gradient(90deg,transparent,#000 70px,#000 calc(100% - 70px),transparent);mask-image:linear-gradient(90deg,transparent,#000 70px,#000 calc(100% - 70px),transparent)}}
 /* ---- Choose a room ------------------------------------------------------ */
 .rooms{position:relative;overflow:hidden;padding:22px var(--gutter) 40px;max-width:var(--max);margin:0 auto;text-align:center}
 .rooms h2{margin:0 0 14px;font:700 clamp(21px,5.6vw,30px)/1.1 var(--display);color:var(--ink-on-night)}
-.rooms__list{list-style:none;margin:0 auto;padding:0;display:grid;gap:7px;width:min(64%,300px)}
+.rooms__list{list-style:none;margin:0 auto;padding:0;display:grid;gap:7px;width:min(72%,300px)}
 .rooms__list .plaque{width:100%}
 .rooms__tree{position:absolute;top:0;width:21.5%;max-width:120px;pointer-events:none}
 .rooms__tree--left{left:0}.rooms__tree--right{right:0}

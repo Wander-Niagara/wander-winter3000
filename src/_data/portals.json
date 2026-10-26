@@ -1,5 +1,5 @@
 {
-  "_note": "Hotspot boxes as percentages of each facade plate (mobile = facade.png 1536x2304, desktop = facade-wide.png 1536x1024). glass = the tappable window/door opening; glow = where that portal's overlay plate sits. Edit href/label here to re-map a window; templates read this file. Order = the light-up sequence (left to right, door last). The desktop plate also has a decorative upper-floor glow that is not a portal.",
+  "_note": "Hotspot boxes as percentages of each facade plate (mobile = facade.png 1536x2304, desktop = facade-wide.png 1536x1024). glass = the tappable window/door opening; glow = where that portal's overlay plate sits. Edit href/label here to re-map a window; templates read this file. Order = the light-up sequence (left to right, door last). The desktop plate also has a decorative upper-floor glow that is not a portal. `priority` is the reading/tab order of the hotspots (door first); array order stays the light-up sequence.",
   "plates": {
     "mobile": {
       "facade": "/assets/plates/facade.png",
@@ -64,7 +64,8 @@
           "w": 6.12,
           "h": 9.668
         }
-      }
+      },
+      "priority": 5
     },
     {
       "id": "dining",
@@ -101,7 +102,8 @@
           "w": 10.677,
           "h": 19.434
         }
-      }
+      },
+      "priority": 2
     },
     {
       "id": "living",
@@ -138,7 +140,8 @@
           "w": 10.677,
           "h": 19.434
         }
-      }
+      },
+      "priority": 3
     },
     {
       "id": "dormer-right",
@@ -175,7 +178,8 @@
           "w": 6.12,
           "h": 9.668
         }
-      }
+      },
+      "priority": 4
     },
     {
       "id": "door",
@@ -192,10 +196,10 @@
           "h": 53.251
         },
         "glass": {
-          "x": 41.992,
-          "y": 46.914,
-          "w": 16.016,
-          "h": 7.325
+          "x": 41.5,
+          "y": 46.9,
+          "w": 17.0,
+          "h": 35.5
         }
       },
       "desktop": {
@@ -207,12 +211,13 @@
           "h": 46.777
         },
         "glass": {
-          "x": 45.573,
-          "y": 43.457,
-          "w": 8.724,
-          "h": 5.762
+          "x": 45.5,
+          "y": 43.5,
+          "w": 9.2,
+          "h": 25.5
         }
-      }
+      },
+      "priority": 1
     }
   ]
 }

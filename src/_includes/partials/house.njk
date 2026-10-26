@@ -46,7 +46,7 @@
     {# hotspots: real links, one set per plate #}
     {% for set in ["mobile","desktop"] %}
     <nav class="house__portals house__portals--{{ 'm' if set == 'mobile' else 'd' }}" aria-label="Rooms">
-      {% for p in portals.portals %}{% set b = p[set].glass %}
+      {% for p in portals.portals | sort(false, false, 'priority') %}{% set b = p[set].glass %}
       <a class="house__portal house__portal--{{ p.id }}" href="{{ p.href }}" data-portal="{{ p.id }}" data-module="house-portal" data-card-label="{{ p.label }}"
          style="left:{{ b.x }}%;top:{{ b.y }}%;width:{{ b.w }}%;height:{{ b.h }}%" aria-label="{{ p.ariaLabel }}">
         <span class="house__sign" aria-hidden="true">{{ p.label }}</span>
@@ -68,7 +68,6 @@
       <p>A holiday escape to St. Catharines and the Benchlands.</p>
     </div>
   </div>
-  <span id="hero-cta-sentinel" aria-hidden="true"></span>
 </section>
 
 <section class="rooms" id="rooms" aria-labelledby="rooms-title">
@@ -87,4 +86,5 @@
     <li><a class="plaque" href="{{ p.href }}" data-module="house-list" data-portal="{{ p.id }}" data-card-label="{{ p.label }}">{{ p.label }}</a></li>
     {% endif %}{% endfor %}{% endfor %}
   </ul>
+  <span id="hero-cta-sentinel" aria-hidden="true"></span>
 </section>

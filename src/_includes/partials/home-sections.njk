@@ -3,8 +3,8 @@
   <div class="wrap">
     <p class="break__lede">Holiday lights on every main street. Wine country under snow. Five <em>MICHELIN</em> Guide restaurants with tables to spare. Markets, tree farms, skating, and a quiet trail to a frozen waterfall. All of it within 90 minutes of Toronto.</p>
     <div class="twoup">
-      {% set photoKey = "HOME_BREAK_LIGHTS" %}{% set photoShape = "portrait" %}{% set photoCaption = "Downtown St. Catharines, lit for the season" %}{% include "partials/photo-print.njk" %}
-      {% set photoKey = "HOME_BREAK_VINES" %}{% set photoShape = "" %}{% set photoCaption = "The Benchlands after a snowfall" %}{% include "partials/photo-print.njk" %}
+      {% set photoKey = "HOME_BREAK_LIGHTS" %}{% set photoShape = "" %}{% set photoCaption = "Downtown St. Catharines, lit for the season" %}{% set photoHref = "/outdoors/#lights-and-trails" %}{% include "partials/photo-print.njk" %}
+      {% set photoKey = "HOME_BREAK_VINES" %}{% set photoShape = "" %}{% set photoCaption = "The Benchlands after a snowfall" %}{% set photoHref = "/eatdrinkplay/#wine" %}{% include "partials/photo-print.njk" %}
     </div>
   </div>
 </section>
@@ -13,9 +13,10 @@
   <div class="wrap">
     <div class="twoup">
       <h2>Where <em>urban</em> energy meets <em>rural</em> charm.</h2>
-      {% set photoKey = "HOME_TWOUP_URBAN" %}{% set photoShape = "" %}{% set photoCaption = "St. Paul Street on a December night" %}{% include "partials/photo-print.njk" %}
-      {% set photoKey = "HOME_TWOUP_RURAL" %}{% set photoShape = "portrait" %}{% set photoCaption = "Jordan Village, Benchlands" %}{% include "partials/photo-print.njk" %}
+      {% set photoKey = "HOME_TWOUP_URBAN" %}{% set photoShape = "" %}{% set photoCaption = "St. Paul Street on a December night" %}{% set photoHref = "/eatdrinkplay/#dining" %}{% include "partials/photo-print.njk" %}
+      {% set photoKey = "HOME_TWOUP_RURAL" %}{% set photoShape = "" %}{% set photoCaption = "Jordan Village, Benchlands" %}{% set photoHref = "/eatdrinkplay/#shopping" %}{% include "partials/photo-print.njk" %}
     </div>
+    <p class="section-cta"><a class="plaque" href="/eatdrinkplay/" data-module="home" data-card-label="Plan the weekend">Plan the weekend</a></p>
   </div>
 </section>
 
