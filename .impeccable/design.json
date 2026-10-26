@@ -1,0 +1,739 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-26T02:10:35Z",
+  "title": "Design System: Wander Niagara Winter",
+  "source": {
+    "artifact": [
+      "assets/css/critical.css",
+      "assets/css/main.css",
+      "assets/js/app.js",
+      "src/_includes/partials/house.njk",
+      "src/_data/portals.json"
+    ],
+    "canonicalColorFormat": "oklch in an @supports override; hex fallbacks in :root (recorded as hexFallback)"
+  },
+  "extensions": {
+    "colorMeta": {
+      "night": {
+        "role": "neutral",
+        "displayName": "Night",
+        "canonical": "oklch(23% 0.047 265)",
+        "cssVar": "--night",
+        "tonalRamp": [
+          "oklch(15% 0.047 265)",
+          "oklch(27% 0.047 265)",
+          "oklch(39% 0.047 265)",
+          "oklch(51% 0.047 265)",
+          "oklch(63% 0.047 265)",
+          "oklch(75% 0.047 265)",
+          "oklch(87% 0.047 265)",
+          "oklch(95% 0.047 265)"
+        ],
+        "hexFallback": "#121c33"
+      },
+      "night-2": {
+        "role": "neutral",
+        "displayName": "Night Deep",
+        "canonical": "#0d1526",
+        "cssVar": "--night-2",
+        "tonalRamp": [
+          "oklch(15% 0.040 262)",
+          "oklch(27% 0.040 262)",
+          "oklch(39% 0.040 262)",
+          "oklch(51% 0.040 262)",
+          "oklch(63% 0.040 262)",
+          "oklch(75% 0.040 262)",
+          "oklch(87% 0.040 262)",
+          "oklch(95% 0.040 262)"
+        ]
+      },
+      "dusk": {
+        "role": "secondary",
+        "displayName": "Dusk",
+        "canonical": "#2b4a7a",
+        "cssVar": "--dusk",
+        "tonalRamp": [
+          "oklch(15% 0.089 259)",
+          "oklch(27% 0.089 259)",
+          "oklch(39% 0.089 259)",
+          "oklch(51% 0.089 259)",
+          "oklch(63% 0.089 259)",
+          "oklch(75% 0.089 259)",
+          "oklch(87% 0.089 259)",
+          "oklch(95% 0.089 259)"
+        ]
+      },
+      "snow": {
+        "role": "neutral",
+        "displayName": "Snow",
+        "canonical": "oklch(97% 0.006 265)",
+        "cssVar": "--snow",
+        "tonalRamp": [
+          "oklch(15% 0.006 265)",
+          "oklch(27% 0.006 265)",
+          "oklch(39% 0.006 265)",
+          "oklch(51% 0.006 265)",
+          "oklch(63% 0.006 265)",
+          "oklch(75% 0.006 265)",
+          "oklch(87% 0.006 265)",
+          "oklch(95% 0.006 265)"
+        ],
+        "hexFallback": "#f4f6fa"
+      },
+      "snow-2": {
+        "role": "neutral",
+        "displayName": "Snow in Shadow",
+        "canonical": "oklch(87% 0.031 259)",
+        "cssVar": "--snow-2",
+        "tonalRamp": [
+          "oklch(15% 0.031 259)",
+          "oklch(27% 0.031 259)",
+          "oklch(39% 0.031 259)",
+          "oklch(51% 0.031 259)",
+          "oklch(63% 0.031 259)",
+          "oklch(75% 0.031 259)",
+          "oklch(87% 0.031 259)",
+          "oklch(95% 0.031 259)"
+        ],
+        "hexFallback": "#c9d6ea"
+      },
+      "dining-red": {
+        "role": "secondary",
+        "displayName": "Dining Red",
+        "canonical": "oklch(47% 0.171 26)",
+        "cssVar": "--red",
+        "tonalRamp": [
+          "oklch(15% 0.171 26)",
+          "oklch(27% 0.171 26)",
+          "oklch(39% 0.171 26)",
+          "oklch(51% 0.171 26)",
+          "oklch(63% 0.171 26)",
+          "oklch(75% 0.171 26)",
+          "oklch(87% 0.171 26)",
+          "oklch(95% 0.171 26)"
+        ],
+        "hexFallback": "#a61e22"
+      },
+      "velvet-red": {
+        "role": "secondary",
+        "displayName": "Velvet Red",
+        "canonical": "oklch(53% 0.207 22)",
+        "cssVar": "--red-2",
+        "tonalRamp": [
+          "oklch(15% 0.207 22)",
+          "oklch(27% 0.207 22)",
+          "oklch(39% 0.207 22)",
+          "oklch(51% 0.207 22)",
+          "oklch(63% 0.207 22)",
+          "oklch(75% 0.207 22)",
+          "oklch(87% 0.207 22)",
+          "oklch(95% 0.207 22)"
+        ],
+        "hexFallback": "#c8102e"
+      },
+      "holly-green": {
+        "role": "secondary",
+        "displayName": "Holly Green",
+        "canonical": "oklch(38% 0.077 150)",
+        "cssVar": "--green",
+        "tonalRamp": [
+          "oklch(15% 0.077 150)",
+          "oklch(27% 0.077 150)",
+          "oklch(39% 0.077 150)",
+          "oklch(51% 0.077 150)",
+          "oklch(63% 0.077 150)",
+          "oklch(75% 0.077 150)",
+          "oklch(87% 0.077 150)",
+          "oklch(95% 0.077 150)"
+        ],
+        "hexFallback": "#1f4d2b"
+      },
+      "bottle-green": {
+        "role": "secondary",
+        "displayName": "Bottle Green",
+        "canonical": "oklch(31% 0.048 165)",
+        "cssVar": "--green-2",
+        "tonalRamp": [
+          "oklch(15% 0.048 165)",
+          "oklch(27% 0.048 165)",
+          "oklch(39% 0.048 165)",
+          "oklch(51% 0.048 165)",
+          "oklch(63% 0.048 165)",
+          "oklch(75% 0.048 165)",
+          "oklch(87% 0.048 165)",
+          "oklch(95% 0.048 165)"
+        ],
+        "hexFallback": "#15382a"
+      },
+      "brass": {
+        "role": "tertiary",
+        "displayName": "Brass",
+        "canonical": "oklch(74% 0.101 83)",
+        "cssVar": "--brass",
+        "tonalRamp": [
+          "oklch(15% 0.101 83)",
+          "oklch(27% 0.101 83)",
+          "oklch(39% 0.101 83)",
+          "oklch(51% 0.101 83)",
+          "oklch(63% 0.101 83)",
+          "oklch(75% 0.101 83)",
+          "oklch(87% 0.101 83)",
+          "oklch(95% 0.101 83)"
+        ],
+        "hexFallback": "#c9a45c"
+      },
+      "candle-gold": {
+        "role": "tertiary",
+        "displayName": "Candle Gold",
+        "canonical": "oklch(83% 0.109 84)",
+        "cssVar": "--gold",
+        "tonalRamp": [
+          "oklch(15% 0.109 84)",
+          "oklch(27% 0.109 84)",
+          "oklch(39% 0.109 84)",
+          "oklch(51% 0.109 84)",
+          "oklch(63% 0.109 84)",
+          "oklch(75% 0.109 84)",
+          "oklch(87% 0.109 84)",
+          "oklch(95% 0.109 84)"
+        ],
+        "hexFallback": "#e8c170"
+      },
+      "window-glow": {
+        "role": "primary",
+        "displayName": "Window Glow",
+        "canonical": "oklch(85% 0.137 79)",
+        "cssVar": "--glow",
+        "tonalRamp": [
+          "oklch(15% 0.137 79)",
+          "oklch(27% 0.137 79)",
+          "oklch(39% 0.137 79)",
+          "oklch(51% 0.137 79)",
+          "oklch(63% 0.137 79)",
+          "oklch(75% 0.137 79)",
+          "oklch(87% 0.137 79)",
+          "oklch(95% 0.137 79)"
+        ],
+        "hexFallback": "#ffc45c"
+      },
+      "glow-core": {
+        "role": "primary",
+        "displayName": "Glow Core",
+        "canonical": "oklch(92% 0.081 84)",
+        "cssVar": "--glow-core",
+        "tonalRamp": [
+          "oklch(15% 0.081 84)",
+          "oklch(27% 0.081 84)",
+          "oklch(39% 0.081 84)",
+          "oklch(51% 0.081 84)",
+          "oklch(63% 0.081 84)",
+          "oklch(75% 0.081 84)",
+          "oklch(87% 0.081 84)",
+          "oklch(95% 0.081 84)"
+        ],
+        "hexFallback": "#ffe2a8"
+      },
+      "wallpaper-cream": {
+        "role": "tertiary",
+        "displayName": "Wallpaper Cream",
+        "canonical": "oklch(94% 0.027 84)",
+        "cssVar": "--cream",
+        "tonalRamp": [
+          "oklch(15% 0.027 84)",
+          "oklch(27% 0.027 84)",
+          "oklch(39% 0.027 84)",
+          "oklch(51% 0.027 84)",
+          "oklch(63% 0.027 84)",
+          "oklch(75% 0.027 84)",
+          "oklch(87% 0.027 84)",
+          "oklch(95% 0.027 84)"
+        ],
+        "hexFallback": "#f3e9d6"
+      },
+      "chintz-rose": {
+        "role": "tertiary",
+        "displayName": "Chintz Rose",
+        "canonical": "oklch(72% 0.095 8)",
+        "cssVar": "--rose",
+        "tonalRamp": [
+          "oklch(15% 0.095 8)",
+          "oklch(27% 0.095 8)",
+          "oklch(39% 0.095 8)",
+          "oklch(51% 0.095 8)",
+          "oklch(63% 0.095 8)",
+          "oklch(75% 0.095 8)",
+          "oklch(87% 0.095 8)",
+          "oklch(95% 0.095 8)"
+        ],
+        "hexFallback": "#d98c9a"
+      },
+      "brick": {
+        "role": "tertiary",
+        "displayName": "Brick",
+        "canonical": "#7a3b2e",
+        "cssVar": "--brick",
+        "tonalRamp": [
+          "oklch(15% 0.090 35)",
+          "oklch(27% 0.090 35)",
+          "oklch(39% 0.090 35)",
+          "oklch(51% 0.090 35)",
+          "oklch(63% 0.090 35)",
+          "oklch(75% 0.090 35)",
+          "oklch(87% 0.090 35)",
+          "oklch(95% 0.090 35)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(24% 0.028 41)",
+        "cssVar": "--ink",
+        "tonalRamp": [
+          "oklch(15% 0.028 41)",
+          "oklch(27% 0.028 41)",
+          "oklch(39% 0.028 41)",
+          "oklch(51% 0.028 41)",
+          "oklch(63% 0.028 41)",
+          "oklch(75% 0.028 41)",
+          "oklch(87% 0.028 41)",
+          "oklch(95% 0.028 41)"
+        ],
+        "hexFallback": "#2a1a14"
+      },
+      "ink-on-night": {
+        "role": "neutral",
+        "displayName": "Ink on Night",
+        "canonical": "#f1ece2",
+        "cssVar": "--ink-on-night",
+        "tonalRamp": [
+          "oklch(15% 0.012 85)",
+          "oklch(27% 0.012 85)",
+          "oklch(39% 0.012 85)",
+          "oklch(51% 0.012 85)",
+          "oklch(63% 0.012 85)",
+          "oklch(75% 0.012 85)",
+          "oklch(87% 0.012 85)",
+          "oklch(95% 0.012 85)"
+        ]
+      },
+      "ink-soft-night": {
+        "role": "neutral",
+        "displayName": "Soft Ink on Night",
+        "canonical": "#c6c9d6",
+        "cssVar": "--ink-soft-night",
+        "tonalRamp": [
+          "oklch(15% 0.015 270)",
+          "oklch(27% 0.015 270)",
+          "oklch(39% 0.015 270)",
+          "oklch(51% 0.015 270)",
+          "oklch(63% 0.015 270)",
+          "oklch(75% 0.015 270)",
+          "oklch(87% 0.015 270)",
+          "oklch(95% 0.015 270)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Room-hero h1 on interior pages (max 14ch). The house headline uses its own clamp (30–48px mobile in the snow band, 40–58px on the desktop lawn) in snow-white with a soft text shadow.",
+        "cssVar": "--display"
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2; variants for 'Choose a room' (21–30px), two-up features (26–44px with an italic candle-gold em) and the letter (22–30px)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "h3, story titles, gift-tag names (19px), event titles (18px), month headers (20px)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All copy at 17px/1.55 with oldstyle numerals; prose 18px/1.65 at 66ch; blurbs 15px/1.45; italics carry town, venue, dek and byline.",
+        "cssVar": "--text"
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Controls and signs: plaques (15/14px), chips (14px), signs (13/15px), date plates (13px), captions (14px), text links (16px). Always Libre Caslon Text 700."
+      },
+      "micro-label": {
+        "displayName": "Micro Label",
+        "purpose": "Vollkorn 600–700 at 11–12px, +0.04 to +0.08em, uppercase: weekday on date plates, 'On now / This weekend' and audience badges, placeholder slot labels. The only uppercase settings in the system."
+      }
+    },
+    "shadows": [
+      {
+        "name": "brass-bevel",
+        "value": "inset 0 1px 0 rgba(255,246,220,.55), inset 0 -1px 0 rgba(60,35,10,.55), inset 0 0 0 1px rgba(120,85,30,.35)",
+        "purpose": "Plaques and date plates; pair with text-shadow 0 1px 0 rgba(255,246,220,.45) to engrave the label."
+      },
+      {
+        "name": "frame-drop",
+        "value": "0 10px 24px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,220,170,.18)",
+        "purpose": "The mahogany print frame."
+      },
+      {
+        "name": "mat-recess",
+        "value": "inset 0 0 0 1px rgba(0,0,0,.35), inset 0 2px 6px rgba(0,0,0,.35)",
+        "purpose": "The bottle-green mat inside a frame."
+      },
+      {
+        "name": "tag-hang",
+        "value": "0 6px 16px rgba(0,0,0,.35)",
+        "purpose": "Gift tags hanging on the field."
+      },
+      {
+        "name": "letter-hang",
+        "value": "0 14px 30px rgba(0,0,0,.45), inset 0 0 0 1px rgba(122,59,46,.25)",
+        "purpose": "The newsletter letter."
+      },
+      {
+        "name": "shelf",
+        "value": "0 6px 14px rgba(0,0,0,.4), inset 0 -2px 0 rgba(0,0,0,.08)",
+        "purpose": "The mantel shelf."
+      },
+      {
+        "name": "sign-brass",
+        "value": "inset 0 1px 0 rgba(255,246,220,.5), 0 3px 8px rgba(0,0,0,.45)",
+        "purpose": "Mobile brass sign under a window."
+      },
+      {
+        "name": "sign-wood",
+        "value": "inset 0 0 0 1px rgba(0,0,0,.4), 0 4px 10px rgba(0,0,0,.5)",
+        "purpose": "Desktop wooden sign under a window."
+      },
+      {
+        "name": "label-card-lip",
+        "value": "0 2px 0 var(--brass), 0 8px 18px rgba(0,0,0,.18)",
+        "purpose": "A cream label card resting on a brass lip."
+      },
+      {
+        "name": "headline-on-snow",
+        "value": "text-shadow: 0 1px 2px rgba(0,0,0,.35), 0 3px 12px rgba(0,0,0,.3)",
+        "purpose": "Snow-white headline over the snow plate; desktop deepens to 0 1px 2px rgba(0,0,0,.5), 0 6px 22px rgba(0,0,0,.5)."
+      },
+      {
+        "name": "portal-focus-halo",
+        "value": "0 0 0 6px rgba(18,28,51,.6)",
+        "purpose": "Night halo behind the 3px gold outline so the ring reads over bright glow."
+      },
+      {
+        "name": "grain",
+        "value": "url(/assets/plates/grain-256.png) repeat; opacity .07; mix-blend-mode: soft-light",
+        "purpose": "Film grain over the house hero and every room hero."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "The only easing; every transition rides it.",
+        "cssVar": "--ease-out"
+      },
+      {
+        "name": "light-up",
+        "value": "opacity 0→1 over 420ms, delay calc(var(--i) * 220ms + 120ms) per glow in portal order (dormer-left, dining, living, dormer-right, door)",
+        "purpose": "The one authored moment: windows light left to right, door last, after the facade loads (2.5s fallback), then hold. Armed only by html.seq, which base.njk sets when prefers-reduced-motion is not reduce; otherwise the windows render lit."
+      },
+      {
+        "name": "warm",
+        "value": "filter: brightness(1.18) saturate(1.05); 250ms",
+        "purpose": "A hovered or focused portal warms its glow overlay (class .is-warm set by app.js)."
+      },
+      {
+        "name": "sign-drop",
+        "value": "transform translate(-50%,6px)→translate(-50%,10px); 300ms; visibility delayed 300ms on hide",
+        "purpose": "The room sign drops under the window on hover/focus; the dining sign rises above its window on desktop."
+      },
+      {
+        "name": "snowfall",
+        "value": "canvas bounded to .hero; ≤90 radial flakes r 0.6–2.2px, 16–46px/s, sine drift; DPR ≤2; starts on requestIdleCallback; pauses off-screen and on hidden tab",
+        "purpose": "Slow snow behind the house. Under reduced motion one static scatter is drawn (and redrawn on resize); the loop never starts."
+      },
+      {
+        "name": "control",
+        "value": "180ms (plaque filter/transform), 220ms (tag lift), 350ms (sticky CTA slide)",
+        "purpose": "State transitions on controls and cards."
+      },
+      {
+        "name": "smooth-scroll",
+        "value": "scroll-behavior: smooth; auto under prefers-reduced-motion",
+        "purpose": "Anchor landings."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tags-two-up",
+        "value": "600px"
+      },
+      {
+        "name": "stories-two",
+        "value": "700px"
+      },
+      {
+        "name": "desktop",
+        "value": "900px",
+        "purpose": "Five-bay plate, lawn and signs; header 64px; nav shown; sticky CTA hidden; one-row plaque rail; room hero two columns."
+      },
+      {
+        "name": "funders-six",
+        "value": "1000px"
+      },
+      {
+        "name": "stories-four",
+        "value": "1100px"
+      },
+      {
+        "name": "max",
+        "value": "1200px",
+        "purpose": "Content width (--max)."
+      }
+    ],
+    "fields": [
+      {
+        "name": "field--night",
+        "background": "{colors.night}",
+        "text": "{colors.ink-on-night}",
+        "secondary": "{colors.ink-soft-night}",
+        "purpose": "Default section field on every page."
+      },
+      {
+        "name": "field--red",
+        "background": "{colors.dining-red}",
+        "text": "#fbf1e6",
+        "secondary": "#f3d9cf",
+        "purpose": "Events page body; article 'keep exploring' band."
+      },
+      {
+        "name": "field--damask",
+        "background": "{colors.dining-red} + damask-tile-512.webp at 360px",
+        "text": "#fbf1e6",
+        "purpose": "Damask paper on red."
+      },
+      {
+        "name": "field--green",
+        "background": "{colors.holly-green}",
+        "text": "#eef3ea",
+        "secondary": "#cfdcc9"
+      },
+      {
+        "name": "field--bottle",
+        "background": "{colors.bottle-green}",
+        "text": "#eef3ea",
+        "purpose": "MICHELIN band, blog itineraries, article widget band."
+      },
+      {
+        "name": "field--dusk",
+        "background": "{colors.dusk}",
+        "text": "#eef2fa",
+        "secondary": "#cdd8ea"
+      },
+      {
+        "name": "field--chintz",
+        "background": "{colors.wallpaper-cream} + chintz-tile-512.webp at 300px",
+        "text": "{colors.ink}",
+        "secondary": "#5b4336",
+        "purpose": "The 'Stay the night' section; pairs with .on-light."
+      },
+      {
+        "name": "field--snow",
+        "background": "{colors.snow}",
+        "text": "{colors.ink}",
+        "secondary": "#4b4a52",
+        "purpose": "Funders band."
+      }
+    ],
+    "roomHeroes": [
+      {
+        "room": "dining",
+        "page": "/eatdrinkplay/",
+        "field": "{colors.dining-red}",
+        "paper": "damask-tile-512.webp at 420px, opacity .16, multiply",
+        "plate": "chandelier.png hung from the top, min(58%,360px), margin-top -36px / -56px"
+      },
+      {
+        "room": "living",
+        "page": "/outdoors/",
+        "field": "{colors.holly-green}",
+        "plate": "tree.png (52%, -22% overlap) over mantel.png (88%)"
+      },
+      {
+        "room": "foyer",
+        "page": "/events/",
+        "field": "{colors.dining-red}",
+        "paper": "damask-tile-512.webp at 420px, opacity .38, multiply",
+        "plate": "room-foyer.png as a framed print, min(100%,560px)"
+      },
+      {
+        "room": "attic",
+        "page": "/blog/",
+        "field": "{colors.dusk}",
+        "text": "#eef2fa",
+        "sub": "#d6e0f2",
+        "plate": "room-attic.png as a framed print, min(100%,560px)"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Brass Plaque",
+      "kind": "button",
+      "refersTo": "plaque",
+      "description": "The site's one button: a brass door plaque with two rivets, Caslon 700, candle-gold focus ring.",
+      "html": "<a class=\"ds-plaque\" href=\"#\">What's on this winter</a>",
+      "css": ".ds-plaque{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 24px;font:700 15px/1.15 \"Libre Caslon Text\",Georgia,serif;color:var(--ink,#2a1a14);text-decoration:none;text-align:center;letter-spacing:.01em;background:var(--brass) url(/assets/plates/brass-texture-512.webp) center/220px auto;border-radius:2px;clip-path:polygon(9px 0,calc(100% - 9px) 0,100% 9px,100% calc(100% - 9px),calc(100% - 9px) 100%,9px 100%,0 calc(100% - 9px),0 9px);box-shadow:inset 0 1px 0 rgba(255,246,220,.55),inset 0 -1px 0 rgba(60,35,10,.55),inset 0 0 0 1px rgba(120,85,30,.35);text-shadow:0 1px 0 rgba(255,246,220,.45);cursor:pointer;transition:filter .18s cubic-bezier(.16,1,.3,1),transform .18s cubic-bezier(.16,1,.3,1)}.ds-plaque::before,.ds-plaque::after{content:\"\";position:absolute;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f6e7bd 0,#b8893f 55%,#6c4a1a 100%);box-shadow:0 0 0 1px rgba(80,55,15,.45)}.ds-plaque::before{left:10px}.ds-plaque::after{right:10px}.ds-plaque:hover{filter:brightness(1.07)}.ds-plaque:active{transform:translateY(1px)}.ds-plaque:focus-visible{outline:3px solid var(--gold,#e8c170);outline-offset:3px}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "refersTo": "tlink",
+      "description": "Secondary action: Caslon 700 in candle gold with a 2px underline; dining red on light fields, glow-core on red, green and dusk fields.",
+      "html": "<a class=\"ds-tlink\" href=\"#\">See every winery</a>",
+      "css": ".ds-tlink{font:700 16px/1.3 \"Libre Caslon Text\",Georgia,serif;color:var(--gold,#e8c170);text-decoration:underline;text-decoration-color:rgba(232,193,112,.55);text-underline-offset:4px;text-decoration-thickness:2px}.ds-tlink:hover{text-decoration-color:var(--gold,#e8c170)}.ds-tlink:focus-visible{outline:3px solid var(--gold,#e8c170);outline-offset:3px;border-radius:2px}"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Events filter: brass-bordered pill, fills brass when pressed.",
+      "html": "<div style=\"display:flex;gap:8px;flex-wrap:wrap\"><button class=\"ds-chip\" type=\"button\" aria-pressed=\"true\">All</button><button class=\"ds-chip\" type=\"button\" aria-pressed=\"false\">Family</button><button class=\"ds-chip\" type=\"button\" aria-pressed=\"false\">Couples and friends</button><button class=\"ds-chip\" type=\"button\" aria-pressed=\"false\">Free</button></div>",
+      "css": ".ds-chip{font:700 14px/1 \"Libre Caslon Text\",Georgia,serif;min-height:44px;padding:12px 16px;border-radius:999px;border:2px solid var(--brass,#c9a45c);background:transparent;color:var(--ink-on-night,#f1ece2);cursor:pointer}.ds-chip[aria-pressed=\"true\"]{background:var(--brass,#c9a45c);color:var(--ink,#2a1a14)}.ds-chip:hover{filter:brightness(1.07)}.ds-chip:focus-visible{outline:3px solid var(--gold,#e8c170);outline-offset:2px}"
+    },
+    {
+      "name": "Gift Tag",
+      "kind": "card",
+      "refersTo": "tag",
+      "description": "A business or itinerary on a cream gift tag hanging from a red string; name / town / type in that order.",
+      "html": "<div style=\"padding:40px 20px 20px\"><a class=\"ds-tag\" href=\"#\"><span class=\"ds-tag__name\">Niagara Cider Company</span><span class=\"ds-tag__town\">Beamsville · Cidery</span><p class=\"ds-tag__blurb\">Dry ciders and a warm taproom on the Bench.</p><span class=\"ds-tag__go\">Visit the taproom →</span></a></div>",
+      "css": ".ds-tag{position:relative;display:grid;grid-template-rows:auto auto 1fr auto;gap:6px;width:290px;padding:26px 18px 16px;color:var(--ink,#2a1a14);text-decoration:none;background:var(--cream,#f3e9d6);clip-path:polygon(0 18px,18px 0,100% 0,100% 100%,0 100%);box-shadow:0 6px 16px rgba(0,0,0,.35);transition:transform .22s cubic-bezier(.16,1,.3,1)}.ds-tag::before{content:\"\";position:absolute;left:50%;top:9px;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:var(--night,#121c33);box-shadow:inset 0 0 0 2px var(--brass,#c9a45c)}.ds-tag::after{content:\"\";position:absolute;left:50%;top:-30px;width:2px;height:40px;background:var(--red-2,#c8102e);transform:rotate(14deg);transform-origin:bottom}.ds-tag:hover{transform:translateY(-3px) rotate(-.6deg)}.ds-tag:focus-visible{outline:3px solid var(--gold,#e8c170);outline-offset:3px}.ds-tag__name{font:700 19px/1.15 \"Libre Caslon Text\",Georgia,serif}.ds-tag__town{font:italic 400 15px/1.3 Vollkorn,Georgia,serif;color:#6b4b3c;margin-top:2px}.ds-tag__blurb{font:400 15px/1.45 Vollkorn,Georgia,serif;color:#3f2a22;margin:4px 0 0}.ds-tag__go{justify-self:start;font:700 14px/1.25 \"Libre Caslon Text\",Georgia,serif;color:var(--red,#a61e22);border-bottom:2px solid var(--red,#a61e22);padding-bottom:2px;margin-top:8px}"
+    },
+    {
+      "name": "Framed Print",
+      "kind": "card",
+      "refersTo": "print",
+      "description": "A photo in a mahogany frame with a bottle-green mat; wraps photos, stories, room plates and the region map.",
+      "html": "<figure class=\"ds-print\"><span class=\"ds-print__mat\"><span class=\"ds-print__img\">Photo 4:3</span></span><figcaption class=\"ds-print__caption\">Icewine harvest on the Bench</figcaption></figure>",
+      "css": ".ds-print{display:block;position:relative;width:320px;margin:0;padding:14px;background:linear-gradient(135deg,#5a2d1a,#3b1a0f 45%,#6a3a22);border-radius:2px;box-shadow:0 10px 24px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,220,170,.18)}.ds-print__mat{display:block;padding:10px;background:var(--green-2,#15382a);box-shadow:inset 0 0 0 1px rgba(0,0,0,.35),inset 0 2px 6px rgba(0,0,0,.35)}.ds-print__img{display:grid;place-items:center;aspect-ratio:4/3;width:100%;font:600 12px/1.3 Vollkorn,Georgia,serif;letter-spacing:.04em;text-transform:uppercase;color:var(--brass,#c9a45c);background:repeating-linear-gradient(135deg,#182240 0 10px,#141c35 10px 20px)}.ds-print__caption{display:block;padding:10px 4px 0;font:700 14px/1.3 \"Libre Caslon Text\",Georgia,serif;color:#f1e6cf}"
+    },
+    {
+      "name": "Event Row",
+      "kind": "custom",
+      "refersTo": "event-date-plate",
+      "description": "A dated event: brass date plate, Caslon title, italic venue, glow-core details link, brass hairline beneath.",
+      "html": "<a class=\"ds-event\" href=\"#\"><span class=\"ds-event__date\"><span class=\"ds-event__day\">Sat</span>Dec 6</span><span><p class=\"ds-event__title\">Downtown Holiday Lighting<span class=\"ds-event__badge\">This weekend</span></p><p class=\"ds-event__meta\">Market Square · St. Catharines</p><p class=\"ds-event__blurb\">The tree lights at dusk; skating after.</p></span><span class=\"ds-event__go\">Event details →</span></a>",
+      "css": ".ds-event{display:grid;grid-template-columns:80px 1fr;gap:14px;align-items:start;padding:12px 0;border-bottom:1px solid rgba(201,164,92,.28);color:var(--ink-on-night,#f1ece2);text-decoration:none;font-family:Vollkorn,Georgia,serif}.ds-event:hover .ds-event__title{text-decoration:underline;text-decoration-color:var(--gold,#e8c170);text-underline-offset:3px}.ds-event:focus-visible{outline:3px solid var(--gold,#e8c170);outline-offset:3px}.ds-event__date{display:grid;place-items:center;align-content:center;min-height:56px;padding:6px 4px;text-align:center;white-space:nowrap;font:700 13px/1.15 \"Libre Caslon Text\",Georgia,serif;color:var(--ink,#2a1a14);background:var(--brass,#c9a45c) url(/assets/plates/brass-texture-512.webp) center/160px auto;border-radius:3px;box-shadow:inset 0 1px 0 rgba(255,246,220,.55),inset 0 -1px 0 rgba(60,35,10,.5);text-shadow:0 1px 0 rgba(255,246,220,.4)}.ds-event__day{display:block;font:700 11px/1 Vollkorn,Georgia,serif;letter-spacing:.08em;text-transform:uppercase;color:#5a3d16;margin-bottom:3px}.ds-event__title{font:700 18px/1.2 \"Libre Caslon Text\",Georgia,serif;margin:0 0 2px}.ds-event__meta{font:italic 400 15px/1.35 Vollkorn,Georgia,serif;color:var(--ink-soft-night,#c6c9d6);margin:0}.ds-event__blurb{margin:4px 0 0;font-size:15px;line-height:1.45}.ds-event__badge{display:inline-block;margin-left:8px;padding:2px 8px;font:700 11px/1.4 Vollkorn,Georgia,serif;letter-spacing:.06em;text-transform:uppercase;color:var(--ink,#2a1a14);background:var(--gold,#e8c170);border-radius:2px;vertical-align:middle}.ds-event__go{grid-column:2;font:700 15px/1 \"Libre Caslon Text\",Georgia,serif;color:var(--glow-core,#ffe2a8)}"
+    },
+    {
+      "name": "FAQ Stocking",
+      "kind": "custom",
+      "refersTo": "faq-stocking",
+      "description": "One FAQ item: a stocking marker, Caslon question, candle-gold plus/minus, brass-bordered panel on the mantel.",
+      "html": "<div class=\"ds-mantel\"><div class=\"ds-mantel__shelf\"></div><details class=\"ds-stocking\" open><summary>How far is St. Catharines from Toronto?</summary><div class=\"ds-stocking__a\">About 1 hour 15 minutes by car on the QEW, or by GO Transit to St. Catharines station.</div></details></div>",
+      "css": ".ds-mantel{padding-top:12px;font-family:Vollkorn,Georgia,serif;color:var(--ink-on-night,#f1ece2)}.ds-mantel__shelf{position:relative;height:18px;margin:0 0 24px;background:linear-gradient(#fbf7ef,#e9e2d3 60%,#cbbfa9);border-radius:2px;box-shadow:0 6px 14px rgba(0,0,0,.4),inset 0 -2px 0 rgba(0,0,0,.08)}.ds-mantel__shelf::after{content:\"\";position:absolute;left:12px;right:12px;top:100%;height:10px;background:linear-gradient(#d9d1c0,#bfb4a0);border-radius:0 0 3px 3px}.ds-stocking{background:rgba(255,255,255,.04);border:1px solid rgba(201,164,92,.3);border-radius:4px}.ds-stocking summary{display:grid;grid-template-columns:26px 1fr auto;gap:12px;align-items:center;padding:14px 16px;cursor:pointer;list-style:none;font:700 17px/1.3 \"Libre Caslon Text\",Georgia,serif}.ds-stocking summary::-webkit-details-marker{display:none}.ds-stocking summary::before{content:\"\";width:26px;height:26px;background:url(/assets/plates/stocking-96.webp) center/contain no-repeat}.ds-stocking summary::after{content:\"+\";font:700 22px/1 \"Libre Caslon Text\",Georgia,serif;color:var(--gold,#e8c170)}.ds-stocking[open] summary::after{content:\"–\"}.ds-stocking summary:focus-visible{outline:3px solid var(--gold,#e8c170);outline-offset:-3px;border-radius:4px}.ds-stocking__a{padding:0 16px 16px 54px;font-size:16px;line-height:1.55;color:var(--ink-soft-night,#c6c9d6);max-width:72ch}"
+    },
+    {
+      "name": "Letter and Email Field",
+      "kind": "input",
+      "refersTo": "input-email",
+      "description": "The newsletter letter: cream paper with a dashed red inner border, a white email field with a brick border and a plaque submit.",
+      "html": "<form class=\"ds-letter\" onsubmit=\"return false\"><h2>Sign up for more winter ideas</h2><p>A few letters a season, never more.</p><div class=\"ds-nl\"><input class=\"ds-input\" type=\"email\" placeholder=\"you@example.com\" aria-label=\"Email address\"><button class=\"ds-plaque\" type=\"submit\">Post my letter</button></div></form>",
+      "css": ".ds-letter{position:relative;width:min(100%,560px);padding:26px 22px 24px;background:var(--cream,#f3e9d6);color:var(--ink,#2a1a14);border-radius:2px;box-shadow:0 14px 30px rgba(0,0,0,.45),inset 0 0 0 1px rgba(122,59,46,.25);text-align:left;font-family:Vollkorn,Georgia,serif}.ds-letter::before{content:\"\";position:absolute;inset:8px;border:1px dashed rgba(166,30,34,.35);pointer-events:none}.ds-letter h2{font:700 clamp(22px,5.4vw,30px)/1.1 \"Libre Caslon Text\",Georgia,serif;margin:0 0 8px}.ds-letter p{color:#5b4336;margin:0 0 14px;font-size:16px}.ds-nl{display:grid;gap:10px;grid-template-columns:1fr auto}.ds-input{width:100%;min-height:46px;padding:10px 14px;font:400 17px/1.2 Vollkorn,Georgia,serif;color:var(--ink,#2a1a14);background:#fff;border:2px solid var(--brick,#7a3b2e);border-radius:3px;caret-color:var(--red,#a61e22)}.ds-input::placeholder{color:#8a6f62}.ds-input:focus-visible{outline:3px solid var(--gold,#e8c170);outline-offset:2px}.ds-letter .ds-plaque{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 24px;font:700 15px/1.15 \"Libre Caslon Text\",Georgia,serif;color:var(--ink,#2a1a14);letter-spacing:.01em;border:0;background:var(--brass) url(/assets/plates/brass-texture-512.webp) center/220px auto;border-radius:2px;clip-path:polygon(9px 0,calc(100% - 9px) 0,100% 9px,100% calc(100% - 9px),calc(100% - 9px) 100%,9px 100%,0 calc(100% - 9px),0 9px);box-shadow:inset 0 1px 0 rgba(255,246,220,.55),inset 0 -1px 0 rgba(60,35,10,.55),inset 0 0 0 1px rgba(120,85,30,.35);text-shadow:0 1px 0 rgba(255,246,220,.45);cursor:pointer}.ds-letter .ds-plaque:hover{filter:brightness(1.07)}.ds-letter .ds-plaque:focus-visible{outline:3px solid var(--gold,#e8c170);outline-offset:3px}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "plaque-sm",
+      "description": "Slim header on the night sky: logo left, Caslon links with a brass hover underline, one small plaque CTA right.",
+      "html": "<header class=\"ds-header\"><span class=\"ds-brand\">WANDER</span><nav class=\"ds-nav\"><a href=\"#\">Eat and drink</a><a href=\"#\">Outdoors</a><a href=\"#\">Stay</a><a href=\"#\">Stories</a></nav><a class=\"ds-plaque-sm\" href=\"#\">What's on</a></header>",
+      "css": ".ds-header{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px;padding:0 16px;background:var(--night,#121c33);color:var(--ink-on-night,#f1ece2)}.ds-brand{font:700 12px/1 Vollkorn,Georgia,serif;letter-spacing:.04em}.ds-nav{display:flex;gap:28px;font:400 17px/1 \"Libre Caslon Text\",Georgia,serif}.ds-nav a{text-decoration:none;color:inherit;padding:6px 0;border-bottom:2px solid transparent}.ds-nav a:hover{border-bottom-color:var(--brass,#c9a45c)}.ds-nav a:focus-visible{outline:3px solid var(--gold,#e8c170);outline-offset:3px;border-radius:2px}.ds-plaque-sm{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:6px 22px;font:700 14px/1.15 \"Libre Caslon Text\",Georgia,serif;color:var(--ink,#2a1a14);text-decoration:none;letter-spacing:.01em;background:var(--brass) url(/assets/plates/brass-texture-512.webp) center/220px auto;border-radius:2px;clip-path:polygon(9px 0,calc(100% - 9px) 0,100% 9px,100% calc(100% - 9px),calc(100% - 9px) 100%,9px 100%,0 calc(100% - 9px),0 9px);box-shadow:inset 0 1px 0 rgba(255,246,220,.55),inset 0 -1px 0 rgba(60,35,10,.55),inset 0 0 0 1px rgba(120,85,30,.35);text-shadow:0 1px 0 rgba(255,246,220,.45)}.ds-plaque-sm::before,.ds-plaque-sm::after{content:\"\";position:absolute;top:50%;width:5px;height:5px;margin-top:-2.5px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f6e7bd 0,#b8893f 55%,#6c4a1a 100%);box-shadow:0 0 0 1px rgba(80,55,15,.45)}.ds-plaque-sm::before{left:8px}.ds-plaque-sm::after{right:8px}.ds-plaque-sm:hover{filter:brightness(1.07)}.ds-plaque-sm:focus-visible{outline:3px solid var(--gold,#e8c170);outline-offset:3px}"
+    },
+    {
+      "name": "Hanging Sign",
+      "kind": "nav",
+      "refersTo": "house-sign-desktop",
+      "description": "The room label that drops under a house window on hover or focus: brass tag on mobile, wooden sign on desktop, on a brass wire.",
+      "html": "<div style=\"display:flex;gap:48px;padding:24px 16px 56px;background:var(--night,#121c33)\"><a class=\"ds-portal\" href=\"#\" aria-label=\"Dining room\"><span class=\"ds-sign ds-sign--brass\">Eat, drink and shop</span></a><a class=\"ds-portal\" href=\"#\" aria-label=\"Living room\"><span class=\"ds-sign ds-sign--wood\">Winter outdoors</span></a></div>",
+      "css": ".ds-portal{position:relative;display:block;width:88px;height:120px;border-radius:3px;outline-offset:4px;background:rgba(255,196,92,.18);box-shadow:inset 0 0 0 2px rgba(255,226,168,.5)}.ds-portal:focus-visible{outline:3px solid var(--gold,#e8c170);box-shadow:0 0 0 6px rgba(18,28,51,.6)}.ds-sign{position:absolute;left:50%;top:100%;transform:translate(-50%,6px);white-space:nowrap;pointer-events:none;visibility:hidden;font:700 13px/1 \"Libre Caslon Text\",Georgia,serif;color:var(--ink,#2a1a14);padding:7px 12px 6px;border-radius:3px;transition:transform .3s cubic-bezier(.16,1,.3,1),visibility 0s .3s}.ds-sign::before{content:\"\";position:absolute;left:50%;bottom:100%;width:1px;height:8px;background:var(--brass,#c9a45c);transform:translateX(-50%)}.ds-sign--brass{background:var(--brass,#c9a45c) url(/assets/plates/brass-texture-512.webp) center/180px auto;box-shadow:inset 0 1px 0 rgba(255,246,220,.5),0 3px 8px rgba(0,0,0,.45)}.ds-sign--wood{font-size:15px;padding:9px 16px 8px;color:#f6ecd6;background:#1f4d2b url(/assets/plates/wood-tile-512.webp) center/260px auto;text-shadow:0 1px 0 rgba(0,0,0,.6);box-shadow:inset 0 0 0 1px rgba(0,0,0,.4),0 4px 10px rgba(0,0,0,.5)}.ds-sign--wood::before{height:14px;width:2px;background:linear-gradient(var(--brass,#c9a45c),#6c4a1a)}.ds-portal:hover .ds-sign,.ds-portal:focus-visible .ds-sign{visibility:visible;transform:translate(-50%,10px);transition-delay:0s}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Lit House in the Snow",
+    "overview": "The page is a house, not a page about a house. The home surface is a red-brick Georgian at night, every window glowing from inside, and its door and windows are the site's navigation. Every other page is the room behind one of those windows: the dining room (eat, drink and shop), the living room (outdoors), the foyer (events), the attic (stories), the bedroom (stay). The world is warm inside, cold outside: a night-navy sky with blue-shadowed snow and slow falling flakes outside; amber glow, brass, velvet red, holly green, damask paper and mahogany inside.\n\nEverything interactive is a physical object from that house. Buttons are brass door plaques with two rivets. Cards are gift tags on a red string or photos in a mahogany frame with a green mat. Rules between movements are a garland plate; rules inside a section are a thin brass line. The FAQ is stockings on a mantel shelf. The newsletter is a letter in a brass mail slot. Dates on the events page are small brass plates. Nothing is glass, nothing blurs, nothing glows neon; the only light is amber window light and candle-gold focus rings.\n\nDensity is a campaign site on a phone: 390 px portrait is the design viewport, one saturated field per section, 17 px Vollkorn body, Caslon headings that stay large and few. Desktop widens to 1200 px and adds the lawn, the oaks, the fifth bay and the hanging wooden signs under each window; it does not add a second house or a second visual idea.",
+    "keyCharacteristics": [
+      "Night-navy page ground, never black, never cream; cream and snow appear only as paper, cards and the funders band.",
+      "Each interior page owns one saturated field (dining red, holly green, damask-on-red foyer, attic dusk blue); accents inside a field are brass, candle gold and glow-core, never a second field colour.",
+      "Two self-hosted serifs: Libre Caslon Text 700 for every heading, label and control; Vollkorn for body, italics and metadata.",
+      "Components are house objects (plaque, tag, print, sign, stocking, letter, mail slot, garland); none of them is a generic card or pill.",
+      "One authored motion moment (windows light left to right, door last), one hover grammar (a window warms, its sign drops), snow bounded to the hero and static under reduced motion.",
+      "Film grain at 7% soft-light over the house and the room heroes; depth by inset bevels and soft drop shadows, not by layering blur."
+    ],
+    "rules": [
+      {
+        "name": "The One Field Rule",
+        "body": "A section or room hero sits on exactly one field (night, red, damask-on-red, holly, bottle, dusk, chintz, snow). Within it, the only accents are brass, candle gold, glow-core and cream paper; a second field colour never appears as an accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paper Rule",
+        "body": "Cream and snow are objects (tag, letter, label card, funders band), never the page. The page is always night.",
+        "section": "colors"
+      },
+      {
+        "name": "The Logo-Only Yellow Rule",
+        "body": "Brand yellow `#FFD300` exists only inside the Wander logo lockups; no CSS token carries it and no surface may introduce it.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Light Rule",
+        "body": "House light is warm amber (glow / glow-core) and nothing else. No multicolour lights on the facade; the tree's ornaments inside the living-room window are the single exception the render carries.",
+        "section": "colors"
+      },
+      {
+        "name": "The Caslon Controls Rule",
+        "body": "Anything you can press or read as a sign is set in Libre Caslon Text 700: plaques, chips, signs, date plates, links, captions. Vollkorn never appears on a control.",
+        "section": "typography"
+      },
+      {
+        "name": "The Italic Metadata Rule",
+        "body": "Secondary facts (town, venue, duration, dek, byline) are Vollkorn italic at 15px, never a kicker above the title. \"St. Catharines and the Benchlands\" lives in the first line of copy, never as a kicker.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Large Type Rule",
+        "body": "The headline is the only large type in the first viewport; the house, the snow and the plaque rail carry everything else at label size.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Glass Rule",
+        "body": "Nothing uses `backdrop-filter`, translucency over imagery or blurred panels. Overlays (sticky bar, modal backdrop) are night-deep at 82–92% alpha, flat.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Soft-Shadow Rule",
+        "body": "Every drop shadow is black at 18–50% alpha with blur at least twice its offset. There are no hard offset shadows; the only solid offset is the 2px brass lip under a label card.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do set every new page on night and give each new section one field (`.field--night`, `--red`, `--damask`, `--green`, `--bottle`, `--dusk`, `--chintz`, `--snow`); use brass, candle gold, glow-core and cream objects as the accents inside it.",
+      "Do make every button a `.plaque` (or `.plaque--sm`) and every secondary action a `.tlink`; both are Libre Caslon Text 700.",
+      "Do present a business, itinerary or place as a gift tag with name / town / type in that order, and a photo or story as a framed print with a bottle-green mat.",
+      "Do give every control a 3px candle-gold `:focus-visible` outline (3px offset; 2px on chips and inputs; −3px inside stockings) and a 44px minimum target.",
+      "Do keep \"St. Catharines and the Benchlands\" in the first line of copy (headline or subline) on every page.",
+      "Do carry the brass texture plate on every brass surface (plaques, date plates, mobile signs) and the 7% soft-light grain on heroes.",
+      "Do honour `prefers-reduced-motion`: windows render lit, snow renders as a static scatter, smooth scroll is off.",
+      "Do add new portals, labels and destinations in `src/_data/portals.json`, never by hand in templates; array order is the light-up order, `priority` is tab order."
+    ],
+    "donts": [
+      "Don't put cream, parchment or snow under a page or section as ground; cream and snow are paper and funders band only (The Paper Rule).",
+      "Don't use `backdrop-filter`, glass panels, blur, neon, purple or gradient text anywhere.",
+      "Don't add coloured or multicolour lights to the house or to the glow plates; house light is amber only.",
+      "Don't use brand yellow `#FFD300` outside the Wander logo lockups.",
+      "Don't add kickers or eyebrows above headings; secondary facts go in Vollkorn italic beneath the title, and the only uppercase settings are the 11–12px micro labels on date plates, badges and placeholders.",
+      "Don't use emoji or glyph icons; the only icons are inline SVG social marks and the stocking, garland, mail-slot and evergreen plates.",
+      "Don't render a second house, a second facade crop or a photo-hero-plus-cards layout on any page; the house is seen once, on the home page, at one scale.",
+      "Don't break the \"Choose a room\" rail into cards or add a hamburger menu; the house and the plaque rail are the mobile navigation.",
+      "Don't add a second authored animation; the light-up, the warming and the snow are the whole motion budget."
+    ]
+  }
+}

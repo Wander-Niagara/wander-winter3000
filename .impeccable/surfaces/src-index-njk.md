@@ -173,3 +173,24 @@ phase machine stays at `plates open` by the user's choice. The build continues
 under the user's authority; hero and responsive fidelity are still measured with
 `impeccable comp-diff` against the approved comp and the diffs ride to the finish
 review. The finish reports the plates phase as left open.
+
+## Finish (2026-10-26)
+
+- Critique (dual-agent, home 22/36 and events 21/36 before fixes) persisted under
+  `.impeccable/critique/`; every P0–P2 item was fixed in the polish pass.
+- Lighthouse mobile on `/`: performance 92, accessibility 100, best practices 100,
+  SEO 100 (LCP 3.3 s simulated, CLS 0.001). First-viewport plates 198 KB AVIF.
+- Detector: 0 findings on built files; URL scan leaves 4 CrowdRiff lazy-image
+  false positives, the dev-only placeholder stripes advisory, and a third-party
+  CrowdRiff script error on non-deployed origins.
+- Build-phase state: `plates open` by the user's quoted decision ("The comp does
+  not need to match."); `hero`, `sections`, `motion`, `responsive` never opened; no
+  hero gate score. Fidelity measured out of band with `comp-diff`
+  (`.impeccable/review/diff/hero`, `.impeccable/review/diff/final`, overall 58%,
+  structure low by design because the facade is a different render of the comp's
+  composition). Seed corroborated with `--check-seed`.
+- Finish reviewer: disposition `fix`, eight material fixes applied; verdict pass
+  scored six resolved and two partial, one regression (desktop roofline) fixed in
+  the second round. Deviations kept by decision: thin legibility shadow on the
+  snow headline; page navy stays at the brief's oklch(23% 0.047 265).
+- Every shipping raster carries embedded provenance (`embed-prompt --scan`: 0 missing).
