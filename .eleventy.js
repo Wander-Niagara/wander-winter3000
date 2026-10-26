@@ -120,6 +120,21 @@ module.exports = function (eleventyConfig) {
     const CleanCSS = require("clean-css");
     const { minify } = require("terser");
     const out = dir.output;
+    // HtmlBasePlugin rewrites href/src/srcset, but not CSS url() values or
+    // <link imagesrcset>. Apply the path prefix to those here so plates, fonts
+    // and textures resolve on a prefixed deploy (GitHub Pages project URL, /winter/).
+    const prefix = (eleventyConfig.pathPrefix || "/").replace(/\/?$/, "/");
+    if (prefix !== "/") {
+      const walkAll = (d, fn) => { for (const e of fs.readdirSync(d, { withFileTypes: true })) { const q = path.join(d, e.name); e.isDirectory() ? walkAll(q, fn) : fn(q); } };
+      walkAll(out, (f) => {
+        if (!/\.(html|css)$/.test(f)) return;
+        let t = fs.readFileSync(f, "utf8");
+        const before = t;
+        t = t.replace(/url\((['"]?)\/assets\//g, (m, q) => `url(${q}${prefix}assets/`);
+        t = t.replace(/imagesrcset="([^"]*)"/g, (m, v) => `imagesrcset="${v.replace(/(^|,\s*)\/assets\//g, `$1${prefix}assets/`)}"`);
+        if (t !== before) fs.writeFileSync(f, t);
+      });
+    }
     for (const f of ["assets/css/main.css", "assets/css/critical.css"]) {
       const p = path.join(out, f);
       if (fs.existsSync(p)) fs.writeFileSync(p, new CleanCSS({ level: 1 }).minify(fs.readFileSync(p, "utf8")).styles);
