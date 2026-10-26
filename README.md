@@ -259,6 +259,21 @@ paths above, no `www`, trailing slash.
 
 ---
 
+## Live verification (2026-10-26, preview URL)
+
+- Lighthouse mobile on the preview home page: performance 100, accessibility 100,
+  best practices 100, SEO 100 (LCP 1.7 s, CLS 0.018).
+- Every page returns 200; fonts, plates and textures load with the path prefix
+  (CSS `url()` and preload `imagesrcset` are prefixed at build time in `.eleventy.js`).
+- The Whereabouts events widget renders on the deployed origin (it is
+  origin-restricted and shows nothing on localhost).
+- Known third-party console error: the CrowdRiff loader (fall gallery id, a
+  stand-in) throws `insertAdjacentHTML … element has no parent` once on scroll.
+  The page is unaffected. Re-check when the winter gallery id is pasted; if it
+  persists, load that one embed eagerly instead of through the lazy slot.
+- GA4 DebugView: not yet confirmed from this machine; follow the steps under
+  Tracking with the shared property.
+
 ## Accessibility and motion
 
 - Every portal is a link with an accessible name, a 44 px minimum target, a
