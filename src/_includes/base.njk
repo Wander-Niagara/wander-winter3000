@@ -21,7 +21,8 @@
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/LibreCaslonText-700-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Vollkorn-var-latin.woff2" crossorigin>
   {% if variant == "home" %}
-  <link rel="preload" as="image" href="/assets/plates/facade-780.avif" type="image/avif" imagesrcset="/assets/plates/facade-780.avif 780w, /assets/plates/facade-1170.avif 1170w, /assets/plates/facade-1536.avif 1536w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" media="(max-width:899px)" imagesrcset="/assets/plates/facade-780.avif 780w, /assets/plates/facade-1170.avif 1170w, /assets/plates/facade-1536.avif 1536w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" media="(min-width:900px)" imagesrcset="/assets/plates/facade-wide-1024.avif 1024w, /assets/plates/facade-wide-1536.avif 1536w" imagesizes="min(100vw, 1200px)" fetchpriority="high">
   {% endif %}
   {% for origin in embeds.preconnect %}<link rel="preconnect" href="{{ origin }}" crossorigin>
   {% endfor %}

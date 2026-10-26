@@ -68,6 +68,14 @@ module.exports = function (eleventyConfig) {
     });
     return out;
   });
+  // Weekday label for a dated row ("Sat", or "Fri–Sun" for a run).
+  eleventyConfig.addFilter("weekday", (ev) => {
+    const names = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    if (!ev || !ev.date) return "";
+    const a = new Date(ev.date + "T12:00:00"); if (isNaN(a)) return "";
+    if (ev.dateEnd) { const b = new Date(ev.dateEnd + "T12:00:00"); if (!isNaN(b) && b > a) return (b - a) / 86400000 > 6 ? "Daily" : names[a.getDay()] + "–" + names[b.getDay()]; }
+    return names[a.getDay()];
+  });
   // "Keep exploring" trio: ["eatdrinkplay:michelin", ...] -> first item of each theme.
   eleventyConfig.addFilter("keepItems", (keys, businesses) => {
     return (keys || []).map((k) => {
@@ -143,8 +151,10 @@ module.exports = function (eleventyConfig) {
       }
       let renamed = 0;
       const offenders = [];
+      const placeholders = [];
       walk(out, (p) => {
         if (path.basename(p) !== "index.html") return;
+        if (fs.readFileSync(p, "utf8").includes("[PLACEHOLDER")) placeholders.push(path.relative(out, p));
         const php = path.join(path.dirname(p), "index.php");
         let html = fs.readFileSync(p, "utf8");
         // PHP executes these files: any "<?" outside a real PHP tag would be parsed
@@ -158,6 +168,9 @@ module.exports = function (eleventyConfig) {
         renamed++;
       });
       console.log(`[flywheel] ${renamed} page(s) written as index.php in ${out}`);
+      if (placeholders.length && process.env.ALLOW_PLACEHOLDERS !== "1") {
+        throw new Error(`[flywheel] refusing to ship [PLACEHOLDER] copy in: ${placeholders.join(", ")} (set ALLOW_PLACEHOLDERS=1 to override)`);
+      }
       if (offenders.length) console.log(`[flywheel] escaped "<?" in: ${offenders.join(", ")}`);
     });
   }

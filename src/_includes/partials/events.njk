@@ -14,25 +14,31 @@
     <div class="event-filters" role="group" aria-label="Filter events">
       <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
       <button class="chip" type="button" data-filter="family" aria-pressed="false">Family</button>
-      <button class="chip" type="button" data-filter="couples" aria-pressed="false">Couples</button>
+      <button class="chip" type="button" data-filter="couples" aria-pressed="false">Couples and friends</button>
       <button class="chip" type="button" data-filter="free" aria-pressed="false">Free</button>
     </div>
+    <p class="event-filters__status" aria-live="polite"></p>
+    <p class="events-empty" hidden>Nothing in this winter's list matches that yet. <a class="tlink" href="#events" data-filter-reset>Show all events</a>, or check the live list below.</p>
     {% for month in events.items | groupByMonth %}
     <div class="events-month">
       <h3>{{ month.label }}</h3>
       {% for ev in month.items %}
-      <a class="event-row" href="{{ ev.url }}" target="_blank" rel="noopener" data-module="events" data-card-label="{{ ev.title }}" data-date="{{ ev.date }}" data-tags="{{ ev.tags | join(' ') }}">
-        <span class="event-row__date">{{ ev.dateLabel }}</span>
+      <a class="event-row" href="{{ ev.url }}" target="_blank" rel="noopener" data-module="events" data-card-label="{{ ev.title }}" data-date="{{ ev.date }}"{% if ev.dateEnd %} data-date-end="{{ ev.dateEnd }}"{% endif %} data-tags="{{ ev.tags | join(' ') }}">
+        <span class="event-row__date"><span class="event-row__day">{{ ev | weekday }}</span>{{ ev.dateLabel }}</span>
         <span>
           <p class="event-row__title">{{ ev.title }}<span class="event-row__badge" hidden></span></p>
           <p class="event-row__meta">{{ ev.venue }} · {{ ev.town }}</p>
           <p class="event-row__blurb">{{ ev.blurb }}</p>
         </span>
-        <span class="event-row__go">Event details →</span>
+        <span class="event-row__go">Event details<span class="visually-hidden"> (opens in a new tab)</span> →</span>
       </a>
       {% endfor %}
     </div>
     {% endfor %}
+    <details class="events-past" hidden>
+      <summary>Past events this winter</summary>
+      <div class="events-past__list"></div>
+    </details>
     {% else %}
     {% for ev in events.items %}{% if loop.index0 < rows %}
     <a class="event-row" href="{{ ev.url }}" target="_blank" rel="noopener" data-module="events" data-card-label="{{ ev.title }}" data-date="{{ ev.date }}">
@@ -41,13 +47,13 @@
         <p class="event-row__title">{{ ev.title }}<span class="event-row__badge" hidden></span></p>
         <p class="event-row__meta">{{ ev.venue }} · {{ ev.town }}</p>
       </span>
-      <span class="event-row__go">Event details →</span>
+      <span class="event-row__go">Event details<span class="visually-hidden"> (opens in a new tab)</span> →</span>
     </a>
     {% endif %}{% endfor %}
     <p class="section-cta"><a class="plaque" href="/events/" data-module="events" data-card-label="See all winter events">See all winter events</a></p>
     {% endif %}
     {% if eventsFull and slots.widgets.EVENTS.embed %}
-    <h3 style="margin-top:34px">More events, updated live</h3>
+    <h3 class="events-live-title">More events, updated live</h3>
     {% set slotKey = "EVENTS" %}{% set slotCells = 6 %}{% include "partials/widget-slot.njk" %}
     {% endif %}
   </div>

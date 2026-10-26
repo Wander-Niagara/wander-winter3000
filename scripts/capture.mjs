@@ -13,7 +13,7 @@ const page = await browser.newPage();
 await page.emulateMediaFeatures([{ name: "prefers-reduced-motion", value: args.includes("--motion") ? "no-preference" : "reduce" }]);
 await page.setViewport({ width, height, deviceScaleFactor: dpr });
 if (cls) await page.evaluateOnNewDocument((c) => { document.addEventListener("DOMContentLoaded", () => document.documentElement.classList.add(c)); }, cls);
-await page.goto(url, { waitUntil: "networkidle0", timeout: 60000 });
+await page.goto(url, { waitUntil: opt("wait", "networkidle0"), timeout: 60000 });
 await page.evaluate(() => document.fonts && document.fonts.ready);
 await new Promise(r => setTimeout(r, settle));
 if (full) { // walk the page so lazy images and reveals settle before a full-page capture

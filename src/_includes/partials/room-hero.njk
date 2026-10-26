@@ -4,6 +4,7 @@
     <div>
       <h1 id="page-title">{{ roomTitle | safe }}</h1>
       <p class="room__sub">{{ roomSub | safe }}</p>
+      {% if roomChips %}<p class="room__cta">{% for c in roomChips %}<a class="plaque" href="#{{ c[0] }}" data-module="hero" data-card-label="Filter: {{ c[1] }}" data-filter-link="{{ c[0] }}">{{ c[1] }}</a>{% endfor %}</p>{% endif %}
       {% if roomCta %}<p class="room__cta"><a class="plaque" href="{{ roomCtaHref }}" data-module="hero" data-card-label="{{ roomCta }}">{{ roomCta }}</a>{% if roomCta2 %}<a class="tlink" href="{{ roomCta2Href }}" data-module="hero" data-card-label="{{ roomCta2 }}">{{ roomCta2 }}</a>{% endif %}</p>{% endif %}
     </div>
     {% if room == "dining" %}

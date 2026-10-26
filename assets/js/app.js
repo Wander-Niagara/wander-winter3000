@@ -167,24 +167,52 @@
     });
   });
 
-  // 8. Event badges from real dates; event filter chips.
-  document.querySelectorAll(".event-row[data-date]").forEach(function(row){
-    var badge = row.querySelector(".event-row__badge"); if (!badge) return;
-    var d = new Date(row.getAttribute("data-date") + "T12:00:00"); if (isNaN(d)) return;
-    var now = new Date(), days = Math.floor((d - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / 86400000), dow = d.getDay();
-    if (days === 0) { badge.textContent = "Today"; badge.hidden = false; }
-    else if (days > 0 && days <= 6 && (dow === 5 || dow === 6 || dow === 0)) { badge.textContent = "This weekend"; badge.hidden = false; }
-  });
+  // 8. Events: retire past rows into "Past events", badge Today / This weekend from
+  //    real dates, filter chips with a live status, an empty state and hash state.
+  var rows = [].slice.call(document.querySelectorAll(".event-row[data-date]"));
+  if (rows.length) {
+    var now = new Date(), today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var dow = today.getDay(), toFri = (5 - dow + 7) % 7, wkStart = new Date(today.getTime() + (dow === 6 || dow === 0 ? 0 : toFri) * 86400000);
+    var wkEnd = new Date(wkStart.getTime() + (dow === 0 ? 0 : dow === 6 ? 1 : 2) * 86400000);
+    var past = document.querySelector(".events-past"), pastList = past && past.querySelector(".events-past__list");
+    rows.forEach(function(row){
+      var d = new Date(row.getAttribute("data-date") + "T12:00:00"), e = new Date((row.getAttribute("data-date-end") || row.getAttribute("data-date")) + "T12:00:00");
+      if (isNaN(d)) return;
+      var d0 = new Date(d.getFullYear(), d.getMonth(), d.getDate()), e0 = new Date(e.getFullYear(), e.getMonth(), e.getDate());
+      if (e0 < today) { row.classList.add("is-past"); if (pastList) { pastList.appendChild(row); past.hidden = false; } return; }
+      var badge = row.querySelector(".event-row__badge"); if (!badge) return;
+      if (d0 <= today && today <= e0) { badge.textContent = "On now"; badge.hidden = false; }
+      else if (d0 <= wkEnd && e0 >= wkStart) { badge.textContent = "This weekend"; badge.hidden = false; }
+    });
+    document.querySelectorAll(".events-month").forEach(function(m){ m.hidden = !m.querySelector(".event-row:not(.is-past)"); });
+  }
   var chips = document.querySelector(".event-filters");
   if (chips) {
-    chips.addEventListener("click", function(e){
-      var b = e.target.closest("button[data-filter]"); if (!b) return;
-      var f = b.getAttribute("data-filter");
-      chips.querySelectorAll("button").forEach(function(x){ x.setAttribute("aria-pressed", String(x === b)); });
-      document.querySelectorAll(".event-row").forEach(function(row){ row.hidden = f !== "all" && (row.getAttribute("data-tags") || "").split(" ").indexOf(f) === -1; });
+    var status = document.querySelector(".event-filters__status"), empty = document.querySelector(".events-empty");
+    var labels = { all: "all", family: "family", couples: "couples and friends", free: "free" };
+    function applyFilter(f, fromUser){
+      chips.querySelectorAll("button").forEach(function(x){ x.setAttribute("aria-pressed", String(x.getAttribute("data-filter") === f)); });
+      var shown = 0;
+      document.querySelectorAll(".events-month .event-row").forEach(function(row){
+        var hide = f !== "all" && (row.getAttribute("data-tags") || "").split(" ").indexOf(f) === -1;
+        row.hidden = hide; if (!hide) shown++;
+      });
       document.querySelectorAll(".events-month").forEach(function(m){ m.hidden = !m.querySelector(".event-row:not([hidden])"); });
-      track("event_filter", { filter: f, page_variant: variant });
+      if (status) status.textContent = f === "all" ? "Showing all " + shown + " events" : "Showing " + shown + " " + labels[f] + " event" + (shown === 1 ? "" : "s");
+      if (empty) empty.hidden = shown > 0;
+      if (fromUser) { try { history.replaceState(null, "", f === "all" ? "#events" : "#" + f); } catch(e){} track("event_filter", { filter: f, page_variant: variant }); }
+    }
+    chips.addEventListener("click", function(e){
+      var b = e.target.closest("button[data-filter]"); if (!b || b.getAttribute("aria-pressed") === "true") return;
+      applyFilter(b.getAttribute("data-filter"), true);
     });
+    document.addEventListener("click", function(e){
+      var a = e.target.closest("[data-filter-link],[data-filter-reset]"); if (!a) return;
+      var f = a.getAttribute("data-filter-link") || "all"; applyFilter(f, true);
+      var target = document.getElementById("events"); if (target) { e.preventDefault(); target.scrollIntoView({ block: "start" }); }
+    });
+    var h = (location.hash || "").slice(1);
+    applyFilter(labels[h] && h !== "all" ? h : "all", false);
   }
 
   // 9. Anchor landings: re-align while lazy content above settles.

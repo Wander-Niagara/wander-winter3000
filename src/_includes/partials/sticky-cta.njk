@@ -1,5 +1,8 @@
 {# Sticky bottom CTA bar on mobile, revealed once the hero sentinel scrolls out. #}
+{% if variant == "events" %}{% set sp = { "label": "See winter itineraries", "href": "/eatdrinkplay/#itineraries" } %}{% set ss = { "label": "Where to stay", "href": "/eatdrinkplay/#accommodations" } %}
+{% elif variant == "couples" %}{% set sp = site.stickyCta.primary %}{% set ss = { "label": "Where to stay", "href": "#accommodations" } %}
+{% else %}{% set sp = site.stickyCta.primary %}{% set ss = site.stickyCta.secondary %}{% endif %}
 <div class="sticky-cta" aria-label="Quick links">
-  <a class="plaque plaque--sm" href="{{ site.stickyCta.primary.href }}" data-module="sticky-cta" data-card-label="{{ site.stickyCta.primary.label }}">{{ site.stickyCta.primary.label }}</a>
-  <a class="sticky-cta__alt" href="{{ site.stickyCta.secondary.href }}" data-module="sticky-cta" data-card-label="{{ site.stickyCta.secondary.label }}">{{ site.stickyCta.secondary.label }}</a>
+  <a class="plaque plaque--sm" href="{{ sp.href }}" data-module="sticky-cta" data-card-label="{{ sp.label }}">{{ sp.label }}</a>
+  <a class="sticky-cta__alt" href="{{ ss.href }}" data-module="sticky-cta" data-card-label="{{ ss.label }}">{{ ss.label }}</a>
 </div>
