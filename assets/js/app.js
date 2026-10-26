@@ -200,6 +200,16 @@
   // 10. The house: windows light in sequence (left to right, door last) once
   //     the facade has painted, then stay lit. Reduced motion renders them lit.
   var house = document.getElementById("house");
+  if (house) {
+    // a hovered or focused portal warms its window (replaces :has(), which is costly to recalc)
+    house.addEventListener("pointerover", warm); house.addEventListener("pointerout", warm);
+    house.addEventListener("focusin", warm); house.addEventListener("focusout", warm);
+  }
+  function warm(e){
+    var a = e.target.closest && e.target.closest(".house__portal"); if (!a) return;
+    var on = e.type === "pointerover" || e.type === "focusin";
+    house.querySelectorAll(".house__glow--" + a.getAttribute("data-portal")).forEach(function(g){ g.classList.toggle("is-warm", on); });
+  }
   if (house && html.classList.contains("seq")) {
     var facade = house.querySelector(".house__facade img");
     function light(){ window.requestAnimationFrame(function(){ html.classList.add("lit"); }); }
@@ -237,9 +247,13 @@
     }
     function start(){ if (running) return; running = true; last = 0; raf = window.requestAnimationFrame(frame); }
     function stop(){ running = false; window.cancelAnimationFrame(raf); }
-    size(); window.addEventListener("resize", throttle(size, 250));
-    if ("IntersectionObserver" in window) new IntersectionObserver(function(en){ en[0].isIntersecting && document.visibilityState === "visible" ? start() : stop(); }, { threshold: .02 }).observe(canvas);
-    else start();
+    // start after the page has settled so the snow never competes with the first paint
+    var begin = function(){
+      size(); window.addEventListener("resize", throttle(size, 250));
+      if ("IntersectionObserver" in window) new IntersectionObserver(function(en){ en[0].isIntersecting && document.visibilityState === "visible" ? start() : stop(); }, { threshold: .02 }).observe(canvas);
+      else start();
+    };
+    if ("requestIdleCallback" in window) window.requestIdleCallback(begin, { timeout: 2500 }); else window.setTimeout(begin, 1200);
     document.addEventListener("visibilitychange", function(){ document.visibilityState === "visible" ? start() : stop(); });
   }
 

@@ -99,9 +99,27 @@ module.exports = function (eleventyConfig) {
   // Inline a file's raw contents (used to inline critical CSS in <head>).
   eleventyConfig.addFilter("readFile", (p) => {
     try {
-      return fs.readFileSync(path.join(__dirname, p), "utf8");
+      const raw = fs.readFileSync(path.join(__dirname, p), "utf8");
+      if (p.endsWith(".css")) { const CleanCSS = require("clean-css"); return new CleanCSS({ level: 1 }).minify(raw).styles; }
+      return raw;
     } catch (e) {
       return "";
+    }
+  });
+
+  // ---- Post-build: minify shipped CSS and JS (clean-css, terser) ----
+  eleventyConfig.on("eleventy.after", async ({ dir }) => {
+    const CleanCSS = require("clean-css");
+    const { minify } = require("terser");
+    const out = dir.output;
+    for (const f of ["assets/css/main.css", "assets/css/critical.css"]) {
+      const p = path.join(out, f);
+      if (fs.existsSync(p)) fs.writeFileSync(p, new CleanCSS({ level: 1 }).minify(fs.readFileSync(p, "utf8")).styles);
+    }
+    const js = path.join(out, "assets/js/app.js");
+    if (fs.existsSync(js)) {
+      const r = await minify(fs.readFileSync(js, "utf8"), { compress: true, mangle: true, format: { comments: false } });
+      if (r.code) fs.writeFileSync(js, r.code);
     }
   });
 

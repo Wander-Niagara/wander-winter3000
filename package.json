@@ -1,7 +1,7 @@
 {
   "name": "wander-niagara-winter",
   "version": "1.0.0",
-  "description": "Wander Niagara \u2014 Winter in St. Catharines & the Benchlands campaign microsite. Static, mobile-first, tracking-heavy landing pages for paid media.",
+  "description": "Wander Niagara — Winter in St. Catharines & the Benchlands campaign microsite. Static, mobile-first, tracking-heavy landing pages for paid media.",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
@@ -14,7 +14,9 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "clean-css": "^5.3.3",
     "cross-env": "^10.1.0",
-    "puppeteer-core": "^25.8.0"
+    "puppeteer-core": "^25.8.0",
+    "terser": "^5.51.2"
   }
 }

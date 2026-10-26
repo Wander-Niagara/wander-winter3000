@@ -92,7 +92,7 @@ h4{font-size:17px;line-height:1.3}
 .snowfall{position:absolute;inset:0;z-index:3;pointer-events:none}
 .house{position:relative;width:100%;max-width:var(--max);margin:0 auto;aspect-ratio:var(--plate-w)/var(--plate-h)}
 .house__facade img{width:100%;height:100%;object-fit:cover;display:block}
-.house__glow{position:absolute;pointer-events:none;mix-blend-mode:screen;opacity:1;will-change:opacity;
+.house__glow{position:absolute;pointer-events:none;mix-blend-mode:screen;opacity:1;
   transition:opacity .42s var(--ease-out);transition-delay:calc(var(--i) * 220ms + 120ms)}
 .house__glow img{width:100%;height:100%;object-fit:fill}
 .seq:not(.lit) .house__glow{opacity:0}
@@ -108,12 +108,8 @@ h4{font-size:17px;line-height:1.3}
   box-shadow:inset 0 1px 0 rgba(255,246,220,.5),0 3px 8px rgba(0,0,0,.45);transition:transform .3s var(--ease-out),visibility 0s .3s}
 .house__sign::before{content:"";position:absolute;left:50%;bottom:100%;width:1px;height:8px;background:var(--brass);transform:translateX(-50%)}
 .house__portal:hover .house__sign,.house__portal:focus-visible .house__sign{visibility:visible;transform:translate(-50%,10px);transition-delay:0s}
-/* a hovered or focused portal warms its window */
-.house:has(.house__portal--door:is(:hover,:focus-visible)) .house__glow--door,
-.house:has(.house__portal--dining:is(:hover,:focus-visible)) .house__glow--dining,
-.house:has(.house__portal--living:is(:hover,:focus-visible)) .house__glow--living,
-.house:has(.house__portal--dormer-left:is(:hover,:focus-visible)) .house__glow--dormer-left,
-.house:has(.house__portal--dormer-right:is(:hover,:focus-visible)) .house__glow--dormer-right{filter:brightness(1.18) saturate(1.05);transition:filter .25s var(--ease-out)}
+/* a hovered or focused portal warms its window (class set by app.js) */
+.house__glow.is-warm{filter:brightness(1.18) saturate(1.05);transition:filter .25s var(--ease-out)}
 
 @media (min-width:900px){
   .house{aspect-ratio:var(--plate-w-d)/var(--plate-h-d)}

@@ -20,9 +20,10 @@
     {# glow overlays: one set per plate; the inactive set is display:none and its lazy images never load #}
     <div class="house__glows house__glows--m" aria-hidden="true">
       {% for p in portals.portals %}{% set g = p.mobile.glow %}
+      {% set gw = {"dormer-left": [250, 375], "dormer-right": [250, 375], "dining": [278, 417], "living": [278, 417], "door": [519, 778]}[p.id] %}
       <picture class="house__glow house__glow--{{ p.id }}" style="--i:{{ loop.index0 }};left:{{ g.x }}%;top:{{ g.y }}%;width:{{ g.w }}%;height:{{ g.h }}%">
-        <source type="image/avif" srcset="/assets/plates/glow-{{ p.id }}-1x.avif 1x, /assets/plates/glow-{{ p.id }}-1.5x.avif 1.5x">
-        <source type="image/webp" srcset="/assets/plates/glow-{{ p.id }}-1x.webp 1x, /assets/plates/glow-{{ p.id }}-1.5x.webp 1.5x">
+        <source type="image/avif" srcset="/assets/plates/glow-{{ p.id }}-1x.avif {{ gw[0] }}w, /assets/plates/glow-{{ p.id }}-1.5x.avif {{ gw[1] }}w" sizes="{{ g.w }}vw">
+        <source type="image/webp" srcset="/assets/plates/glow-{{ p.id }}-1x.webp {{ gw[0] }}w, /assets/plates/glow-{{ p.id }}-1.5x.webp {{ gw[1] }}w" sizes="{{ g.w }}vw">
         <img src="/assets/plates/glow-{{ p.id }}.png" alt="" loading="lazy" decoding="async" fetchpriority="low">
       </picture>
       {% endfor %}
@@ -76,11 +77,11 @@
 
 <section class="rooms" id="rooms" aria-labelledby="rooms-title">
   <picture class="rooms__tree rooms__tree--left" aria-hidden="true">
-    <source type="image/avif" srcset="/assets/plates/evergreen-left-360.avif"><source type="image/webp" srcset="/assets/plates/evergreen-left-360.webp">
+    <source type="image/avif" srcset="/assets/plates/evergreen-left-240.avif 240w, /assets/plates/evergreen-left-360.avif 360w" sizes="(min-width:900px) 170px, 21vw"><source type="image/webp" srcset="/assets/plates/evergreen-left-240.webp 240w, /assets/plates/evergreen-left-360.webp 360w" sizes="(min-width:900px) 170px, 21vw">
     <img src="/assets/plates/evergreen-left.png" alt="" loading="lazy" decoding="async">
   </picture>
   <picture class="rooms__tree rooms__tree--right" aria-hidden="true">
-    <source type="image/avif" srcset="/assets/plates/evergreen-right-360.avif"><source type="image/webp" srcset="/assets/plates/evergreen-right-360.webp">
+    <source type="image/avif" srcset="/assets/plates/evergreen-right-240.avif 240w, /assets/plates/evergreen-right-360.avif 360w" sizes="(min-width:900px) 170px, 21vw"><source type="image/webp" srcset="/assets/plates/evergreen-right-240.webp 240w, /assets/plates/evergreen-right-360.webp 360w" sizes="(min-width:900px) 170px, 21vw">
     <img src="/assets/plates/evergreen-right.png" alt="" loading="lazy" decoding="async">
   </picture>
   <h2 id="rooms-title">Choose a room</h2>
