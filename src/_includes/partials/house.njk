@@ -1,0 +1,67 @@
+{# THE HOUSE — the home page's first viewport and its navigation.
+   Plates: an unlit facade, one glow overlay per portal (screen-blended, lit in
+   sequence on first paint), the snow band the headline sits on. Hotspots are
+   real links placed from src/_data/portals.json (percentages of the plate), so
+   the client can re-map a window without touching this file. #}
+{% set mp = portals.plates.mobile %}
+<section class="hero" aria-labelledby="hero-title">
+  <canvas class="snowfall" aria-hidden="true"></canvas>
+  <div class="house" id="house" style="--plate-w:{{ mp.size[0] }};--plate-h:{{ mp.size[1] }}">
+    <picture class="house__facade">
+      <source type="image/avif" srcset="/assets/plates/facade-780.avif 780w, /assets/plates/facade-1170.avif 1170w, /assets/plates/facade-1536.avif 1536w" sizes="100vw">
+      <source type="image/webp" srcset="/assets/plates/facade-780.webp 780w, /assets/plates/facade-1170.webp 1170w, /assets/plates/facade-1536.webp 1536w" sizes="100vw">
+      <img src="/assets/plates/facade.png" width="{{ mp.size[0] }}" height="{{ mp.size[1] }}" fetchpriority="high" decoding="async"
+           alt="A red-brick house at night in the snow, its windows and front door glowing, decorated with wreath and warm-white lights">
+    </picture>
+    {% for p in portals.portals %}
+    {% set g = p.mobile.glow %}
+    <picture class="house__glow house__glow--{{ p.id }}" style="--i:{{ loop.index0 }};left:{{ g.x }}%;top:{{ g.y }}%;width:{{ g.w }}%;height:{{ g.h }}%" aria-hidden="true">
+      <source type="image/avif" srcset="/assets/plates/glow-{{ p.id }}-1x.avif 1x, /assets/plates/glow-{{ p.id }}-1.5x.avif 1.5x">
+      <source type="image/webp" srcset="/assets/plates/glow-{{ p.id }}-1x.webp 1x, /assets/plates/glow-{{ p.id }}-1.5x.webp 1.5x">
+      <img src="/assets/plates/glow-{{ p.id }}.png" alt="" decoding="async" fetchpriority="low">
+    </picture>
+    {% endfor %}
+    <nav class="house__portals" aria-label="Rooms">
+      {% for p in portals.portals %}
+      {% set b = p.mobile.glass %}
+      <a class="house__portal house__portal--{{ p.id }}" href="{{ p.href }}" data-portal="{{ p.id }}" data-module="house-portal" data-card-label="{{ p.label }}"
+         style="left:{{ b.x }}%;top:{{ b.y }}%;width:{{ b.w }}%;height:{{ b.h }}%" aria-label="{{ p.ariaLabel }}">
+        <span class="house__sign" aria-hidden="true">{{ p.label }}</span>
+      </a>
+      {% endfor %}
+    </nav>
+  </div>
+  <div class="snowfield">
+    <picture class="snowfield__plate" aria-hidden="true">
+      <source type="image/avif" srcset="/assets/plates/snow-ground-780.avif 780w, /assets/plates/snow-ground-1170.avif 1170w, /assets/plates/snow-ground-1536.avif 1536w" sizes="100vw">
+      <source type="image/webp" srcset="/assets/plates/snow-ground-780.webp 780w, /assets/plates/snow-ground-1170.webp 1170w, /assets/plates/snow-ground-1536.webp 1536w" sizes="100vw">
+      <img src="/assets/plates/snow-ground.png" width="{{ mp.snowSize[0] }}" height="{{ mp.snowSize[1] }}" alt="" decoding="async">
+    </picture>
+    <div class="snowfield__text">
+      <h1 id="hero-title">Winter is made for&nbsp;wandering</h1>
+      <p>A holiday escape to St. Catharines and the Benchlands.</p>
+    </div>
+  </div>
+  <span id="hero-cta-sentinel" aria-hidden="true"></span>
+</section>
+
+<section class="rooms" id="rooms" aria-labelledby="rooms-title">
+  <picture class="rooms__tree rooms__tree--left" aria-hidden="true">
+    <source type="image/avif" srcset="/assets/plates/evergreen-left-360.avif">
+    <source type="image/webp" srcset="/assets/plates/evergreen-left-360.webp">
+    <img src="/assets/plates/evergreen-left.png" alt="" loading="lazy" decoding="async">
+  </picture>
+  <picture class="rooms__tree rooms__tree--right" aria-hidden="true">
+    <source type="image/avif" srcset="/assets/plates/evergreen-right-360.avif">
+    <source type="image/webp" srcset="/assets/plates/evergreen-right-360.webp">
+    <img src="/assets/plates/evergreen-right.png" alt="" loading="lazy" decoding="async">
+  </picture>
+  <h2 id="rooms-title">Choose a room</h2>
+  <ul class="rooms__list">
+    {% for p in portals.portals | sort(false, false, 'label') %}{% endfor %}
+    {% set order = ['door','dining','living','dormer-right','dormer-left'] %}
+    {% for key in order %}{% for p in portals.portals %}{% if p.id == key %}
+    <li><a class="plaque" href="{{ p.href }}" data-module="house-list" data-portal="{{ p.id }}" data-card-label="{{ p.label }}">{{ p.label }}</a></li>
+    {% endif %}{% endfor %}{% endfor %}
+  </ul>
+</section>

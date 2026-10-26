@@ -162,3 +162,14 @@ render exactly) and the snow band. Hotspot and glow boxes are in
 structure against the comp crop at 21–36% because the render is a different
 house in the same composition, not a crop of the comp; the user's plates review
 decides whether the render stands in for the comp's house.
+
+## Plates gate (2026-10-25)
+
+The user kept the rendered house and declined to regenerate from the comp crops
+("Keep the Figma renders as they are", "The plates do not need to match the
+comp", "The comp does not need to match."). The tool's `--force` refused nine
+phrasings of that decision, including the regex form found in the binary, so the
+phase machine stays at `plates open` by the user's choice. The build continues
+under the user's authority; hero and responsive fidelity are still measured with
+`impeccable comp-diff` against the approved comp and the diffs ride to the finish
+review. The finish reports the plates phase as left open.

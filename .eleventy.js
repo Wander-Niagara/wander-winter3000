@@ -24,7 +24,6 @@ module.exports = function (eleventyConfig) {
 
   // ---- Passthrough copy (assets ship as-is; keep paths relative) ----
   eleventyConfig.addPassthroughCopy({ "assets": "assets" });
-  eleventyConfig.addPassthroughCopy("src/favicon.svg");
   // robots.txt is GitHub-Pages-only: on Flywheel the WordPress site owns /robots.txt.
   if (!FLYWHEEL) eleventyConfig.addPassthroughCopy("src/robots.txt");
 

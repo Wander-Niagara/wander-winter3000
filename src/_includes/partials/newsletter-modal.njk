@@ -1,0 +1,19 @@
+{# Exit-intent newsletter modal (desktop mouse-leave; mobile 70% scroll + 10 s
+   idle; never before 30 s; once per 30 days). A letter in a brass mail slot. #}
+{% if embeds.mailchimp.actionUrl %}
+<div class="modal" id="nl-modal" role="dialog" aria-modal="true" aria-labelledby="nl-modal-title" hidden>
+  <div class="modal__backdrop"></div>
+  <div class="modal__card letter">
+    <button class="modal__close" type="button" data-close aria-label="Close">×</button>
+    <h2 id="nl-modal-title">Before you go, leave us your address</h2>
+    <p>Winter ideas and insider tips for St. Catharines and the Benchlands, a few times a season.</p>
+    <form class="nl-form" data-nl-loc="modal" action="{{ embeds.mailchimp.actionUrl }}" method="post" target="_blank" novalidate>
+      <label class="visually-hidden" for="nl-modal-email">Email address</label>
+      <input id="nl-modal-email" type="email" name="EMAIL" placeholder="you@email.com" required autocomplete="email">
+      {% if embeds.mailchimp.tags %}<input type="hidden" name="tags" value="{{ embeds.mailchimp.tags }}">{% endif %}
+      {% if embeds.mailchimp.honeypot %}<div aria-hidden="true" style="position:absolute;left:-5000px"><input type="text" name="{{ embeds.mailchimp.honeypot }}" tabindex="-1" value="" autocomplete="off"></div>{% endif %}
+      <button class="plaque" type="submit" name="subscribe">Send my letter</button>
+    </form>
+  </div>
+</div>
+{% endif %}
