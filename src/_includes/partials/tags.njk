@@ -1,0 +1,14 @@
+{# GIFT TAGS — business cards on a string, every card an outbound link.
+   Usage: {% set tagItems = theme.items %}{% set tagModule = "theme" %}{% include "partials/tags.njk" %} #}
+<div class="tags">
+  {% for b in tagItems %}
+  <a class="tag" href="{{ b.url }}" target="_blank" rel="noopener" data-module="{{ tagModule or 'theme' }}" data-card-label="{{ b.name }}">
+    {% if b.img %}<img class="tag__photo" src="{{ b.img }}" alt="" loading="lazy" decoding="async">{% endif %}
+    <span class="tag__type">{{ b.type }}</span>
+    <span class="tag__name">{{ b.name }}</span>
+    <span class="tag__town">{{ b.town }}</span>
+    <p class="tag__blurb">{{ b.blurb }}</p>
+    <span class="tag__go">Visit {{ b.name | replace("[PLACEHOLDER] ", "") | truncate(24, true, "…") }} →</span>
+  </a>
+  {% endfor %}
+</div>

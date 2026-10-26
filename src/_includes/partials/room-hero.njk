@@ -1,0 +1,23 @@
+{# ROOM HERO — an interior page opens inside its room. `room` = dining | living | foyer | attic | plain. #}
+<section class="room room--{{ room }}" id="hero" aria-labelledby="page-title">
+  <div class="room__inner">
+    <div>
+      <h1 id="page-title">{{ roomTitle | safe }}</h1>
+      <p class="room__sub">{{ roomSub | safe }}</p>
+      {% if roomCta %}<p class="room__cta"><a class="plaque" href="{{ roomCtaHref }}" data-module="hero" data-card-label="{{ roomCta }}">{{ roomCta }}</a>{% if roomCta2 %}<a class="tlink" href="{{ roomCta2Href }}" data-module="hero" data-card-label="{{ roomCta2 }}">{{ roomCta2 }}</a>{% endif %}</p>{% endif %}
+    </div>
+    {% if room == "dining" %}
+    <picture class="room__plate" aria-hidden="true"><source type="image/avif" srcset="/assets/plates/chandelier-480.avif 480w, /assets/plates/chandelier-720.avif 720w" sizes="(min-width:900px) 460px, 58vw"><source type="image/webp" srcset="/assets/plates/chandelier-480.webp 480w, /assets/plates/chandelier-720.webp 720w" sizes="(min-width:900px) 460px, 58vw"><img src="/assets/plates/chandelier.png" width="974" height="1315" alt="" decoding="async" fetchpriority="high"></picture>
+    {% elif room == "living" %}
+    <div class="room__plate" aria-hidden="true">
+      <picture class="room__tree"><source type="image/avif" srcset="/assets/plates/tree-500.avif 500w, /assets/plates/tree-900.avif 900w" sizes="(min-width:900px) 270px, 48vw"><source type="image/webp" srcset="/assets/plates/tree-500.webp 500w, /assets/plates/tree-900.webp 900w" sizes="(min-width:900px) 270px, 48vw"><img src="/assets/plates/tree.png" width="996" height="1536" alt="" decoding="async" fetchpriority="high"></picture>
+      <picture class="room__mantel"><source type="image/avif" srcset="/assets/plates/mantel-640.avif 640w, /assets/plates/mantel-1200.avif 1200w" sizes="(min-width:900px) 460px, 80vw"><source type="image/webp" srcset="/assets/plates/mantel-640.webp 640w, /assets/plates/mantel-1200.webp 1200w" sizes="(min-width:900px) 460px, 80vw"><img src="/assets/plates/mantel.png" width="1295" height="1009" alt="" decoding="async"></picture>
+    </div>
+    {% elif room == "foyer" %}
+    <figure class="print room__plate"><span class="print__mat"><picture><source type="image/avif" srcset="/assets/plates/room-foyer-800.avif 800w, /assets/plates/room-foyer-1536.avif 1536w" sizes="(min-width:900px) 560px, 92vw"><source type="image/webp" srcset="/assets/plates/room-foyer-800.webp 800w, /assets/plates/room-foyer-1536.webp 1536w" sizes="(min-width:900px) 560px, 92vw"><img class="print__img" src="/assets/plates/room-foyer.png" width="1536" height="1024" alt="A front hall decorated for the holidays: a red stair runner, garland on the banister and damask wallpaper" decoding="async" fetchpriority="high"></picture></span></figure>
+    {% elif room == "attic" %}
+    <figure class="print room__plate"><span class="print__mat"><picture><source type="image/avif" srcset="/assets/plates/room-attic-800.avif 800w, /assets/plates/room-attic-1536.avif 1536w" sizes="(min-width:900px) 560px, 92vw"><source type="image/webp" srcset="/assets/plates/room-attic-800.webp 800w, /assets/plates/room-attic-1536.webp 1536w" sizes="(min-width:900px) 560px, 92vw"><img class="print__img" src="/assets/plates/room-attic.png" width="1536" height="1024" alt="A quiet attic room with a dormer window, cold winter daylight and a chair with a tartan blanket" decoding="async" fetchpriority="high"></picture></span></figure>
+    {% endif %}
+  </div>
+</section>
+<span id="hero-cta-sentinel" aria-hidden="true"></span>

@@ -1,0 +1,17 @@
+{# THEMED BUSINESS SECTION — heading, intro, gift-tag scroller. Usage:
+   {% set themePage = "eatdrinkplay" %}{% set themeKey = "wine" %}{% set themeField = "red" %}{% include "partials/theme-section.njk" %} #}
+{% set theme = null %}
+{% for t in businesses[themePage].themes %}{% if t.key == themeKey %}{% set theme = t %}{% endif %}{% endfor %}
+{% if theme %}
+<section class="section field--{{ themeField or 'night' }}" id="{{ themeKey }}" data-module="theme">
+  <div class="wrap">
+    <div class="section__head">
+      <h2>{{ theme.title }}</h2>
+      {% if theme.intro %}<p>{{ theme.intro }}</p>{% endif %}
+    </div>
+    {% set tagItems = theme.items %}{% set tagModule = "theme" %}{% include "partials/tags.njk" %}
+    {% if themeCta %}<p class="section-cta"><a class="plaque" href="{{ themeCtaHref }}" data-module="theme" data-card-label="{{ themeCta }}">{{ themeCta }}</a></p>{% endif %}
+  </div>
+</section>
+{% endif %}
+{% set themeCta = "" %}{% set themeCtaHref = "" %}

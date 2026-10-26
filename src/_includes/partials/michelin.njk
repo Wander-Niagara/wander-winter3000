@@ -1,0 +1,10 @@
+{# MICHELIN GUIDE block — the five recognised restaurants as gift tags, story link. #}
+{% set mTheme = null %}{% for t in businesses.eatdrinkplay.themes %}{% if t.key == "michelin" %}{% set mTheme = t %}{% endif %}{% endfor %}
+<section class="section {{ michelinField or 'field--bottle' }}" id="michelin" data-module="theme">
+  <div class="wrap">
+    <div class="section__head"><h2>MICHELIN Guide restaurants</h2><p>{{ mTheme.intro }} Winter is the season the hard tables have room.</p></div>
+    {% set tagItems = mTheme.items %}{% set tagModule = "theme" %}{% include "partials/tags.njk" %}
+    <p class="section-cta"><a class="plaque" href="/blog/michelin-guide/" data-module="stories" data-card-label="Read the MICHELIN Guide story">Read the MICHELIN Guide story</a></p>
+  </div>
+</section>
+{% set michelinField = "" %}

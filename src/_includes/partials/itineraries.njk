@@ -1,0 +1,22 @@
+{# ITINERARIES — Whereabouts tripper widget slot, with gift-tag fallbacks from itineraries.json. #}
+<section class="section {{ itinField or 'field--night' }}" id="itineraries" data-module="itinerary">
+  <div class="wrap">
+    <div class="section__head"><h2>Winter itineraries</h2><p>Planned days you can follow as they are, or bend to your own pace.</p></div>
+    {% set slot = slots.widgets[itinSlot] %}
+    {% if slot and slot.embed %}
+    {% set slotKey = itinSlot %}{% set slotCells = 6 %}{% include "partials/widget-slot.njk" %}
+    {% else %}
+    <div class="tags">
+      {% for it in itineraries[itinPage] %}
+      <a class="tag" href="{{ it.url }}" target="_blank" rel="noopener" data-module="itinerary" data-card-label="{{ it.title }}">
+        <span class="tag__type">{{ it.duration }} · {{ it.stops }} stops</span>
+        <span class="tag__name">{{ it.title }}</span>
+        <p class="tag__blurb">{{ it.blurb }}</p>
+        <span class="tag__go">{{ it.cta }} →</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% set itinField = "" %}

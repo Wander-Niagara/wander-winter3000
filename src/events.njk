@@ -1,0 +1,27 @@
+---
+layout: base.njk
+permalink: /events/
+variant: events
+title: "What's on this winter"
+description: "Winter events in St. Catharines and the Benchlands: holiday light switch-ons, markets, concerts at the PAC, winery open houses, skating days and the icewine festivals, Nov to Jan."
+---
+{% set room = "foyer" %}
+{% set roomTitle = "What's on this winter" %}
+{% set roomSub = "Light switch-ons, holiday markets, concerts and the icewine festivals in St. Catharines and the Benchlands, November through January." %}
+{% set roomCta = "Jump to the events" %}{% set roomCtaHref = "#events" %}
+{% include "partials/room-hero.njk" %}
+
+{% set eventsFull = true %}{% set eventsField = "field--red" %}{% set eventsIntro = "Pick a weekend. Filter for the family, for a night out, or for what's free." %}{% include "partials/events.njk" %}
+{% include "partials/page-tail.njk" %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "What's on this winter — {{ site.name }}",
+  "description": {{ description | dump | safe }},
+  "url": "{{ site.url }}{{ page.url }}",
+  "isPartOf": { "@type": "WebSite", "name": "{{ site.name }}", "url": "{{ site.url }}" },
+  "about": { "@type": "Place", "name": "St. Catharines and the Niagara Benchlands, Ontario" }
+}
+</script>

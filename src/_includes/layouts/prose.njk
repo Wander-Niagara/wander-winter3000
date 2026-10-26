@@ -1,13 +1,6 @@
-{# Simple prose page — title head + readable measure (privacy policy, etc.). #}
+{# Plain prose page (privacy). #}
 {% extends "base.njk" %}
 {% block content %}
-  <div class="wrap article-head">
-    <h1>{{ pageHeading or title }}</h1>
-    {% if pageMeta %}<p class="meta">{{ pageMeta }}</p>{% endif %}
-  </div>
-  <div class="wrap">
-    <div class="prose">
-      {{ content | safe }}
-    </div>
-  </div>
+  <div class="article-head"><h1>{{ pageHeading or title }}</h1>{% if pageMeta %}<p class="meta">{{ pageMeta }}</p>{% endif %}</div>
+  <div class="prose">{{ content | safe }}</div>
 {% endblock %}

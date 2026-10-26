@@ -1,0 +1,16 @@
+{# FRAMED PRINT for a client photo slot. Usage:
+   {% set photoKey = "HOME_BREAK_LIGHTS" %}{% set photoShape = "portrait" %}{% set photoCaption = "..." %}{% include "partials/photo-print.njk" %}
+   Photo missing + dev → labelled placeholder inside the frame; production → the frame is not rendered. #}
+{% set ph = slots.photos[photoKey] %}
+{% if ph and ph.embed %}
+<figure class="print">
+  <span class="print__mat"><img class="print__img{% if photoShape %} print__img--{{ photoShape }}{% endif %}" src="{{ ph.embed }}" alt="{{ ph.alt }}" loading="lazy" decoding="async"></span>
+  {% if photoCaption %}<figcaption class="print__caption">{{ photoCaption }}</figcaption>{% endif %}
+</figure>
+{% elif slots.showPlaceholders %}
+<figure class="print print--placeholder" data-slot="{{ photoKey }}">
+  <span class="print__mat"><span class="print__img{% if photoShape %} print__img--{{ photoShape }}{% endif %}">{{ photoKey }} · {{ ph.label if ph else "photo slot" }}</span></span>
+  {% if photoCaption %}<figcaption class="print__caption">{{ photoCaption }}</figcaption>{% endif %}
+</figure>
+{% endif %}
+{% set photoShape = "" %}{% set photoCaption = "" %}

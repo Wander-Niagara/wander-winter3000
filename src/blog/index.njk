@@ -1,0 +1,52 @@
+---
+layout: base.njk
+permalink: /blog/
+variant: stories
+title: "Winter reading"
+description: "Stories to plan a winter weekend in St. Catharines and the Benchlands: lights, markets and tree farms, a MICHELIN Guide winter, and one weekend two ways."
+eleventyExcludeFromCollections: true
+---
+{% set room = "attic" %}
+{% set roomTitle = "Winter reading" %}
+{% set roomSub = "Four stories to plan a winter weekend in St. Catharines and the Benchlands, written for couples, friends and families." %}
+{% include "partials/room-hero.njk" %}
+
+<section class="section field--night" id="stories" data-module="stories">
+  <div class="wrap"><div class="stories stories--large">
+      {% for a in collections.articles %}{% if loop.index <= 2 %}
+      {% set ph = slots.photos[a.data.heroSlotKey] %}
+      <a class="story" href="{{ a.url }}" data-module="stories" data-card-label="{{ a.data.title }}">
+        <span class="print{% if not (ph and ph.embed) %} print--placeholder{% endif %}">
+          <span class="print__mat">
+            <span class="story__audience">{{ a.data.audience }}</span>
+            {% if ph and ph.embed %}<img class="print__img" src="{{ ph.embed }}" alt="" loading="lazy" decoding="async">{% else %}<span class="print__img">{{ a.data.heroSlotKey }} · photo</span>{% endif %}
+          </span>
+        </span>
+        <span class="story__body"><h3>{{ a.data.title }}</h3><p>{{ a.data.dek }}</p><span class="tlink">Read the story</span></span>
+      </a>
+      {% endif %}{% endfor %}
+  </div></div>
+</section>
+{% set itinSlot = "ITINERARIES_COUPLES" %}{% set itinPage = "eatdrinkplay" %}{% set itinField = "field--bottle" %}{% include "partials/itineraries.njk" %}
+<section class="section field--night" data-module="stories">
+  <div class="wrap"><div class="stories stories--large">
+      {% for a in collections.articles %}{% if loop.index > 2 %}
+      {% set ph = slots.photos[a.data.heroSlotKey] %}
+      <a class="story" href="{{ a.url }}" data-module="stories" data-card-label="{{ a.data.title }}">
+        <span class="print{% if not (ph and ph.embed) %} print--placeholder{% endif %}">
+          <span class="print__mat">
+            <span class="story__audience">{{ a.data.audience }}</span>
+            {% if ph and ph.embed %}<img class="print__img" src="{{ ph.embed }}" alt="" loading="lazy" decoding="async">{% else %}<span class="print__img">{{ a.data.heroSlotKey }} · photo</span>{% endif %}
+          </span>
+        </span>
+        <span class="story__body"><h3>{{ a.data.title }}</h3><p>{{ a.data.dek }}</p><span class="tlink">Read the story</span></span>
+      </a>
+      {% endif %}{% endfor %}
+  </div></div>
+</section>
+{% if slots.widgets.CROWDRIFF_GALLERY.embed or slots.showPlaceholders %}
+<section class="section field--night" id="gallery" data-module="gallery">
+  <div class="wrap"><div class="section__head"><h2>Your winter, shared</h2></div>{% set slotKey = "CROWDRIFF_GALLERY" %}{% set slotCells = 8 %}{% include "partials/widget-slot.njk" %}</div>
+</section>
+{% endif %}
+{% include "partials/page-tail.njk" %}

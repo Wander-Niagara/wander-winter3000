@@ -1,0 +1,55 @@
+{# EVENTS — dated rows grouped by month with Family / Couples / Free chips.
+   `eventRows` limits the count on non-events pages; `eventsFull` shows chips + groups. #}
+{% set rows = eventRows or 4 %}
+<section class="section {{ eventsField or 'field--night' }}" id="events" data-module="events">
+  <div class="wrap">
+    <div class="section__head head-row">
+      <div>
+        <h2>{{ eventsTitle or "What's on this winter" }}</h2>
+        <p>{{ eventsIntro or "Light switch-ons, markets, concerts and the icewine festivals, in St. Catharines and the Benchlands." }}</p>
+      </div>
+      {% if not eventsFull %}<a class="tlink" href="/events/" data-module="events" data-card-label="See all winter events">See all winter events</a>{% endif %}
+    </div>
+    {% if eventsFull %}
+    <div class="event-filters" role="group" aria-label="Filter events">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-filter="family" aria-pressed="false">Family</button>
+      <button class="chip" type="button" data-filter="couples" aria-pressed="false">Couples</button>
+      <button class="chip" type="button" data-filter="free" aria-pressed="false">Free</button>
+    </div>
+    {% for month in events.items | groupByMonth %}
+    <div class="events-month">
+      <h3>{{ month.label }}</h3>
+      {% for ev in month.items %}
+      <a class="event-row" href="{{ ev.url }}" target="_blank" rel="noopener" data-module="events" data-card-label="{{ ev.title }}" data-date="{{ ev.date }}" data-tags="{{ ev.tags | join(' ') }}">
+        <span class="event-row__date">{{ ev.dateLabel }}</span>
+        <span>
+          <p class="event-row__title">{{ ev.title }}<span class="event-row__badge" hidden></span></p>
+          <p class="event-row__meta">{{ ev.venue }} · {{ ev.town }}</p>
+          <p class="event-row__blurb">{{ ev.blurb }}</p>
+        </span>
+        <span class="event-row__go">Event details →</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% endfor %}
+    {% else %}
+    {% for ev in events.items %}{% if loop.index0 < rows %}
+    <a class="event-row" href="{{ ev.url }}" target="_blank" rel="noopener" data-module="events" data-card-label="{{ ev.title }}" data-date="{{ ev.date }}">
+      <span class="event-row__date">{{ ev.dateLabel }}</span>
+      <span>
+        <p class="event-row__title">{{ ev.title }}<span class="event-row__badge" hidden></span></p>
+        <p class="event-row__meta">{{ ev.venue }} · {{ ev.town }}</p>
+      </span>
+      <span class="event-row__go">Event details →</span>
+    </a>
+    {% endif %}{% endfor %}
+    <p class="section-cta"><a class="plaque" href="/events/" data-module="events" data-card-label="See all winter events">See all winter events</a></p>
+    {% endif %}
+    {% if eventsFull and slots.widgets.EVENTS.embed %}
+    <h3 style="margin-top:34px">More events, updated live</h3>
+    {% set slotKey = "EVENTS" %}{% set slotCells = 6 %}{% include "partials/widget-slot.njk" %}
+    {% endif %}
+  </div>
+</section>
+{% set eventsField = "" %}{% set eventsTitle = "" %}{% set eventsIntro = "" %}

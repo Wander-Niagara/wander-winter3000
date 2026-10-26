@@ -1,0 +1,22 @@
+---
+layout: base.njk
+permalink: /outdoors/
+variant: families
+title: "Winter outdoors and family fun"
+description: "Winter lights, trails and family fun in St. Catharines and the Benchlands: holiday light displays, Escarpment and waterfront walks, skating, Christmas-tree farms, holiday markets and museums."
+---
+{% set room = "living" %}
+{% set roomTitle = "Winter lights, trails and family fun" %}
+{% set roomSub = "Lit-up main streets, a frozen waterfall at the end of a flat trail, a tree you cut yourself and a rink under the lights, all in St. Catharines and the Benchlands." %}
+{% set roomCta = "See the lights" %}{% set roomCtaHref = "#lights-and-trails" %}{% set roomCta2 = "Markets and tree farms" %}{% set roomCta2Href = "#farms-and-markets" %}
+{% include "partials/room-hero.njk" %}
+
+{% set themePage = "outdoors" %}
+{% set themeKey = "lights-and-trails" %}{% set themeField = "green" %}{% include "partials/theme-section.njk" %}
+{% set themeKey = "skating-and-snow" %}{% set themeField = "night" %}{% include "partials/theme-section.njk" %}
+{% set themeKey = "farms-and-markets" %}{% set themeField = "green" %}{% include "partials/theme-section.njk" %}
+{% set themeKey = "museums-and-attractions" %}{% set themeField = "night" %}{% include "partials/theme-section.njk" %}
+{% set stayIntro = "Make it a weekend: inns and hotels within twenty minutes of every trail and rink." %}{% include "partials/stay.njk" %}
+{% set itinSlot = "ITINERARIES_FAMILIES" %}{% set itinPage = "outdoors" %}{% include "partials/itineraries.njk" %}
+{% set eventRows = 4 %}{% include "partials/events.njk" %}
+{% include "partials/page-tail.njk" %}

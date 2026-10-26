@@ -1,1 +1,46 @@
-{# Home page sections below the house: built in the sections phase. #}
+{# HOME — everything below the house, in the fall site's order with winter content. #}
+<section class="section break field--night" data-module="home">
+  <div class="wrap">
+    <p class="break__lede">Holiday lights on every main street. Wine country under snow. Five <em>MICHELIN</em> Guide restaurants with tables to spare. Markets, tree farms, skating, and a quiet trail to a frozen waterfall. All of it within 90 minutes of Toronto.</p>
+    <div class="twoup">
+      {% set photoKey = "HOME_BREAK_LIGHTS" %}{% set photoShape = "portrait" %}{% set photoCaption = "Downtown St. Catharines, lit for the season" %}{% include "partials/photo-print.njk" %}
+      {% set photoKey = "HOME_BREAK_VINES" %}{% set photoShape = "" %}{% set photoCaption = "The Benchlands after a snowfall" %}{% include "partials/photo-print.njk" %}
+    </div>
+  </div>
+</section>
+
+<section class="section field--night" data-module="home">
+  <div class="wrap">
+    <div class="twoup">
+      <h2>Where <em>urban</em> energy meets <em>rural</em> charm.</h2>
+      {% set photoKey = "HOME_TWOUP_URBAN" %}{% set photoShape = "" %}{% set photoCaption = "St. Paul Street on a December night" %}{% include "partials/photo-print.njk" %}
+      {% set photoKey = "HOME_TWOUP_RURAL" %}{% set photoShape = "portrait" %}{% set photoCaption = "Jordan Village, Benchlands" %}{% include "partials/photo-print.njk" %}
+    </div>
+  </div>
+</section>
+
+<img class="rule-garland" src="/assets/plates/garland-768.webp" srcset="/assets/plates/garland-768.webp 768w, /assets/plates/garland-1536.webp 1536w" sizes="(min-width:900px) 760px, 86vw" width="1536" height="439" alt="" loading="lazy" decoding="async">
+
+{% set themePage = "eatdrinkplay" %}{% set themeKey = "wine" %}{% set themeField = "red" %}
+{% set themeCta = "See where to eat and drink" %}{% set themeCtaHref = "/eatdrinkplay/" %}{% include "partials/theme-section.njk" %}
+
+{% include "partials/michelin.njk" %}
+
+{% set themePage = "outdoors" %}{% set themeKey = "lights-and-trails" %}{% set themeField = "green" %}
+{% set themeCta = "See winter outdoors" %}{% set themeCtaHref = "/outdoors/" %}{% include "partials/theme-section.njk" %}
+
+{% include "partials/stay.njk" %}
+
+{% set eventRows = 4 %}{% include "partials/events.njk" %}
+
+{% if slots.widgets.CROWDRIFF_GALLERY.embed or slots.showPlaceholders %}
+<section class="section field--night" id="gallery" data-module="gallery">
+  <div class="wrap">
+    <div class="section__head"><h2>Your winter, shared</h2><p>Photos from people who wandered here this season.</p></div>
+    {% set slotKey = "CROWDRIFF_GALLERY" %}{% set slotCells = 8 %}{% include "partials/widget-slot.njk" %}
+  </div>
+</section>
+{% endif %}
+
+{% include "partials/stories.njk" %}
+{% include "partials/page-tail.njk" %}

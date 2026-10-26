@@ -55,6 +55,28 @@ module.exports = function (eleventyConfig) {
     return theme ? theme.items : [];
   });
 
+
+  // Group dated event rows by month label (Nov / Dec / Jan), keeping order.
+  eleventyConfig.addFilter("groupByMonth", (items) => {
+    const out = [], seen = {};
+    const names = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    (items || []).forEach((ev) => {
+      const d = new Date((ev.date || "2026-12-01") + "T12:00:00");
+      const label = names[d.getMonth()] + " " + d.getFullYear();
+      if (!seen[label]) { seen[label] = { label, items: [] }; out.push(seen[label]); }
+      seen[label].items.push(ev);
+    });
+    return out;
+  });
+  // "Keep exploring" trio: ["eatdrinkplay:michelin", ...] -> first item of each theme.
+  eleventyConfig.addFilter("keepItems", (keys, businesses) => {
+    return (keys || []).map((k) => {
+      const [pg, theme] = k.split(":");
+      const t = ((businesses[pg] || {}).themes || []).find((x) => x.key === theme);
+      return t && t.items[0];
+    }).filter(Boolean);
+  });
+
   // Nunjucks-friendly JSON dump for JSON-LD blocks
   eleventyConfig.addFilter("jsonld", (obj) => JSON.stringify(obj));
 

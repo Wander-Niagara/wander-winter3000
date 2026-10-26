@@ -1,0 +1,23 @@
+---
+layout: base.njk
+permalink: /eatdrinkplay/
+variant: couples
+title: "Eat, drink and shop"
+description: "Your winter getaway to eat, drink and play in St. Catharines and the Benchlands: icewine by the fire, five MICHELIN Guide restaurants, craft taprooms, holiday shopping and boutique inns."
+---
+{% set room = "dining" %}
+{% set roomTitle = "Your winter getaway to eat, drink and play" %}
+{% set roomSub = "Icewine poured where it is made, MICHELIN tables with room in December, warm taprooms and holiday shops, all a few minutes apart in St. Catharines and the Benchlands." %}
+{% set roomCta = "See the wineries" %}{% set roomCtaHref = "#wine" %}{% set roomCta2 = "Stay the night" %}{% set roomCta2Href = "#accommodations" %}
+{% include "partials/room-hero.njk" %}
+
+{% set themePage = "eatdrinkplay" %}{% set themeField = "red" %}
+{% set themeKey = "wine" %}{% include "partials/theme-section.njk" %}
+{% set themeKey = "beer-and-cider" %}{% set themeField = "night" %}{% include "partials/theme-section.njk" %}
+{% set themeKey = "dining" %}{% set themeField = "red" %}{% include "partials/theme-section.njk" %}
+{% include "partials/michelin.njk" %}
+{% set themeKey = "shopping" %}{% set themeField = "night" %}{% include "partials/theme-section.njk" %}
+{% include "partials/stay.njk" %}
+{% set itinSlot = "ITINERARIES_COUPLES" %}{% set itinPage = "eatdrinkplay" %}{% include "partials/itineraries.njk" %}
+{% set eventRows = 4 %}{% include "partials/events.njk" %}
+{% include "partials/page-tail.njk" %}

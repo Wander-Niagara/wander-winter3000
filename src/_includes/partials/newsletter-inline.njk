@@ -1,28 +1,26 @@
-{# EMAIL SIGNUP — client heading/copy (Mackenzie's doc). Posts straight to
-   Mailchimp using the action URL, honeypot and tag from the client's embed
-   snippet (_data/embeds.js) — rendered as a brand form, no Mailchimp CSS/JS. #}
-<section class="section section--warm" id="newsletter">
-  <div class="wrap">
-    <div class="nl">
-      <h2 class="boxed">Sign Up for More Fall Ideas and Insider Tips</h2>
-      <p>Subscribe to email updates to get the latest news, events, and things to do in St. Catharines and the Benchlands.</p>
+{# NEWSLETTER — a letter posted through a brass mail slot. Posts straight to Mailchimp. #}
+<section class="section {{ nlField or 'field--night' }}" id="newsletter" data-module="newsletter">
+  <div class="wrap letterbox">
+    <picture class="letterbox__slot" aria-hidden="true">
+      <source type="image/avif" srcset="/assets/plates/mail-slot-720.avif">
+      <source type="image/webp" srcset="/assets/plates/mail-slot-720.webp">
+      <img src="/assets/plates/mail-slot.png" alt="" loading="lazy" decoding="async" width="1448" height="442">
+    </picture>
+    <div class="letter">
+      <h2>Sign up for more winter ideas and insider tips</h2>
+      <p>A few letters a season with new places to eat, drink and wander in St. Catharines and the Benchlands. No noise.</p>
       {% if embeds.mailchimp.actionUrl %}
       <form class="nl-form" data-nl-loc="inline" action="{{ embeds.mailchimp.actionUrl }}" method="post" target="_blank" novalidate>
         <label class="visually-hidden" for="nl-email">Email address</label>
         <input id="nl-email" type="email" name="EMAIL" placeholder="you@email.com" required autocomplete="email">
         {% if embeds.mailchimp.tags %}<input type="hidden" name="tags" value="{{ embeds.mailchimp.tags }}">{% endif %}
-        {% if embeds.mailchimp.honeypot %}
-        <div aria-hidden="true" style="position:absolute;left:-5000px">
-          <input type="text" name="{{ embeds.mailchimp.honeypot }}" tabindex="-1" value="" autocomplete="off">
-        </div>
-        {% endif %}
-        <button class="btn" type="submit" name="subscribe">Subscribe</button>
+        {% if embeds.mailchimp.honeypot %}<div aria-hidden="true" style="position:absolute;left:-5000px"><input type="text" name="{{ embeds.mailchimp.honeypot }}" tabindex="-1" value="" autocomplete="off"></div>{% endif %}
+        <button class="plaque" type="submit" name="subscribe">Post my letter</button>
       </form>
       {% else %}
-      {% set slotKey = "MAILCHIMP_SIGNUP" %}
-      {% set slotCells = 2 %}
-      {% include "partials/widget-slot.njk" %}
+      <p class="widget-slot__label">MAILCHIMP · paste the form action URL in src/_data/embeds.js</p>
       {% endif %}
     </div>
   </div>
 </section>
+{% set nlField = "" %}

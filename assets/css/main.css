@@ -1,1 +1,247 @@
-/* Wander Niagara — Winter. Deferred stylesheet: sections, cards, footer, forms, modal. Built in the sections phase. */
+/* Wander Niagara — Winter. Deferred stylesheet: everything below the house.
+   Component language from the world: brass plaques (buttons), gift tags on a string
+   and framed prints with green mats (cards), garland and thin brass rules,
+   stockings on a mantel (FAQ), a letter in a brass mail slot (newsletter). */
+
+/* ---- Layout primitives --------------------------------------------------- */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.section{position:relative;padding:40px 0 44px}
+@media (min-width:900px){.section{padding:64px 0 72px}}
+.section__head{max-width:62ch;margin:0 0 18px}
+.section__head h2,.section h2{margin:0 0 10px;font:700 clamp(24px,5.4vw,36px)/1.08 var(--display);letter-spacing:-.01em;text-wrap:balance}
+.section__head p,.lede{margin:0;font-size:17px;line-height:1.55;color:var(--ink-soft-night)}
+.head-row{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.section-cta{margin:22px 0 0}
+h3{font:700 clamp(18px,4.4vw,22px)/1.2 var(--display);margin:0 0 8px}
+p{margin:0 0 1em}
+.tlink{font:700 16px/1.3 var(--display);color:var(--gold);text-decoration:underline;text-decoration-color:rgba(232,193,112,.55);text-underline-offset:4px;text-decoration-thickness:2px}
+.tlink:hover{text-decoration-color:var(--gold)}
+.on-light .tlink{color:var(--red)}
+
+/* rules: garland between major movements, a thin brass line inside sections */
+.rule-garland{display:block;width:min(86%,760px);height:auto;margin:0 auto -6px;position:relative;z-index:1;pointer-events:none}
+.rule-brass{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--brass) 20%,var(--brass) 80%,transparent);margin:0}
+.rule-brass--short{width:120px;margin:14px auto 0}
+
+/* ---- Fields: each interior room owns one saturated field --------------- */
+.field--night{background:var(--night);color:var(--ink-on-night)}
+.field--red{background:var(--red);color:#fbf1e6}
+.field--red .section__head p,.field--red .lede{color:#f3d9cf}
+.field--green{background:var(--green);color:#eef3ea}
+.field--green .section__head p,.field--green .lede{color:#cfdcc9}
+.field--bottle{background:var(--green-2);color:#eef3ea}
+.field--dusk{background:var(--dusk);color:#eef2fa}
+.field--dusk .section__head p{color:#cdd8ea}
+.field--damask{background:var(--red) url(/assets/plates/damask-tile-512.webp) center/360px auto;color:#fbf1e6}
+.field--chintz{background:var(--cream) url(/assets/plates/chintz-tile-512.webp) center/300px auto;color:var(--ink)}
+.field--chintz .section__head p,.field--chintz .lede{color:#5b4336}
+.field--snow{background:var(--snow);color:var(--ink)}
+.field--snow .section__head p{color:#4b4a52}
+.on-light{color:var(--ink)}
+.on-light .plaque{color:var(--ink)}
+.field--red .tlink,.field--damask .tlink,.field--green .tlink,.field--dusk .tlink{color:var(--gold)}
+
+/* ---- Photo break + two-up (client photos land in slots) ----------------- */
+.break{padding:28px 0 8px}
+.break__lede{font:700 clamp(21px,5.2vw,30px)/1.25 var(--display);letter-spacing:-.01em;text-wrap:pretty;margin:0 0 22px;max-width:28ch}
+.break__lede em{font-style:italic;color:var(--gold)}
+.twoup{display:grid;gap:14px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+.twoup>*{min-width:0}
+.twoup h2{grid-column:1/-1;font:700 clamp(26px,6.4vw,44px)/1.04 var(--display);margin:0 0 6px}
+.twoup h2 em{font-style:italic;color:var(--gold)}
+@media (min-width:900px){.twoup{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:28px;align-items:center}.twoup .print{max-width:560px}.twoup .print:has(.print__img--portrait){max-width:400px;justify-self:center}}
+
+/* ---- Framed print: a photo in a mahogany frame with a green mat ---------- */
+.print{display:block;position:relative;padding:14px;background:linear-gradient(135deg,#5a2d1a,#3b1a0f 45%,#6a3a22);border-radius:2px;
+  box-shadow:0 10px 24px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,220,170,.18)}
+.print__mat{display:block;padding:10px;background:var(--green-2);box-shadow:inset 0 0 0 1px rgba(0,0,0,.35),inset 0 2px 6px rgba(0,0,0,.35)}
+.print__img{display:block;aspect-ratio:4/3;width:100%;object-fit:cover;background:var(--night-2)}
+.print__img--portrait{aspect-ratio:3/4}
+.print__img--wide{aspect-ratio:16/9}
+.print--placeholder .print__img{display:grid;place-items:center;padding:12px;overflow-wrap:anywhere;font:600 12px/1.3 var(--text);color:var(--brass);text-align:center;letter-spacing:.04em;text-transform:uppercase;background:repeating-linear-gradient(135deg,#182240 0 10px,#141c35 10px 20px)}
+.print__caption{display:block;padding:10px 4px 0;font:700 14px/1.3 var(--display);color:#f1e6cf}
+
+/* ---- Gift tag: a business card on a string ------------------------------ */
+.tags{display:grid;grid-auto-flow:column;grid-auto-columns:min(78%,290px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:18px var(--gutter) 10px;margin:0 calc(-1 * var(--gutter));scrollbar-width:thin;scrollbar-color:var(--brass) transparent}
+.tags::-webkit-scrollbar{height:6px}.tags::-webkit-scrollbar-thumb{background:var(--brass);border-radius:3px}
+@media (min-width:900px){.tags{grid-auto-columns:minmax(240px,1fr);grid-auto-flow:row;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));overflow:visible;margin:0;padding:18px 0 0}}
+.tag{position:relative;display:grid;grid-template-rows:auto 1fr auto;gap:6px;scroll-snap-align:start;padding:26px 18px 16px;color:var(--ink);text-decoration:none;
+  background:var(--cream);clip-path:polygon(0 18px,18px 0,100% 0,100% 100%,0 100%);box-shadow:0 6px 16px rgba(0,0,0,.35);transition:transform .22s var(--ease-out)}
+.tag::before{content:"";position:absolute;left:50%;top:9px;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:var(--night);box-shadow:inset 0 0 0 2px var(--brass)}
+.tag::after{content:"";position:absolute;left:50%;top:-30px;width:2px;height:40px;background:var(--red-2);transform:rotate(14deg);transform-origin:bottom}
+.tag:hover{transform:translateY(-3px) rotate(-.6deg)}
+.tag__type{font:700 12px/1.2 var(--text);letter-spacing:.06em;text-transform:uppercase;color:var(--red)}
+.tag h3,.tag__name{font:700 19px/1.15 var(--display);margin:0;color:var(--ink)}
+.tag__town{font:italic 400 15px/1.3 var(--text);color:#6b4b3c}
+.tag__blurb{font:400 15px/1.45 var(--text);color:#3f2a22;margin:4px 0 0}
+.tag__go{justify-self:start;font:700 14px/1 var(--display);color:var(--red);border-bottom:2px solid var(--red);padding-bottom:2px;margin-top:8px;white-space:nowrap}
+.tag__photo{aspect-ratio:3/2;object-fit:cover;width:calc(100% + 36px);margin:-8px -18px 4px;border-top:3px solid var(--green)}
+.field--red .tag,.field--damask .tag{background:var(--cream)}
+
+/* ---- Events: dated rows grouped by month, filter chips ------------------ */
+.event-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.chip{font:700 14px/1 var(--display);padding:10px 14px;border-radius:999px;border:2px solid var(--brass);background:transparent;color:inherit;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--brass);color:var(--ink)}
+.chip:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.events-month{margin:0 0 26px}
+.events-month h3{display:flex;align-items:center;gap:12px;font:700 20px/1 var(--display);margin:0 0 12px}
+.events-month h3::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--brass),transparent)}
+.event-row{display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:start;padding:14px 0;border-bottom:1px solid rgba(201,164,92,.28);color:inherit;text-decoration:none}
+.event-row:hover .event-row__title{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.event-row__date{display:grid;place-items:center;min-height:56px;padding:6px 4px;text-align:center;font:700 13px/1.1 var(--display);color:var(--ink);background:var(--brass) url(/assets/plates/brass-texture-512.webp) center/160px auto;border-radius:3px;
+  box-shadow:inset 0 1px 0 rgba(255,246,220,.55),inset 0 -1px 0 rgba(60,35,10,.5);text-shadow:0 1px 0 rgba(255,246,220,.4)}
+.event-row__title{font:700 18px/1.2 var(--display);margin:0 0 2px}
+.event-row__meta{font:italic 400 15px/1.35 var(--text);color:var(--ink-soft-night);margin:0}
+.field--damask .event-row__meta,.field--red .event-row__meta{color:#f0d6cc}
+.event-row__blurb{margin:4px 0 0;font-size:15px;line-height:1.45}
+.event-row__badge{display:inline-block;margin-left:8px;padding:2px 8px;font:700 11px/1.4 var(--text);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--gold);border-radius:2px;vertical-align:middle}
+.event-row__go{grid-column:2;font:700 14px/1 var(--display);color:var(--gold)}
+@media (min-width:900px){.event-row{grid-template-columns:88px 1fr auto;align-items:center}.event-row__go{grid-column:auto}}
+
+/* ---- Stories: framed prints with the audience on the mat ---------------- */
+.stories{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+.stories>*{min-width:0}
+@media (min-width:700px){.stories{grid-template-columns:1fr 1fr}}
+@media (min-width:1100px){.stories--4{grid-template-columns:repeat(4,1fr)}}
+.story{display:block;color:inherit;text-decoration:none}
+.story .print__mat{position:relative}
+.story__audience{position:absolute;left:10px;top:10px;z-index:1;padding:4px 9px;font:700 11px/1.3 var(--text);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--gold)}
+.story__body{padding:12px 4px 0}
+.story h3{font:700 clamp(19px,4.8vw,22px)/1.2 var(--display);margin:0 0 6px;color:#f7efe0}
+.story p{margin:0 0 8px;font-size:15px;line-height:1.45;color:var(--ink-soft-night)}
+.story:hover h3{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.stories--large .print__img{aspect-ratio:16/10}
+
+/* ---- Room heroes (interior pages) ---------------------------------------- */
+.room{position:relative;overflow:hidden;isolation:isolate}
+.room__inner{position:relative;max-width:var(--max);margin:0 auto;padding:36px var(--gutter) 40px;display:grid;gap:18px;align-items:center;min-height:52vh}
+.room h1{margin:0 0 14px;font:700 clamp(34px,9vw,64px)/1.04 var(--display);letter-spacing:-.015em;text-wrap:balance;max-width:14ch}
+.room__sub{margin:0;font:400 clamp(17px,4.4vw,22px)/1.35 var(--text);max-width:40ch}
+.room__cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-top:18px}
+.room__plate{position:relative;justify-self:center;width:min(70%,420px)}
+.room__plate img{width:100%;height:auto;display:block}
+@media (min-width:900px){.room__inner{grid-template-columns:1.05fr .95fr;min-height:62vh;padding:56px var(--gutter) 64px}.room__plate{width:min(100%,520px);justify-self:end}}
+/* dining room: red field, chandelier hanging from the top */
+.room--dining{background:var(--red)}
+.room--dining::before{content:"";position:absolute;inset:0;background:url(/assets/plates/damask-tile-512.webp) center/420px auto;opacity:.16;mix-blend-mode:multiply}
+.room--dining .room__plate{justify-self:center;width:min(58%,360px);margin-top:-36px}
+@media (min-width:900px){.room--dining .room__plate{margin-top:-56px;width:min(100%,460px)}}
+/* living room: green field, tree and mantel */
+.room--living{background:var(--green)}
+.room--living .room__plate{display:grid;grid-template-columns:1fr;gap:0;width:min(92%,520px)}
+.room--living .room__tree{width:52%;justify-self:end;margin-bottom:-22%}
+.room--living .room__mantel{width:88%}
+/* foyer: damask paper with the hall as a framed print */
+.room--foyer{background:var(--red) url(/assets/plates/damask-tile-512.webp) center/420px auto}
+.room--foyer .room__plate{width:min(100%,560px)}
+/* attic: cold daylight */
+.room--attic{background:var(--dusk);color:#eef2fa}
+.room--attic .room__sub{color:#d6e0f2}
+.room--attic .room__plate{width:min(100%,560px)}
+.room--plain{background:var(--night)}
+
+/* hanging wooden signs under each window (desktop) */
+@media (min-width:900px){
+  .house__sign{font-size:15px;padding:9px 16px 8px;color:#f6ecd6;background:#1f4d2b url(/assets/plates/wood-tile-512.webp) center/260px auto;text-shadow:0 1px 0 rgba(0,0,0,.6);box-shadow:inset 0 0 0 1px rgba(0,0,0,.4),0 4px 10px rgba(0,0,0,.5)}
+  .house__sign::before{height:14px;width:2px;background:linear-gradient(var(--brass),#6c4a1a)}
+}
+
+/* ---- Getting here ---------------------------------------------------------- */
+.region-map{margin:0 0 22px}
+.region-map .print__img{aspect-ratio:1600/1034;object-fit:contain;background:var(--snow)}
+.here-grid{display:grid;gap:24px}
+@media (min-width:900px){.here-grid{grid-template-columns:1fr 1.2fr;gap:40px}}
+.drive{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:0}
+.drive li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(201,164,92,.3);font-size:16px}
+.drive b{font-family:var(--display)}
+.drive span{color:var(--ink-soft-night);text-align:right}
+.region-copy{font-size:16px;line-height:1.55;color:var(--ink-soft-night)}
+
+/* ---- FAQ: stockings on a mantel -------------------------------------------- */
+.mantel{position:relative;padding-top:12px}
+.mantel__shelf{position:relative;height:18px;margin:0 0 6px;background:linear-gradient(#fbf7ef,#e9e2d3 60%,#cbbfa9);border-radius:2px;box-shadow:0 6px 14px rgba(0,0,0,.4),inset 0 -2px 0 rgba(0,0,0,.08)}
+.mantel__shelf::after{content:"";position:absolute;left:12px;right:12px;top:100%;height:10px;background:linear-gradient(#d9d1c0,#bfb4a0);border-radius:0 0 3px 3px}
+.faq{display:grid;gap:10px;margin-top:18px}
+.faq details{background:rgba(255,255,255,.04);border:1px solid rgba(201,164,92,.3);border-radius:4px;padding:0}
+.faq summary{display:grid;grid-template-columns:26px 1fr auto;gap:12px;align-items:center;padding:14px 16px;cursor:pointer;list-style:none;font:700 17px/1.3 var(--display)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"";width:26px;height:26px;background:url(/assets/plates/stocking-300.webp) center/contain no-repeat}
+.faq summary::after{content:"+";font:700 22px/1 var(--display);color:var(--gold)}
+.faq details[open] summary::after{content:"–"}
+.faq__a{padding:0 16px 16px 54px;font-size:16px;line-height:1.55;color:var(--ink-soft-night)}
+.faq__a a{color:var(--gold)}
+.faq summary:focus-visible{outline:3px solid var(--gold);outline-offset:-3px;border-radius:4px}
+.on-light .faq details{background:rgba(255,255,255,.55);border-color:rgba(122,59,46,.3)}
+.on-light .faq__a{color:#4a362c}.on-light .faq__a a{color:var(--red)}.on-light .faq summary::after{color:var(--red)}
+
+/* ---- Newsletter: a letter in a brass mail slot ----------------------------- */
+.letterbox{display:grid;gap:18px;justify-items:center;text-align:center}
+.letterbox__slot{width:min(72%,420px);height:auto}
+.letter{position:relative;width:min(100%,560px);padding:26px 22px 24px;background:var(--cream);color:var(--ink);border-radius:2px;
+  box-shadow:0 14px 30px rgba(0,0,0,.45),inset 0 0 0 1px rgba(122,59,46,.25);text-align:left}
+.letter::before{content:"";position:absolute;inset:8px;border:1px dashed rgba(166,30,34,.35);pointer-events:none}
+.letter h2{font:700 clamp(22px,5.4vw,30px)/1.1 var(--display);margin:0 0 8px;color:var(--ink)}
+.letter p{color:#5b4336;margin:0 0 14px;font-size:16px}
+.nl-form{display:grid;gap:10px}
+@media (min-width:600px){.nl-form{grid-template-columns:1fr auto}}
+.nl-form input[type=email]{width:100%;min-height:46px;padding:10px 14px;font:400 17px/1.2 var(--text);color:var(--ink);background:#fff;border:2px solid var(--brick);border-radius:3px;caret-color:var(--red)}
+.nl-form input[type=email]::placeholder{color:#8a6f62}
+.nl-form input[type=email]:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* ---- Funders, social, footer ---------------------------------------------- */
+.funders{background:var(--snow);color:var(--ink);padding:34px 0}
+.funders h3{text-align:center;font:700 20px/1.2 var(--display);margin:0 0 20px;color:var(--ink)}
+.funders__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 22px;align-items:center;justify-items:center}
+@media (min-width:700px){.funders__grid{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:1000px){.funders__grid{grid-template-columns:repeat(6,1fr)}}
+.funders__grid img{max-height:54px;width:auto;max-width:150px;object-fit:contain}
+.site-footer{background:var(--night-2);color:var(--ink-on-night);padding:40px 0 24px}
+.site-footer__row{display:grid;gap:28px}
+@media (min-width:900px){.site-footer__row{grid-template-columns:repeat(4,1fr);align-items:start}}
+.site-footer h4{margin:0 0 10px;font:700 17px/1.2 var(--display)}
+.social{display:flex;gap:14px}
+.social a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:2px solid var(--brass);color:var(--gold)}
+.social svg{width:18px;height:18px;fill:currentColor}
+.social a:hover{background:var(--brass);color:var(--ink)}
+.foot-tiao{max-height:70px;width:auto;background:var(--snow);padding:8px;border-radius:3px}
+.foot-wander{height:56px;width:auto}
+.memLinks{margin-top:12px;font-size:15px;line-height:1.9}
+.memLinks a{color:var(--ink-soft-night)}
+.site-footer__copy{margin-top:30px;padding-top:18px;border-top:1px solid rgba(201,164,92,.3);text-align:center;font-size:14px;color:var(--ink-soft-night)}
+.site-footer__copy a{color:var(--gold)}
+
+/* ---- Modal ------------------------------------------------------------------ */
+.modal{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:var(--gutter)}
+.modal[hidden]{display:none}
+.modal__backdrop{position:absolute;inset:0;background:rgba(13,21,38,.82)}
+.modal__card{position:relative;z-index:1}
+.modal__close{position:absolute;right:10px;top:8px;width:40px;height:40px;border:0;background:transparent;font:400 28px/1 var(--display);color:var(--red);cursor:pointer;border-radius:50%}
+.modal__close:focus-visible{outline:3px solid var(--gold)}
+
+/* ---- Articles & prose ------------------------------------------------------- */
+.article-head{padding:36px var(--gutter) 10px;max-width:760px;margin:0 auto}
+.article-head h1{font:700 clamp(30px,7.6vw,52px)/1.05 var(--display);letter-spacing:-.015em;margin:0 0 12px;text-wrap:balance}
+.dek{font:italic 400 clamp(18px,4.6vw,22px)/1.4 var(--text);color:var(--ink-soft-night);margin:0 0 10px}
+.meta{font:700 13px/1.3 var(--text);letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin:0}
+.article-hero{max-width:980px;margin:16px auto 0;padding:0 var(--gutter)}
+.prose{max-width:66ch;margin:28px auto 0;padding:0 var(--gutter);font-size:18px;line-height:1.65}
+.prose h2{font:700 clamp(24px,5.6vw,32px)/1.15 var(--display);margin:1.6em 0 .5em}
+.prose a{color:var(--gold);text-decoration-thickness:1.5px;text-underline-offset:3px}
+.prose strong{color:#f7efe0}
+.article-img{margin:1.6em auto}
+.article-img img{width:100%;height:auto;display:block}
+.article-back{margin-top:24px}
+.prose-wide{max-width:var(--max);margin:1.6em auto;padding:0}
+.keep{padding:40px 0}
+
+/* ---- Pending-asset slots (dev / SHOW_PLACEHOLDERS) -------------------------- */
+.widget-slot{border:2px dashed rgba(201,164,92,.5);border-radius:4px;padding:14px;margin:10px 0}
+.widget-slot__label{margin:0 0 10px;font:600 12px/1.3 var(--text);letter-spacing:.06em;text-transform:uppercase;color:var(--brass)}
+.widget-slot__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.widget-slot__grid i{display:block;aspect-ratio:4/3;background:repeating-linear-gradient(135deg,rgba(255,255,255,.06) 0 10px,transparent 10px 20px)}
+.widget-live{min-height:200px}
+/* Whereabouts widgets: themed to the world */
+whereabouts-operators-widget,whereabouts-events-widget,whereabouts-tripper-widget{--global-font-body:var(--text);display:block}
+whereabouts-operators-widget::part(card__surface){border-radius:2px;background:var(--cream);color:var(--ink)}
+whereabouts-operators-widget::part(card__title){font-family:var(--display);color:var(--ink)}
+whereabouts-operators-widget::part(card__btn-details){background:var(--brass);color:var(--ink);border-radius:3px;font-family:var(--display);font-weight:700}
